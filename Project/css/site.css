@@ -1,0 +1,52 @@
+﻿@import url('site.css');
+body {
+    padding: 1%;
+    font-size: 12px;
+}
+
+.nav_bar{
+    font-weight: bold;
+    font-size: 14px;
+    background-color: #00b557;
+}
+
+.navbar-default .navbar-nav>li>a{
+    color: black;
+}
+
+.div_above{
+    min-height: 150px;
+}
+
+.div_content{
+    min-height: 500px;
+    background-color: #ddd;
+}
+footer{
+    background: #ddd;
+    margin-top: 10px;
+    padding:5px;
+}
+.author{
+    padding-top:75px;
+    height: 90px;
+    color:blue;
+    font-weight: bold;
+}
+
+
+.navbar-nav li:hover{
+     background-color:#00bb57;
+}
+
+.navbar-nav li a:hover{
+    color:white!important;
+}
+
+.header_padding{
+    padding:10px;
+}
+
+.font_bold{
+    font-weight:bold;
+}

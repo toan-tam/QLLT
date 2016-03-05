@@ -1,0 +1,6 @@
+D:\Project\Project\Project\bin\Project.dll.config
+D:\Project\Project\Project\bin\Project.dll
+D:\Project\Project\Project\bin\Project.pdb
+D:\Project\Project\Project\obj\Debug\Project.csprojResolveAssemblyReference.cache
+D:\Project\Project\Project\obj\Debug\Project.dll
+D:\Project\Project\Project\obj\Debug\Project.pdb
