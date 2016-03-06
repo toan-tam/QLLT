@@ -50,3 +50,13 @@ footer{
 .font_bold{
     font-weight:bold;
 }
+
+.badge_left{
+    float:left;
+    width: 13%;
+}
+.badge_right{
+    float:left;
+    width:86%;
+    padding-top: 5%;
+}

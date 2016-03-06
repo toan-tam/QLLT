@@ -1,25 +1,33 @@
-﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="layout.aspx.cs" Inherits="Project.views.layout.layout" %>
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeBehind="Site.master.cs" Inherits="Project.views.layout.Site" %>
 
 <!DOCTYPE html>
 
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head runat="server">
-    <title></title>
+    <title>Quản lý lưu trữ</title>
     <link href="../../css/bootstrap.min.css" rel="stylesheet" />
     <link href="../../css/site.css" rel="stylesheet" />
 </head>
 <body>
     <div class="container-fluid div_above">
         <div class="row">
-            <div class="col-xs-9 col-sm-9">
-                <a href="../../index.aspx">
-                    <img src="../../images/badge.png" />
-                </a>
-                <font color="red" size="3">
-                    CHI CỤC VĂN THƯ LƯU TRỮ TỈNH QUẢNG NINH
-                </font>
+            <div class="col-xs-7 col-sm-7">
+                <div class="badge_left">
+                    <a href="/">
+                        <img src="../../images/badge.png" class="img-responsive" alt="Trang chủ" />
+                    </a>
+                </div>
+                <div class="badge_right visible-lg">
+                    <font color="red" size="3">CHI CỤC VĂN THƯ LƯU TRỮ TỈNH QUẢNG NINH</font>
+                </div>
+                <div class="badge_right visible-sm">
+                    <font color="red" size="3">CHI CỤC VĂN THƯ LƯU TRỮ TỈNH QUẢNG NINH</font>
+                </div>
+                <div class="badge_right visible-md ">
+                    <font color="red" size="3">CHI CỤC VĂN THƯ LƯU TRỮ TỈNH QUẢNG NINH</font>
+                </div>
             </div>
-            <div class="col-xs-3 col-sm-3">
+            <div class="col-xs-5 col-sm-5">
                 <br />
                 <div class="pull-right"><a href="#">Đăng nhập</a>&nbsp;</div>
                 <div class="pull-right">&nbsp;</div>
@@ -42,7 +50,7 @@
             </button>
             <div class="collapse navbar-collapse" id="myNavbar">
                 <ul class="nav navbar-nav">
-                    <li><a href="#">Trang chủ</a></li>
+                    <li><a href="/">Trang chủ</a></li>
                     <li><a href="#">Quản trị Hệ thống</a></li>
                     <li><a href="#">Giới thiệu về Chi cục</a></li>
                     <li><a href="#">Quản lý danh mục</a></li>
@@ -58,12 +66,14 @@
             <div class="col-sm-3">
                 <div class="row">
                     <div class="col-sm-11  div_content">
+
                         <div class="row nav_bar header_padding text-center">Quản lý lưu trữ</div>
                     </div>
                 </div>
             </div>
             <div class="col-sm-9 div_content">
-                <div class="row nav_bar header_padding">Giới thiệu</div>
+                <asp:ContentPlaceHolder ID="head" runat="server">
+                </asp:ContentPlaceHolder>
             </div>
         </div>
     </div>

@@ -7,7 +7,7 @@ using System.Web.UI.WebControls;
 
 namespace Project.views.layout
 {
-    public partial class layout : System.Web.UI.Page
+    public partial class Site : System.Web.UI.MasterPage
     {
         protected void Page_Load(object sender, EventArgs e)
         {
