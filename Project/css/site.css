@@ -50,6 +50,12 @@ footer{
 .font_bold{
     font-weight:bold;
 }
+.font_14{
+    font-size:14px;
+}
+.margin_b1{
+    margin-bottom:3%;
+}
 
 .badge_left{
     float:left;
@@ -65,4 +71,15 @@ footer{
 .navbar-default .navbar-nav>.active>a, .navbar-default .navbar-nav>.active>a:focus, .navbar-default .navbar-nav>.active>a:hover {
     color: #555;
     background-color: #80ff00;
+}
+.side_bar_ul .list-group-item{
+    background-color:#ddd;
+    padding-top:2px;
+    padding-bottom:5px;
+}
+.side_bar_ul{
+    margin-bottom:0;
+}
+.table>tbody>tr>td, .table>tbody>tr>th, .table>tfoot>tr>td, .table>tfoot>tr>th, .table>thead>tr>td, .table>thead>tr>th{
+    padding:35px;
 }
