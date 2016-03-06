@@ -36,7 +36,7 @@ footer{
 
 
 .navbar-nav li:hover{
-     background-color:#00bb57;
+     background-color:#43d500;
 }
 
 .navbar-nav li a:hover{
@@ -60,4 +60,9 @@ footer{
     width:84%;
     padding-top: 5%;
     margin-left:1%;
+}
+
+.navbar-default .navbar-nav>.active>a, .navbar-default .navbar-nav>.active>a:focus, .navbar-default .navbar-nav>.active>a:hover {
+    color: #555;
+    background-color: #80ff00;
 }
