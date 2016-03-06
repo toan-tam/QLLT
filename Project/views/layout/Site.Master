@@ -17,14 +17,9 @@
                         <img src="../../images/badge.png" class="img-responsive" alt="Trang chủ" />
                     </a>
                 </div>
-                <div class="badge_right visible-lg">
-                    <font color="red" size="3">CHI CỤC VĂN THƯ LƯU TRỮ TỈNH QUẢNG NINH</font>
-                </div>
-                <div class="badge_right visible-sm">
-                    <font color="red" size="3">CHI CỤC VĂN THƯ LƯU TRỮ TỈNH QUẢNG NINH</font>
-                </div>
-                <div class="badge_right visible-md ">
-                    <font color="red" size="3">CHI CỤC VĂN THƯ LƯU TRỮ TỈNH QUẢNG NINH</font>
+                <div class="badge_right">
+                    <font color="red" class="visible-xs" style="font-size: 10px">CHI CỤC VĂN THƯ LƯU TRỮ TỈNH QUẢNG NINH</font>
+                    <font color="red" size="3" class="visible-lg visible-sm visible-md">CHI CỤC VĂN THƯ LƯU TRỮ TỈNH QUẢNG NINH</font>
                 </div>
             </div>
             <div class="col-xs-5 col-sm-5">
@@ -36,7 +31,8 @@
 
         </div>
         <div class="row text-center">
-            <font size="5" class="font_bold">PHẦN MỀM QUẢN LÝ LƯU TRỮ</font>
+            <font size="5" class="font_bold visible-xs" style="font-size: 13px;">PHẦN MỀM QUẢN LÝ LƯU TRỮ</font>
+            <font size="5" class="font_bold visible-sm visible-md visible-lg">PHẦN MỀM QUẢN LÝ LƯU TRỮ</font>
         </div>
         <br />
         <br />

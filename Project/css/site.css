@@ -53,10 +53,11 @@ footer{
 
 .badge_left{
     float:left;
-    width: 13%;
+    width: 14%;
 }
 .badge_right{
     float:left;
-    width:86%;
+    width:84%;
     padding-top: 5%;
+    margin-left:1%;
 }
