@@ -57,6 +57,11 @@ footer{
     margin-bottom:3%;
 }
 
+.margin_b10{
+    margin-bottom:10%;
+}
+
+
 .badge_left{
     float:left;
     width: 14%;
@@ -80,6 +85,7 @@ footer{
 .side_bar_ul{
     margin-bottom:0;
 }
-.table>tbody>tr>td, .table>tbody>tr>th, .table>tfoot>tr>td, .table>tfoot>tr>th, .table>thead>tr>td, .table>thead>tr>th{
-    padding:35px;
+
+#ctl00_head_DataList_Hoso tr{
+    height:150px;
 }

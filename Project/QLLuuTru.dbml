@@ -1,0 +1,50 @@
+﻿<?xml version="1.0" encoding="utf-8"?><Database Name="QL_luu_tru" Class="QLLuuTruDataContext" xmlns="http://schemas.microsoft.com/linqtosql/dbml/2007">
+  <Connection Mode="WebSettings" ConnectionString="Data Source=TOANTAM\SQLEXPRESS;Initial Catalog=QL_luu_tru;Integrated Security=True" SettingsObjectName="System.Configuration.ConfigurationManager.ConnectionStrings" SettingsPropertyName="QL_luu_truConnectionString" Provider="System.Data.SqlClient" />
+  <Table Name="dbo.Hsrecords" Member="Hsrecords">
+    <Type Name="Hsrecord">
+      <Column Name="Hsrecords_Id" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="Tenphong" Type="System.String" DbType="NVarChar(1000)" CanBeNull="true" />
+      <Column Name="Tenkho" Type="System.String" DbType="NVarChar(1000)" CanBeNull="true" />
+      <Column Name="KHTT" Type="System.String" DbType="NVarChar(500)" CanBeNull="true" />
+      <Column Name="Namchinhly" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="Donvi" Type="System.String" DbType="NVarChar(1000)" CanBeNull="true" />
+      <Column Name="Vande" Type="System.String" DbType="NVarChar(2000)" CanBeNull="true" />
+      <Column Name="Muclucso" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="Hopso" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="Hososo" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="Tieude" Type="System.String" DbType="NVarChar(4000)" CanBeNull="true" />
+      <Column Name="Chugiai" Type="System.String" DbType="NVarChar(3000)" CanBeNull="true" />
+      <Column Name="ThoigianBD" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="ThoigianKT" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="Soluongto" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="Ngonngu" Type="System.String" DbType="NVarChar(500)" CanBeNull="true" />
+      <Column Name="Buttich" Type="System.String" DbType="NVarChar(500)" CanBeNull="true" />
+      <Column Name="ThoihanBQ" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="ChedoSD" Type="System.String" DbType="NVarChar(500)" CanBeNull="true" />
+      <Column Name="TinhtrangVL" Type="System.String" DbType="NVarChar(1000)" CanBeNull="true" />
+      <Column Name="NguoilapHS" Type="System.String" DbType="NVarChar(500)" CanBeNull="true" />
+      <Column Name="Tencongtrinh" Type="System.String" DbType="NVarChar(3000)" CanBeNull="true" />
+      <Column Name="Tenhangmuc" Type="System.String" DbType="NVarChar(1000)" CanBeNull="true" />
+      <Column Name="Tengiaidoan" Type="System.String" DbType="NVarChar(1000)" CanBeNull="true" />
+      <Column Name="Hopdongso" Type="System.String" DbType="NVarChar(200)" CanBeNull="true" />
+      <Column Name="DiadiemXD" Type="System.String" DbType="NVarChar(2000)" CanBeNull="true" />
+      <Column Name="Domat" Type="System.String" DbType="NVarChar(500)" CanBeNull="true" />
+      <Column Name="Nam" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="Vatmangtinkhac" Type="System.String" DbType="NVarChar(1000)" CanBeNull="true" />
+      <Column Name="Tylebando" Type="System.String" DbType="NVarChar(100)" CanBeNull="true" />
+      <Column Name="Khobando" Type="System.String" DbType="NVarChar(100)" CanBeNull="true" />
+      <Column Name="Chatlieubando" Type="System.String" DbType="NVarChar(500)" CanBeNull="true" />
+      <Column Name="Hovaten" Type="System.String" DbType="NVarChar(200)" CanBeNull="true" />
+      <Column Name="Ngaysinh" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="Quequan" Type="System.String" DbType="NVarChar(1000)" CanBeNull="true" />
+      <Column Name="Dongho" Type="System.String" DbType="NVarChar(500)" CanBeNull="true" />
+      <Column Name="Thoiluongphat" Type="System.String" DbType="NVarChar(100)" CanBeNull="true" />
+      <Column Name="Tocdoghi" Type="System.String" DbType="NVarChar(100)" CanBeNull="true" />
+      <Column Name="Mucdotruycap" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="Adduser" Type="System.String" DbType="NVarChar(200)" CanBeNull="true" />
+      <Column Name="Addtime" Type="System.String" DbType="NVarChar(100)" CanBeNull="true" />
+      <Column Name="Hsbooks_Id" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="Hosocv" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+    </Type>
+  </Table>
+</Database>
