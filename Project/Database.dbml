@@ -1,0 +1,500 @@
+﻿<?xml version="1.0" encoding="utf-8"?><Database Name="langson" Class="DatabaseDataContext" xmlns="http://schemas.microsoft.com/linqtosql/dbml/2007">
+  <Connection Mode="WebSettings" ConnectionString="Data Source=TOANTAM\SQLEXPRESS;Initial Catalog=langson;Integrated Security=True" SettingsObjectName="System.Configuration.ConfigurationManager.ConnectionStrings" SettingsPropertyName="langsonConnectionString1" Provider="System.Data.SqlClient" />
+  <Table Name="dbo.DataFileImport" Member="DataFileImports">
+    <Type Name="DataFileImport">
+      <Column Name="DataFileImport_ID" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="Hsbooks_ID" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="FileOldName" Type="System.String" DbType="NVarChar(200)" CanBeNull="true" />
+      <Column Name="FileNewName" Type="System.String" DbType="NVarChar(200)" CanBeNull="true" />
+      <Column Name="FileSize" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="FileType" Type="System.String" DbType="NVarChar(200)" CanBeNull="true" />
+      <Column Name="Adduser" Type="System.String" DbType="NVarChar(200)" CanBeNull="true" />
+      <Column Name="Addtime" Type="System.DateTime" DbType="SmallDateTime" CanBeNull="true" />
+      <Column Name="UploadDT" Type="System.DateTime" DbType="SmallDateTime" CanBeNull="true" />
+      <Column Name="Description" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="SourceFileName" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="DestFileName" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="DataSize" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Association Name="Hsbook_DataFileImport" Member="Hsbook" ThisKey="Hsbooks_ID" OtherKey="Hsbooks_Id" Type="Hsbook" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.Vbrecords" Member="Vbrecords">
+    <Type Name="Vbrecord">
+      <Column Name="Vbrecords_Id" Type="System.Int64" DbType="BigInt NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="Ngayden" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="Soden" Type="System.String" DbType="NVarChar(200)" CanBeNull="true" />
+      <Column Name="SoKHVB" Type="System.String" DbType="NVarChar(500)" CanBeNull="true" />
+      <Column Name="NgayVB" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="Tenloai" Type="System.String" DbType="NVarChar(500)" CanBeNull="true" />
+      <Column Name="Phanloai" Type="System.String" DbType="NVarChar(2000)" CanBeNull="true" />
+      <Column Name="Capgui" Type="System.String" DbType="NVarChar(1000)" CanBeNull="true" />
+      <Column Name="Noigui" Type="System.String" DbType="NVarChar(1000)" CanBeNull="true" />
+      <Column Name="Nguoiky" Type="System.String" DbType="NVarChar(500)" CanBeNull="true" />
+      <Column Name="TrichyeuND" Type="System.String" DbType="NVarChar(4000)" CanBeNull="true" />
+      <Column Name="TrinhLD" Type="System.String" DbType="NVarChar(500)" CanBeNull="true" />
+      <Column Name="Mucdomat" Type="System.String" DbType="NVarChar(500)" CanBeNull="true" />
+      <Column Name="Mucdokhan" Type="System.String" DbType="NVarChar(500)" CanBeNull="true" />
+      <Column Name="ThoihanGQ" Type="System.String" DbType="NVarChar(500)" CanBeNull="true" />
+      <Column Name="ThoihanBQ" Type="System.String" DbType="NVarChar(500)" CanBeNull="true" />
+      <Column Name="YkienGQ" Type="System.String" DbType="NVarChar(3000)" CanBeNull="true" />
+      <Column Name="Daxuly" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="Noiluubanchinh" Type="System.String" DbType="NVarChar(1000)" CanBeNull="true" />
+      <Column Name="Saogui" Type="System.String" DbType="NVarChar(1000)" CanBeNull="true" />
+      <Column Name="Donvisoan" Type="System.String" DbType="NVarChar(1000)" CanBeNull="true" />
+      <Column Name="Noinhan" Type="System.String" DbType="NVarChar(1000)" CanBeNull="true" />
+      <Column Name="NoidungVB" Type="System.String" DbType="NVarChar(500)" CanBeNull="true" />
+      <Column Name="SothutuVB" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="Toso" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="Banchinh" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="Soto" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="Tacgia" Type="System.String" DbType="NVarChar(500)" CanBeNull="true" />
+      <Column Name="Tinhtrangvatly" Type="System.String" DbType="NVarChar(1000)" CanBeNull="true" />
+      <Column Name="Chedosudung" Type="System.String" DbType="NVarChar(500)" CanBeNull="true" />
+      <Column Name="Vatmangtin" Type="System.String" DbType="NVarChar(500)" CanBeNull="true" />
+      <Column Name="Ngonngu" Type="System.String" DbType="NVarChar(200)" CanBeNull="true" />
+      <Column Name="SttHSTK" Type="System.String" DbType="NVarChar(500)" CanBeNull="true" />
+      <Column Name="Tylebando" Type="System.String" DbType="NVarChar(100)" CanBeNull="true" />
+      <Column Name="Khobando" Type="System.String" DbType="NVarChar(100)" CanBeNull="true" />
+      <Column Name="Chatlieubando" Type="System.String" DbType="NVarChar(100)" CanBeNull="true" />
+      <Column Name="Hovaten" Type="System.String" DbType="NVarChar(200)" CanBeNull="true" />
+      <Column Name="Ngaysinh" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="Quequan" Type="System.String" DbType="NVarChar(1000)" CanBeNull="true" />
+      <Column Name="Dongho" Type="System.String" DbType="NVarChar(1000)" CanBeNull="true" />
+      <Column Name="Mucdotruycap" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="Field1" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="Field2" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="Field3" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="Field4" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="Field5" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="Field6" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="Field7" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="Field8" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="Field9" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="Field10" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="Field11" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="Field12" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="Field13" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="Field14" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="Field15" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="Field16" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="Field17" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="Field18" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="Field19" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="Field20" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="Adduser" Type="System.String" DbType="NVarChar(200)" CanBeNull="true" />
+      <Column Name="Addtime" Type="System.String" DbType="NVarChar(100)" CanBeNull="true" />
+      <Column Name="Vbbooks_Id" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="Hsrecords_Id" Type="System.Int64" DbType="BigInt" CanBeNull="true" />
+      <Column Name="Hosocv" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Association Name="Vbrecord_VbFileAttach" Member="VbFileAttaches" ThisKey="Vbrecords_Id" OtherKey="Vbrecords_ID" Type="VbFileAttach" />
+      <Association Name="Hsrecord_Vbrecord" Member="Hsrecord" ThisKey="Hsrecords_Id" OtherKey="Hsrecords_Id" Type="Hsrecord" IsForeignKey="true" />
+      <Association Name="Vbbook_Vbrecord" Member="Vbbook" ThisKey="Vbbooks_Id" OtherKey="Vbbooks_Id" Type="Vbbook" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.employees_emp" Member="employees_emps">
+    <Type Name="employees_emp">
+      <Column Name="id_emp" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="firstname_emp" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="lastname_emp" Type="System.String" DbType="NVarChar(200)" CanBeNull="true" />
+      <Column Name="address_emp" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="salary_emp" Type="System.Int32" DbType="Int" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.Hsbooks" Member="Hsbooks">
+    <Type Name="Hsbook">
+      <Column Name="Hsbooks_Id" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="Bookname" Type="System.String" DbType="NVarChar(1000)" CanBeNull="true" />
+      <Column Name="Bookorder" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="Bookactive" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="Booknote" Type="System.String" DbType="NVarChar(2000)" CanBeNull="true" />
+      <Column Name="Adduser" Type="System.String" DbType="NVarChar(500)" CanBeNull="true" />
+      <Column Name="Addtime" Type="System.String" DbType="NVarChar(100)" CanBeNull="true" />
+      <Association Name="Hsbook_DataFileImport" Member="DataFileImports" ThisKey="Hsbooks_Id" OtherKey="Hsbooks_ID" Type="DataFileImport" />
+      <Association Name="Hsbook_Hsfieldsattribute" Member="Hsfieldsattributes" ThisKey="Hsbooks_Id" OtherKey="Hsbooks_Id" Type="Hsfieldsattribute" />
+      <Association Name="Hsbook_Hsrecord" Member="Hsrecords" ThisKey="Hsbooks_Id" OtherKey="Hsbooks_Id" Type="Hsrecord" />
+    </Type>
+  </Table>
+  <Table Name="dbo.Hsfields" Member="Hsfields">
+    <Type Name="Hsfield">
+      <Column Name="Hsfields_Id" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="Fieldname" Type="System.String" DbType="NVarChar(200)" CanBeNull="true" />
+      <Column Name="Fullfieldname" Type="System.String" DbType="NVarChar(1000)" CanBeNull="true" />
+      <Column Name="Fieldtype" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="Fieldnote" Type="System.String" DbType="NVarChar(2000)" CanBeNull="true" />
+      <Column Name="Fieldactive" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="Adduser" Type="System.String" DbType="NVarChar(200)" CanBeNull="true" />
+      <Column Name="Addtime" Type="System.String" DbType="NVarChar(100)" CanBeNull="true" />
+      <Association Name="Hsfield_Hsfieldsattribute" Member="Hsfieldsattributes" ThisKey="Hsfields_Id" OtherKey="Hsfields_Id" Type="Hsfieldsattribute" />
+    </Type>
+  </Table>
+  <Table Name="dbo.Hsfieldsattribute" Member="Hsfieldsattributes">
+    <Type Name="Hsfieldsattribute">
+      <Column Name="Hsfieldsattribute_Id" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="Hsbooks_Id" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="Hsfields_Id" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="Fieldbookname" Type="System.String" DbType="NVarChar(500)" CanBeNull="true" />
+      <Column Name="Listactive" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="Listorder" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="Listwidth" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="Addformactive" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="Addformorder" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="Addcompulsory" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="Addsame" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="Linkdirectory" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="Keepvalue" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="Adduser" Type="System.String" DbType="NVarChar(200)" CanBeNull="true" />
+      <Column Name="Addtime" Type="System.String" DbType="NVarChar(100)" CanBeNull="true" />
+      <Association Name="Hsbook_Hsfieldsattribute" Member="Hsbook" ThisKey="Hsbooks_Id" OtherKey="Hsbooks_Id" Type="Hsbook" IsForeignKey="true" />
+      <Association Name="Hsfield_Hsfieldsattribute" Member="Hsfield" ThisKey="Hsfields_Id" OtherKey="Hsfields_Id" Type="Hsfield" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.Hsrecords" Member="Hsrecords">
+    <Type Name="Hsrecord">
+      <Column Name="Hsrecords_Id" Type="System.Int64" DbType="BigInt NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="MaPhong" Type="System.Int64" DbType="BigInt" CanBeNull="true" />
+      <Column Name="MaKho" Type="System.Int64" DbType="BigInt" CanBeNull="true" />
+      <Column Name="KHTT" Type="System.String" DbType="NVarChar(500)" CanBeNull="true" />
+      <Column Name="Namchinhly" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="Donvi" Type="System.String" DbType="NVarChar(1000)" CanBeNull="true" />
+      <Column Name="Vande" Type="System.String" DbType="NVarChar(2000)" CanBeNull="true" />
+      <Column Name="Muclucso" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="Hopso" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="Hososo" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="Tieude" Type="System.String" DbType="NVarChar(4000)" CanBeNull="true" />
+      <Column Name="Chugiai" Type="System.String" DbType="NVarChar(3000)" CanBeNull="true" />
+      <Column Name="ThoigianBD" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="ThoigianKT" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="Soluongto" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="Ngonngu" Type="System.String" DbType="NVarChar(500)" CanBeNull="true" />
+      <Column Name="Buttich" Type="System.String" DbType="NVarChar(500)" CanBeNull="true" />
+      <Column Name="ThoihanBQ" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="ChedoSD" Type="System.String" DbType="NVarChar(500)" CanBeNull="true" />
+      <Column Name="TinhtrangVL" Type="System.String" DbType="NVarChar(1000)" CanBeNull="true" />
+      <Column Name="NguoilapHS" Type="System.String" DbType="NVarChar(500)" CanBeNull="true" />
+      <Column Name="Tencongtrinh" Type="System.String" DbType="NVarChar(3000)" CanBeNull="true" />
+      <Column Name="Tenhangmuc" Type="System.String" DbType="NVarChar(1000)" CanBeNull="true" />
+      <Column Name="Tengiaidoan" Type="System.String" DbType="NVarChar(1000)" CanBeNull="true" />
+      <Column Name="Hopdongso" Type="System.String" DbType="NVarChar(200)" CanBeNull="true" />
+      <Column Name="DiadiemXD" Type="System.String" DbType="NVarChar(2000)" CanBeNull="true" />
+      <Column Name="Domat" Type="System.String" DbType="NVarChar(500)" CanBeNull="true" />
+      <Column Name="Nam" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="Vatmangtinkhac" Type="System.String" DbType="NVarChar(1000)" CanBeNull="true" />
+      <Column Name="Tylebando" Type="System.String" DbType="NVarChar(100)" CanBeNull="true" />
+      <Column Name="Khobando" Type="System.String" DbType="NVarChar(100)" CanBeNull="true" />
+      <Column Name="Chatlieubando" Type="System.String" DbType="NVarChar(500)" CanBeNull="true" />
+      <Column Name="Hovaten" Type="System.String" DbType="NVarChar(200)" CanBeNull="true" />
+      <Column Name="Ngaysinh" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="Quequan" Type="System.String" DbType="NVarChar(1000)" CanBeNull="true" />
+      <Column Name="Dongho" Type="System.String" DbType="NVarChar(500)" CanBeNull="true" />
+      <Column Name="Thoiluongphat" Type="System.String" DbType="NVarChar(100)" CanBeNull="true" />
+      <Column Name="Tocdoghi" Type="System.String" DbType="NVarChar(100)" CanBeNull="true" />
+      <Column Name="Mucdotruycap" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="Field1" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="Field2" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="Field3" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="Field4" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="Field5" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="Field6" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="Field7" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="Field8" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="Field9" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="Field10" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="Field11" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="Field12" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="Field13" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="Field14" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="Field15" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="Field16" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="Field17" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="Field18" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="Field19" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="Field20" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="Adduser" Type="System.String" DbType="NVarChar(200)" CanBeNull="true" />
+      <Column Name="Addtime" Type="System.String" DbType="NVarChar(100)" CanBeNull="true" />
+      <Column Name="Hsbooks_Id" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="Hosocv" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Association Name="Hsrecord_Vbrecord" Member="Vbrecords" ThisKey="Hsrecords_Id" OtherKey="Hsrecords_Id" Type="Vbrecord" />
+      <Association Name="Hsbook_Hsrecord" Member="Hsbook" ThisKey="Hsbooks_Id" OtherKey="Hsbooks_Id" Type="Hsbook" IsForeignKey="true" />
+      <Association Name="Kho_Hsrecord" Member="Kho" ThisKey="MaKho" OtherKey="MaKho" Type="Kho" IsForeignKey="true" />
+      <Association Name="Phong_Hsrecord" Member="Phong" ThisKey="MaPhong" OtherKey="MaPhong" Type="Phong" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.Kho" Member="Khos">
+    <Type Name="Kho">
+      <Column Name="MaKho" Type="System.Int64" DbType="BigInt NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="TenKho" Type="System.String" DbType="NVarChar(1000) NOT NULL" CanBeNull="false" />
+      <Column Name="GhiChu" Type="System.String" DbType="NVarChar(1000)" CanBeNull="true" />
+      <Association Name="Kho_Hsrecord" Member="Hsrecords" ThisKey="MaKho" OtherKey="MaKho" Type="Hsrecord" />
+    </Type>
+  </Table>
+  <Table Name="dbo.List" Member="Lists">
+    <Type Name="List">
+      <Column Name="List_Id" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="Listtype_Id" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="Parent" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="Kyhieu" Type="System.String" DbType="NVarChar(200)" CanBeNull="true" />
+      <Column Name="Tenchimuc" Type="System.String" DbType="NVarChar(2000)" CanBeNull="true" />
+      <Column Name="Ghichu" Type="System.String" DbType="NVarChar(2000)" CanBeNull="true" />
+      <Column Name="Adduser" Type="System.String" DbType="NVarChar(500)" CanBeNull="true" />
+      <Column Name="Addtime" Type="System.String" DbType="NVarChar(100)" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.Listtype" Member="Listtypes">
+    <Type Name="Listtype">
+      <Column Name="Listtype_Id" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="Listname" Type="System.String" DbType="NVarChar(1000)" CanBeNull="true" />
+      <Column Name="Listorder" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="Listactive" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="Listtype" Member="Listtype1" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="Listtypeorder" Type="System.String" DbType="NVarChar(200)" CanBeNull="true" />
+      <Column Name="Listnote" Type="System.String" DbType="NVarChar(2000)" CanBeNull="true" />
+      <Column Name="Adduser" Type="System.String" DbType="NVarChar(200)" CanBeNull="true" />
+      <Column Name="Addtime" Type="System.String" DbType="NVarChar(100)" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.Log_info" Member="Log_infos">
+    <Type Name="Log_info">
+      <Column Name="ID" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="Noidung" Type="System.String" DbType="NVarChar(2000)" CanBeNull="true" />
+      <Column Name="Thoidiem" Type="System.String" DbType="NVarChar(100)" CanBeNull="true" />
+      <Column Name="Maytram" Type="System.String" DbType="NVarChar(100)" CanBeNull="true" />
+      <Column Name="UserName" Type="System.String" DbType="NVarChar(1000)" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.Phong" Member="Phongs">
+    <Type Name="Phong">
+      <Column Name="MaPhong" Type="System.Int64" DbType="BigInt NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="TenPhong" Type="System.String" DbType="NVarChar(1000)" CanBeNull="true" />
+      <Column Name="GhiChu" Type="System.String" DbType="NVarChar(1000)" CanBeNull="true" />
+      <Association Name="Phong_Hsrecord" Member="Hsrecords" ThisKey="MaPhong" OtherKey="MaPhong" Type="Hsrecord" />
+    </Type>
+  </Table>
+  <Table Name="dbo.Sysright" Member="Sysrights">
+    <Type Name="Sysright">
+      <Column Name="USER_LOG" Type="System.String" DbType="NVarChar(100)" CanBeNull="true" />
+      <Column Name="R" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="A" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="E" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="D" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="F" Type="System.Int32" DbType="Int" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.Sysuser" Member="Sysusers">
+    <Type Name="Sysuser">
+      <Column Name="USER_LOG" Type="System.String" DbType="NVarChar(200)" CanBeNull="true" />
+      <Column Name="NAME" Type="System.String" DbType="NVarChar(100)" CanBeNull="true" />
+      <Column Name="PASS" Type="System.String" DbType="NVarChar(100)" CanBeNull="true" />
+      <Column Name="GID" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="ACTIVE" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="PV" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="GF" Type="System.String" DbType="NVarChar(200)" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.Table1" Member="Table1s">
+    <Type Name="Table1">
+      <Column Name="ID" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="[Tên kho]" Member="Tên_kho" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="[Tên phông]" Member="Tên_phông" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="[Năm chỉnh lý]" Member="Năm_chỉnh_lý" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="[Mục lục số]" Member="Mục_lục_số" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="Hsbooks_Id" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="[Hộp  số]" Member="Hộp__số" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="[Hồ sơ số]" Member="Hồ_sơ_số" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="[Tiêu đề]" Member="Tiêu_đề" Type="System.String" DbType="NVarChar(200)" CanBeNull="true" />
+      <Column Name="[Số tờ]" Member="Số_tờ" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="[Thời hạn BQ]" Member="Thời_hạn_BQ" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="[Mức độ truy cập]" Member="Mức_độ_truy_cập" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="[Chú giải]" Member="Chú_giải" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.tblActiveUser" Member="tblActiveUsers">
+    <Type Name="tblActiveUser">
+      <Column Name="VisitorID" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="VisitorIP" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="VisitorMSN" Type="System.String" DbType="NVarChar(30)" CanBeNull="true" />
+      <Column Name="VisitorPos" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="VisitorWhere" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="VisitorForum" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="VisitorTime" Type="System.DateTime" DbType="SmallDateTime" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.tblDocgia" Member="tblDocgias">
+    <Type Name="tblDocgia">
+      <Column Name="tblDocgia_Id" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="Hovaten" Type="System.String" DbType="NVarChar(200)" CanBeNull="true" />
+      <Column Name="Gioitinh" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="Ngaysinh" Type="System.DateTime" DbType="SmallDateTime" CanBeNull="true" />
+      <Column Name="Sothe" Type="System.String" DbType="NVarChar(200)" CanBeNull="true" />
+      <Column Name="Matkhau" Type="System.String" DbType="NVarChar(200)" CanBeNull="true" />
+      <Column Name="Ngaycap" Type="System.DateTime" DbType="SmallDateTime" CanBeNull="true" />
+      <Column Name="Ngayhethan" Type="System.DateTime" DbType="SmallDateTime" CanBeNull="true" />
+      <Column Name="SoCMT" Type="System.String" DbType="NVarChar(100)" CanBeNull="true" />
+      <Column Name="Languoinuocngoai" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="Quoctich" Type="System.String" DbType="NVarChar(500)" CanBeNull="true" />
+      <Column Name="Sovisa" Type="System.String" DbType="NVarChar(100)" CanBeNull="true" />
+      <Column Name="Ngaynhapcanh" Type="System.DateTime" DbType="SmallDateTime" CanBeNull="true" />
+      <Column Name="Coquan" Type="System.String" DbType="NVarChar(1000)" CanBeNull="true" />
+      <Column Name="Diachi" Type="System.String" DbType="NVarChar(1000)" CanBeNull="true" />
+      <Column Name="Choohiennay" Type="System.String" DbType="NVarChar(1000)" CanBeNull="true" />
+      <Column Name="Dienthoai" Type="System.String" DbType="NVarChar(100)" CanBeNull="true" />
+      <Column Name="Email" Type="System.String" DbType="NVarChar(500)" CanBeNull="true" />
+      <Column Name="Capdomat" Type="System.String" DbType="NVarChar(200)" CanBeNull="true" />
+      <Column Name="F" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="TrangthaiSD" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="ChuyendeNC" Type="System.String" DbType="NVarChar(1000)" CanBeNull="true" />
+      <Column Name="MucdichNC" Type="System.String" DbType="NVarChar(2000)" CanBeNull="true" />
+      <Column Name="Tendetai" Type="System.String" DbType="NVarChar(1000)" CanBeNull="true" />
+      <Column Name="NCtungay" Type="System.DateTime" DbType="SmallDateTime" CanBeNull="true" />
+      <Column Name="NCdenngay" Type="System.DateTime" DbType="SmallDateTime" CanBeNull="true" />
+      <Column Name="Ghichu" Type="System.String" DbType="NVarChar(2000)" CanBeNull="true" />
+      <Column Name="SoKHVB" Type="System.String" DbType="NVarChar(100)" CanBeNull="true" />
+      <Column Name="NgayVB" Type="System.DateTime" DbType="SmallDateTime" CanBeNull="true" />
+      <Column Name="TrichyeuND" Type="System.String" DbType="NVarChar(3000)" CanBeNull="true" />
+      <Column Name="Tacgia" Type="System.String" DbType="NVarChar(1000)" CanBeNull="true" />
+      <Column Name="adduser" Type="System.String" DbType="NVarChar(200)" CanBeNull="true" />
+      <Column Name="addtime" Type="System.DateTime" DbType="SmallDateTime" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.tblDocgiaHN" Member="tblDocgiaHNs">
+    <Type Name="tblDocgiaHN">
+      <Column Name="tblDocgiaHN_Id" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="Ngaydangky" Type="System.DateTime" DbType="SmallDateTime" CanBeNull="true" />
+      <Column Name="STTluot" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="tblDocgia_Id" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="adduser" Type="System.String" DbType="NVarChar(200)" CanBeNull="true" />
+      <Column Name="addtime" Type="System.DateTime" DbType="SmallDateTime" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.tblDocgiaPSC" Member="tblDocgiaPSCs">
+    <Type Name="tblDocgiaPSC">
+      <Column Name="tblDocgiaPSC_Id" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="STTPSC" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="NgaySC" Type="System.DateTime" DbType="SmallDateTime" CanBeNull="true" />
+      <Column Name="tblDocgia_Id" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="adduser" Type="System.String" DbType="NVarChar(200)" CanBeNull="true" />
+      <Column Name="addtime" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.tblDocgiaPYC" Member="tblDocgiaPYCs">
+    <Type Name="tblDocgiaPYC">
+      <Column Name="tblDocgiaPYC_Id" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="STTPYC" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="NgayYC" Type="System.DateTime" DbType="SmallDateTime" CanBeNull="true" />
+      <Column Name="tblDocgia_Id" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="Adduser" Type="System.String" DbType="NVarChar(200)" CanBeNull="true" />
+      <Column Name="Addtime" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.tblMainConfig" Member="tblMainConfigs">
+    <Type Name="tblMainConfig">
+      <Column Name="NumOfTopicPerPage" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="NumOfPostPerPage" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="MaxWidthAvatar" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="MaxHeightAvatar" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="MaxWidthImage" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="MaxHeightImage" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="NumOfPollOption" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="NumOfMemberPerPage" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="AllowCode" Type="System.Boolean" DbType="Bit NOT NULL" CanBeNull="false" />
+      <Column Name="AllowSmiley" Type="System.Boolean" DbType="Bit NOT NULL" CanBeNull="false" />
+      <Column Name="NumOfRank" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="NumOfPostPerRank" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="NewMemberTitle" Type="System.String" DbType="NVarChar(255)" CanBeNull="true" />
+      <Column Name="NumOfPostForTitle" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="NoAvatarText" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="AllowSmileyInSubject" Type="System.Boolean" DbType="Bit NOT NULL" CanBeNull="false" />
+      <Column Name="AllowVieBCodeInPoll" Type="System.Boolean" DbType="Bit NOT NULL" CanBeNull="false" />
+      <Column Name="AllowSmileyInPoll" Type="System.Boolean" DbType="Bit NOT NULL" CanBeNull="false" />
+      <Column Name="AllowQuickReply" Type="System.Boolean" DbType="Bit NOT NULL" CanBeNull="false" />
+      <Column Name="AllowReview" Type="System.Boolean" DbType="Bit NOT NULL" CanBeNull="false" />
+      <Column Name="MainWidth" Type="System.Int32" DbType="Int" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.tblTailieuSC" Member="tblTailieuSCs">
+    <Type Name="tblTailieuSC">
+      <Column Name="tblTailieuSC_Id" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="Matailieu" Type="System.String" DbType="NVarChar(200)" CanBeNull="true" />
+      <Column Name="Tieude" Type="System.String" DbType="NVarChar(3000)" CanBeNull="true" />
+      <Column Name="Tenphong" Type="System.String" DbType="NVarChar(1000)" CanBeNull="true" />
+      <Column Name="TrangSC" Type="System.String" DbType="NVarChar(500)" CanBeNull="true" />
+      <Column Name="Ghichu" Type="System.String" DbType="NVarChar(2000)" CanBeNull="true" />
+      <Column Name="tblDocgiaPSC_Id" Type="System.Int32" DbType="Int" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.tblTailieuYC" Member="tblTailieuYCs">
+    <Type Name="tblTailieuYC">
+      <Column Name="tblTailieuYC_Id" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="Matailieu" Type="System.String" DbType="NVarChar(200)" CanBeNull="true" />
+      <Column Name="Tieude" Type="System.String" DbType="NVarChar(3000)" CanBeNull="true" />
+      <Column Name="Phongso" Type="System.String" DbType="NVarChar(1000)" CanBeNull="true" />
+      <Column Name="ThoigianNC" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="Ghichu" Type="System.String" DbType="NVarChar(2000)" CanBeNull="true" />
+      <Column Name="tblDocgiaPYC_Id" Type="System.Int32" DbType="Int" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.Vbbooks" Member="Vbbooks">
+    <Type Name="Vbbook">
+      <Column Name="Vbbooks_Id" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="Bookname" Type="System.String" DbType="NVarChar(2000)" CanBeNull="true" />
+      <Column Name="Bookorder" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="Bookactive" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="Booknote" Type="System.String" DbType="NVarChar(2000)" CanBeNull="true" />
+      <Column Name="Adduser" Type="System.String" DbType="NVarChar(200)" CanBeNull="true" />
+      <Column Name="Addtime" Type="System.String" DbType="NVarChar(100)" CanBeNull="true" />
+      <Column Name="Hsbooks_Id" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Association Name="Vbbook_Vbrecord" Member="Vbrecords" ThisKey="Vbbooks_Id" OtherKey="Vbbooks_Id" Type="Vbrecord" />
+      <Association Name="Vbbook_Vbfieldsattribute" Member="Vbfieldsattributes" ThisKey="Vbbooks_Id" OtherKey="Vbbooks_Id" Type="Vbfieldsattribute" />
+    </Type>
+  </Table>
+  <Table Name="dbo.Vbfields" Member="Vbfields">
+    <Type Name="Vbfield">
+      <Column Name="Vbfields_Id" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="Fieldname" Type="System.String" DbType="NVarChar(200)" CanBeNull="true" />
+      <Column Name="Fullfieldname" Type="System.String" DbType="NVarChar(1000)" CanBeNull="true" />
+      <Column Name="Fieldtype" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="Fieldnote" Type="System.String" DbType="NVarChar(2000)" CanBeNull="true" />
+      <Column Name="Fieldactive" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="Adduser" Type="System.String" DbType="NVarChar(200)" CanBeNull="true" />
+      <Column Name="Addtime" Type="System.String" DbType="NVarChar(100)" CanBeNull="true" />
+      <Association Name="Vbfield_Vbfieldsattribute" Member="Vbfieldsattributes" ThisKey="Vbfields_Id" OtherKey="Vbfields_Id" Type="Vbfieldsattribute" />
+    </Type>
+  </Table>
+  <Table Name="dbo.Vbfieldsattribute" Member="Vbfieldsattributes">
+    <Type Name="Vbfieldsattribute">
+      <Column Name="Vbfieldsattribute_Id" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="Vbbooks_Id" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="Vbfields_Id" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="Fieldbookname" Type="System.String" DbType="NVarChar(200)" CanBeNull="true" />
+      <Column Name="Listactive" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="Listorder" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="Addformactive" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="Addformorder" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="Addcompulsory" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="Addsame" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="Linkdirectory" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="Keepvalue" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="Adduser" Type="System.String" DbType="NVarChar(200)" CanBeNull="true" />
+      <Column Name="Addtime" Type="System.String" DbType="NVarChar(100)" CanBeNull="true" />
+      <Association Name="Vbbook_Vbfieldsattribute" Member="Vbbook" ThisKey="Vbbooks_Id" OtherKey="Vbbooks_Id" Type="Vbbook" IsForeignKey="true" />
+      <Association Name="Vbfield_Vbfieldsattribute" Member="Vbfield" ThisKey="Vbfields_Id" OtherKey="Vbfields_Id" Type="Vbfield" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.VbFileAttach" Member="VbFileAttaches">
+    <Type Name="VbFileAttach">
+      <Column Name="Vbfileattachs_ID" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="Vbrecords_ID" Type="System.Int64" DbType="BigInt" CanBeNull="true" />
+      <Column Name="FileOldName" Type="System.String" DbType="NVarChar(200)" CanBeNull="true" />
+      <Column Name="FileNewName" Type="System.String" DbType="NVarChar(200)" CanBeNull="true" />
+      <Column Name="FileSize" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="FileType" Type="System.String" DbType="NVarChar(200)" CanBeNull="true" />
+      <Column Name="Adduser" Type="System.String" DbType="NVarChar(200)" CanBeNull="true" />
+      <Column Name="Addtime" Type="System.DateTime" DbType="SmallDateTime" CanBeNull="true" />
+      <Column Name="UploadDT" Type="System.DateTime" DbType="SmallDateTime" CanBeNull="true" />
+      <Column Name="Description" Type="System.String" DbType="NVarChar(1000)" CanBeNull="true" />
+      <Column Name="SourceFileName" Type="System.String" DbType="NVarChar(500)" CanBeNull="true" />
+      <Column Name="DestFileName" Type="System.String" DbType="NVarChar(500)" CanBeNull="true" />
+      <Column Name="DataSize" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Association Name="Vbrecord_VbFileAttach" Member="Vbrecord" ThisKey="Vbrecords_ID" OtherKey="Vbrecords_Id" Type="Vbrecord" IsForeignKey="true" />
+    </Type>
+  </Table>
+</Database>
