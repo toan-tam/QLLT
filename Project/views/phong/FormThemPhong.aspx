@@ -13,6 +13,12 @@
                         <asp:TextBox ID="txt_TenPhong" runat="server"></asp:TextBox>
                     </td>
                 </tr>
+                  <tr>
+                    <td>Ghi chú: </td>
+                    <td colspan="3">
+                        <asp:TextBox ID="txta_GhiChu" TextMode="MultiLine" runat="server"></asp:TextBox>
+                    </td>
+                </tr>
                 <tr>
                     <td></td>
                     <td colspan="3">

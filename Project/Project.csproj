@@ -80,11 +80,6 @@
     <Compile Include="models\Phong_ett.cs" />
     <Compile Include="models\Result.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="QLLuuTru.designer.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>QLLuuTru.dbml</DependentUpon>
-    </Compile>
     <Compile Include="shared\Constants.cs" />
     <Compile Include="shared\Util.cs" />
     <Compile Include="views\hoso\FormThemHS.aspx.cs">
@@ -118,11 +113,6 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="views\layout\Site.Master" />
-    <Content Include="QLLuuTru.dbml">
-      <Generator>MSLinqToSQLGenerator</Generator>
-      <LastGenOutput>QLLuuTru.designer.cs</LastGenOutput>
-      <SubType>Designer</SubType>
-    </Content>
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
@@ -130,14 +120,8 @@
       <DependentUpon>Web.config</DependentUpon>
     </None>
   </ItemGroup>
-  <ItemGroup />
   <ItemGroup>
     <Service Include="{3259AA49-8AA1-44D3-9025-A0B520596A8C}" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="QLLuuTru.dbml.layout">
-      <DependentUpon>QLLuuTru.dbml</DependentUpon>
-    </None>
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>

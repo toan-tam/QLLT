@@ -22,6 +22,15 @@ namespace Project.views.phong {
         protected global::System.Web.UI.WebControls.TextBox txt_TenPhong;
         
         /// <summary>
+        /// txta_GhiChu control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.TextBox txta_GhiChu;
+        
+        /// <summary>
         /// btn_themmoi control.
         /// </summary>
         /// <remarks>
