@@ -16,7 +16,7 @@ namespace Project.views.vanban
 
             if(!IsPostBack)
             {
-
+                
             }
         }
     }
