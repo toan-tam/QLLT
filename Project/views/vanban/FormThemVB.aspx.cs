@@ -9,9 +9,14 @@ namespace Project.views.vanban
 {
     public partial class FormThemVB : System.Web.UI.Page
     {
+        DatabaseDataContext db = new DatabaseDataContext();
+
         protected void Page_Load(object sender, EventArgs e)
         {
+            if(!IsPostBack)
+            {
 
+            }
         }
     }
 }
