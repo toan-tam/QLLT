@@ -13,6 +13,24 @@ namespace Project.views.phong {
     public partial class FormThemPhong {
         
         /// <summary>
+        /// lst_Phong control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.ListView lst_Phong;
+        
+        /// <summary>
+        /// dtl_HoSo control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.DataList dtl_HoSo;
+        
+        /// <summary>
         /// txt_TenPhong control.
         /// </summary>
         /// <remarks>
