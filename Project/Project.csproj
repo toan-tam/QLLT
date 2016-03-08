@@ -66,7 +66,6 @@
     <Content Include="Web.config" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="controllers\HSRecord_ctrl.cs" />
     <Compile Include="controllers\Phong_ctrl.cs" />
     <Compile Include="default.aspx.cs">
       <DependentUpon>default.aspx</DependentUpon>
@@ -76,7 +75,6 @@
       <DependentUpon>default.aspx</DependentUpon>
     </Compile>
     <Compile Include="models\ErrorCode.cs" />
-    <Compile Include="models\HSRecord_ett.cs" />
     <Compile Include="models\Phong_ett.cs" />
     <Compile Include="models\Result.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
