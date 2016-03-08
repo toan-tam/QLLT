@@ -22,6 +22,8 @@ body {
     min-height: 500px;
     background-color: #ddd;
 }
+
+
 footer{
     background: #ddd;
     margin-top: 10px;
@@ -88,4 +90,8 @@ footer{
 
 #ctl00_head_DataList_Hoso tr{
     height:150px;
+}
+.tilte_themmoiHS{
+    color:blue;
+    font-size: 16px;
 }
