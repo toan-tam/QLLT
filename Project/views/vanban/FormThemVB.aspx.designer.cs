@@ -58,13 +58,13 @@ namespace Project.views.vanban {
         protected global::System.Web.UI.WebControls.DropDownList ddl_CQLuuTru;
         
         /// <summary>
-        /// txt_SoVB control.
+        /// txt_SoKHVB control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox txt_SoVB;
+        protected global::System.Web.UI.WebControls.TextBox txt_SoKHVB;
         
         /// <summary>
         /// txt_SLTo control.
@@ -112,13 +112,13 @@ namespace Project.views.vanban {
         protected global::System.Web.UI.WebControls.TextBox txt_KHThongTin;
         
         /// <summary>
-        /// txt_NgonNgu control.
+        /// ddl_NgonNgu control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox txt_NgonNgu;
+        protected global::System.Web.UI.WebControls.DropDownList ddl_NgonNgu;
         
         /// <summary>
         /// txt_ToSo control.

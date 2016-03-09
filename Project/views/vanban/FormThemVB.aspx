@@ -29,7 +29,7 @@
                 <tr>
                     <td>Số/Ký hiệu văn bản</td>
                     <td>
-                        <asp:TextBox ID="txt_SoVB" runat="server"></asp:TextBox>
+                        <asp:TextBox ID="txt_SoKHVB" runat="server"></asp:TextBox>
                     </td>
                     <td>Số lượng tờ</td>
                     <td>
@@ -62,7 +62,10 @@
                 <tr>
                     <td>Ngôn ngữ</td>
                     <td>
-                        <asp:TextBox ID="txt_NgonNgu" runat="server"></asp:TextBox>
+                        <asp:DropDownList ID="ddl_NgonNgu" runat="server">
+                            <asp:ListItem>Tiếng Việt</asp:ListItem>
+                            <asp:ListItem>English</asp:ListItem>
+                        </asp:DropDownList>
                     </td>
                     <td>Tờ số</td>
                     <td>
