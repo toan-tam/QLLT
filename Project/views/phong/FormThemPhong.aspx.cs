@@ -96,5 +96,24 @@ namespace Project.views.phong
         {
             Response.Redirect("/");
         }
+
+        protected void lst_Phong_ItemDataBound(object sender, ListViewItemEventArgs e)
+        {
+            ListViewDataItem dataItem = (ListViewDataItem)e.Item;
+
+            if (e.Item.ItemType == ListViewItemType.DataItem)
+            {
+                Phong phong = (Phong)dataItem.DataItem;
+
+                long CurrentCategoryID = phong.MaPhong;
+
+                var query = db.Hsrecords.Where(o => o.MaPhong == CurrentCategoryID).Take(10);
+
+                ListView lst_HoSo = (ListView)e.Item.FindControl("lst_HoSo");
+                lst_HoSo.DataSource = query.ToList<Hsrecord>();
+
+                lst_HoSo.DataBind();
+            }
+        }
     }
 }

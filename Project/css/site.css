@@ -55,6 +55,10 @@ footer{
 .font_14{
     font-size:14px;
 }
+
+.font_12{
+    font-size:12px;
+}
 .margin_b1{
     margin-bottom:3%;
 }
@@ -94,4 +98,15 @@ footer{
 .tilte_themmoiHS{
     color:blue;
     font-size: 16px;
+}
+.panel_sidebar{
+    background-color:#ddd;
+    border: 0px;
+}
+
+.panel-group{
+    margin-bottom:0px;
+}
+.panel-heading{
+    padding:0;
 }

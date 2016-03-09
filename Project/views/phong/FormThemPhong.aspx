@@ -9,7 +9,7 @@
                         <div class="row nav_bar header_padding text-center">Quản lý danh mục</div>
                         <br />
 
-                        <asp:ListView ID="lst_Phong" runat="server" ItemPlaceholderID="place_holder_phong">
+                        <asp:ListView ID="lst_Phong" runat="server" ItemPlaceholderID="place_holder_phong" OnItemDataBound="lst_Phong_ItemDataBound">
                             <LayoutTemplate>
                                 <asp:PlaceHolder runat="server" ID="place_holder_phong" />
                             </LayoutTemplate>
@@ -20,21 +20,35 @@
                                     </div>
 
                                     <div class="col-sm-8 col-xs-8 font_bold font_14" style="padding-top: 8%">
-                                        <p>
-                                            <asp:LinkButton OnClick="a_Expand_Click" CommandName='<%#Eval("MaPhong") %>' runat="server">+</asp:LinkButton>
-                                            <asp:LinkButton OnClick="a_Phong_Click" CommandName='<%#Eval("MaPhong") %>' runat="server"><%#Eval("TenPhong") %></asp:LinkButton>
-                                        </p>
-                                        <asp:Literal ID="Literal1" runat="server"></asp:Literal>
-                                        <ul class="list-group side_bar_ul">
-                                            <asp:ListView ID="lst_HoSo" runat="server" ItemPlaceholderID="place_holder_hoso">
-                                                <ItemTemplate>
-                                                    <asp:PlaceHolder ID="place_holder_hoso" runat="server" />
 
-                                                    <li class="list-group-item" id="li_HoSo" runat="server"></li>
+                                        <div class="panel-group" id="accordition">
+                                            <div class="panel panel_sidebar">
+                                                <div class="panel-heading">
+                                                    <p class="panel-title">
+                                                        <asp:LinkButton CssClass="font_12" data-toggle="collapse" data-parent="#accordion" href='<%# "#" + Eval("MaPhong") %>' OnClick="a_Expand_Click" CommandName='<%#Eval("MaPhong") %>' runat="server">+</asp:LinkButton>
+                                                        <asp:LinkButton CssClass="font_12" OnClick="a_Phong_Click" CommandName='<%#Eval("MaPhong") %>' runat="server"><%#Eval("TenPhong") %></asp:LinkButton>
+                                                    </p>
+                                                </div>
 
-                                                </ItemTemplate>
-                                            </asp:ListView>
-                                        </ul>
+                                                <div id='<%#Eval("MaPhong") %>' class="panel-collapse collapse">
+                                                    <div class="panel-body">
+                                                        <asp:ListView ID="lst_HoSo" runat="server" ItemPlaceholderID="place_holder_hoso">
+                                                            <LayoutTemplate>
+                                                                <ul class="list-group side_bar_ul">
+                                                                    <asp:PlaceHolder runat="server" ID="place_holder_hoso" />
+                                                                </ul>
+                                                            </LayoutTemplate>
+                                                            <ItemTemplate>
+
+                                                                <li class="list-group-item" id="li_HoSo" runat="server">Hồ sơ số  <%#Eval("Hososo") %>
+                                                                </li>
+
+                                                            </ItemTemplate>
+                                                        </asp:ListView>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
                                     </div>
                                 </div>
                             </ItemTemplate>
@@ -44,13 +58,13 @@
 
                 </div>
             </div>
-            <div class="col-sm-9 div_content"  style="padding:0">
+            <div class="col-sm-9 div_content" style="padding: 20px 0 0 0">
 
-                <div class="table-responsive font_bold">
+                <div class="table-responsive font_bold" style="padding:6px;">
 
                     <% if (Request.QueryString["act"] == "display")
                         {%>
-                    <asp:DataList ID="dtl_HoSo" runat="server"  CssClass="table table-responsive text-center" RepeatColumns="8" RepeatDirection="Horizontal" ShowFooter="False" ShowHeader="False">
+                    <asp:DataList ID="dtl_HoSo" runat="server" CssClass="table table-responsive text-center" RepeatColumns="8" RepeatDirection="Horizontal" ShowFooter="False" ShowHeader="False">
                         <ItemTemplate>
                             <div class="row margin_b10">
                                 <img src="../../images/badge.png" width="70" alt="Alternate Text" />
