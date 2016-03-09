@@ -13,6 +13,24 @@ namespace Project.views {
     public partial class FormThemHS {
         
         /// <summary>
+        /// div_alert control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Panel div_alert;
+        
+        /// <summary>
+        /// lbl_ShowInfo control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label lbl_ShowInfo;
+        
+        /// <summary>
         /// ddl_CQLuuTru control.
         /// </summary>
         /// <remarks>

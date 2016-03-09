@@ -14,8 +14,11 @@ namespace Project.views
 
         protected void Page_Load(object sender, EventArgs e)
         {
-            if (!IsPostBack)
-            {
+            //lbl_ShowInfo.Text = "xuốn<br> dòng";
+            lbl_ShowInfo.ForeColor = System.Drawing.Color.Black;
+
+            //if (!IsPostBack)
+            //{
                 //lấy dữ liệu cho ddl_CQLuuTru
                 ddl_CQLuuTru.DataSource = db.Khos;
                 ddl_CQLuuTru.DataTextField = "TenKho";
@@ -27,13 +30,14 @@ namespace Project.views
                 ddl_Phong.DataTextField = "TenPhong";
                 ddl_Phong.DataValueField = "MaPhong";
                 ddl_Phong.DataBind();
-            }
+            //}
         }
 
         protected void btn_themmoi_Click(object sender, EventArgs e)
         {
             try
             {
+                //Khởi tạo đối tượng hồ sơ mới và truyền các tham số cần thiết
                 Hsrecord obj = new Hsrecord();
                 //int rsTryParse = 0;
                 obj.MaKho = int.Parse(ddl_CQLuuTru.SelectedValue);
@@ -53,16 +57,22 @@ namespace Project.views
                 obj.ChedoSD = ddl_CDSD.SelectedValue;
                 obj.TinhtrangVL = ddl_TTVL.SelectedValue;
 
+                //chèn mơi vào csdl
                 db.Hsrecords.InsertOnSubmit(obj);
 
                 db.SubmitChanges();
 
-                Response.Write("Thành công");
+                //Thông báo thành công
+                div_alert.CssClass = "alert alert-success";
+                lbl_ShowInfo.ForeColor = System.Drawing.Color.Green;
+                lbl_ShowInfo.Text = "Thêm mới hồ sơ thành công";
+                
             }
             catch (Exception ex)
             {
-                Util.ShowExceptionError(ex, this);
-                throw;
+                //hiển thị thông báo lỗi                
+                Util.ShowExceptionError(ex, lbl_ShowInfo, div_alert);
+                
             }
             
         }
