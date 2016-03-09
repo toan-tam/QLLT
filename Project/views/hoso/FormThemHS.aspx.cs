@@ -74,7 +74,7 @@ namespace Project.views
             catch (Exception ex)
             {
                 //hiển thị thông báo lỗi                
-                Util.ShowExceptionError(ex, lbl_ShowInfo, div_alert);
+                Util.ShowExceptionError(ex, lbl_ShowInfo, div_alert, "Thêm mới Hồ sơ thất bại. ");
                 
             }
             

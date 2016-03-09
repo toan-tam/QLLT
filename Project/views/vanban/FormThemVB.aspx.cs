@@ -60,8 +60,11 @@ namespace Project.views.vanban
                         if (File.Exists(filename))
                         {
                             //nếu thành công thì save văn bản vào csdl
-                            Vbrecord obj = new Vbrecord();
-                            //obj.
+                            Insert_Vb(filename);
+                            //Thông báo thành công
+                            div_alert.CssClass = "alert alert-success";
+                            lbl_ShowInfo.ForeColor = System.Drawing.Color.Green;
+                            lbl_ShowInfo.Text = "Thêm mới Văn bản thành công";
                         }
                         else
                         {
@@ -75,12 +78,62 @@ namespace Project.views.vanban
                         lbl_ShowInfo.Text = "Vui lòng chọn file upload có dung lượng dưới 1GB!";
                     }
                 }
+                else
+                {
+                    //nếu không chèn file thì chỉ cần thêm bản ghi vào db
+                    Insert_Vb("");
+                }
             }
             catch (Exception ex)
             {
-                Util.ShowExceptionError(ex, lbl_ShowInfo, div_alert);
+                Util.ShowExceptionError(ex, lbl_ShowInfo, div_alert, "Thêm mới Văn bản thất bại. ");
             }
 
+        }
+
+        protected bool Insert_Vb(string filename)
+        {
+            try
+            {
+                
+                Vbrecord obj = new Vbrecord();
+                obj.Hsrecords_Id = long.Parse(txt_HoSo.Text);
+                //obj.
+                //obj.
+                obj.SoKHVB = txt_SoKHVB.Text;
+                obj.Soto = int.Parse(txt_SLTo.Text);
+                obj.Ngonngu = ddl_NgonNgu.SelectedValue;
+                obj.TrichyeuND = txta_TrichYeu.Text;
+                obj.Tacgia = txt_TGVB.Text;
+                obj.Tenloai = ddl_LoaiVB.SelectedValue;
+                obj.Tinhtrangvatly = txt_TTVL.Text;
+                obj.TrinhLD = txt_ButTich.Text;
+                obj.Mucdomat = txt_DoMat.Text;
+                obj.Mucdotruycap = txt_MucDoTinCay.Text;
+                obj.YkienGQ = txt_GhiChu.Text;
+
+                db.Vbrecords.InsertOnSubmit(obj);
+                db.SubmitChanges();
+
+                if (filename != "")
+                {
+                    //lưu link đến file
+                    VbFileAttach fobj = new VbFileAttach();
+                    fobj.Vbrecords_ID = obj.Vbrecords_Id;
+                    fobj.DestFileName = filename;
+
+                    db.VbFileAttaches.InsertOnSubmit(fobj);
+
+                    db.SubmitChanges();
+                }
+                
+
+                return true;
+            }
+            catch
+            {
+                return false;
+            }
         }
 
         protected void btn_huybo_Click(object sender, EventArgs e)

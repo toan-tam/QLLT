@@ -9,11 +9,11 @@ namespace Project.shared
 {
     public class Util
     {
-        public static void ShowExceptionError(Exception ex, Label target_showInfo, Panel div_alert)
+        public static void ShowExceptionError(Exception ex, Label target_showInfo, Panel div_alert, string msg)
         {
             div_alert.CssClass = "alert alert-danger";
             target_showInfo.ForeColor = System.Drawing.Color.Red;
-            target_showInfo.Text = "Thêm mới Hồ sơ thất bại. <br> Thông tin lỗi: <br>" + ex.ToString();
+            target_showInfo.Text = msg + "<br> Thông tin lỗi: <br>" + ex.ToString();
         }
 
         // [Toàn] function to get CommandName of current control clicked
