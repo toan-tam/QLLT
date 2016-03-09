@@ -15,5 +15,19 @@ namespace Project.shared
             target_showInfo.ForeColor = System.Drawing.Color.Red;
             target_showInfo.Text = "Thêm mới Hồ sơ thất bại. <br> Thông tin lỗi: <br>" + ex.ToString();
         }
+
+        // [Toàn] function to get CommandName of current control clicked
+        public static string getCommandName(object sender)
+        {
+            LinkButton link = sender as LinkButton;
+
+            if (link != null)
+            {
+                return link.CommandName;
+               
+            }
+
+            return null;
+        }
     }
 }

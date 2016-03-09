@@ -1,11 +1,12 @@
-﻿<%@ Page Title="" Language="C#" MasterPageFile="~/views/layout/Site.Master" AutoEventWireup="true" CodeBehind="FormThemPhong.aspx.cs" Inherits="Project.views.phong.FormThemPhong" %>
+﻿<%@ Page Title="" Language="C#" MasterPageFile="~/views/layout/Site.Master" AutoEventWireup="true" CodeBehind="QLluutru.aspx.cs" Inherits="Project.views.QLluutru.QLluutru" %>
 
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
+
     <div class="row">
         <div class="col-sm-3">
             <div class="row">
                 <div class="col-sm-11  div_content">
-                    <div class="row nav_bar header_padding text-center">Quản lý Phông</div>
+                    <div class="row nav_bar header_padding text-center">Quản lý lưu trữ</div>
                     <br />
 
                     <asp:ListView ID="lst_Phong" runat="server" ItemPlaceholderID="place_holder_phong" OnItemDataBound="lst_Phong_ItemDataBound">
@@ -40,8 +41,8 @@
                                                         </LayoutTemplate>
                                                         <ItemTemplate>
 
-                                                            <li class="list-group-item" id="li_HoSo" runat="server">
-                                                               - &nbsp;  <asp:LinkButton href="#" CommandName='<%#Eval("Hososo") %>' runat="server">Hồ sơ số  <%#Eval("Hososo") %></asp:LinkButton>
+                                                            <li class="list-group-item" id="li_HoSo" runat="server">- &nbsp; 
+                                                                <asp:LinkButton href="#" CommandName='<%#Eval("Hososo") %>' runat="server">Hồ sơ số  <%#Eval("Hososo") %></asp:LinkButton>
                                                             </li>
 
                                                         </ItemTemplate>
@@ -100,43 +101,8 @@
                         </td>
                     </ItemTemplate>
                 </asp:ListView>
-                <% }
-                    else
-                    {%>
-
-                <table class="table table-condensed">
-                    <tr>
-                        <th colspan="4" class=" text-center font_18">THÊM MỚI PHÔNG</th>
-                    </tr>
-                    <tr>
-                        <td>
-                            <br />
-                        </td>
-                    </tr>
-                    <tr>
-                        <td>Tên phông: </td>
-                        <td colspan="3">
-                            <asp:TextBox ID="txt_TenPhong" class="form-control" runat="server" Width="100%"></asp:TextBox>
-                        </td>
-                    </tr>
-                    <tr>
-                        <td>Ghi chú: </td>
-                        <td colspan="3">
-                            <asp:TextBox ID="txta_GhiChu" class="form-control" TextMode="MultiLine" Width="100%" runat="server"></asp:TextBox>
-                        </td>
-                    </tr>
-                    <tr>
-                        <td></td>
-                        <td colspan="3">
-                            <asp:Button ID="btn_themmoi" class="btn btn-primary" runat="server" Text="Thêm mới" OnClick="btn_themmoi_Click" />
-                            <asp:Button ID="btn_huybo" class="btn btn-danger" runat="server" Text="Hủy bỏ" OnClick="btn_huybo_Click" />
-                            <asp:Button ID="btn_quaylai" class="btn btn-warning" runat="server" Text="Quay lại" OnClick="btn_quaylai_Click" />
-                        </td>
-                    </tr>
-                </table>
-                <%} %>
+                <% }%>
             </div>
         </div>
     </div>
-
 </asp:Content>

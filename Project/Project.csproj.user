@@ -7,7 +7,11 @@
     <VisualStudio>
       <FlavorProperties GUID="{349c5851-65df-11da-9384-00065b846f21}">
         <WebProjectProperties>
+<<<<<<< HEAD
           <StartPageUrl>views/phong/FormThemPhong.aspx</StartPageUrl>
+=======
+          <StartPageUrl>views/phong/show.aspx</StartPageUrl>
+>>>>>>> a08189202d74f3dd93bf76095d7e964ad4af0d04
           <StartAction>SpecificPage</StartAction>
           <AspNetDebugging>True</AspNetDebugging>
           <SilverlightDebugging>False</SilverlightDebugging>
