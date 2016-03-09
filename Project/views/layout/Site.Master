@@ -9,75 +9,88 @@
     <link href="../../css/site.css" rel="stylesheet" />
 </head>
 <body>
-    <div class="container-fluid div_above">
-        <div class="row">
-            <div class="col-xs-7 col-sm-7">
-                <div class="badge_left">
-                    <a href="/">
-                        <img src="../../images/badge.png" class="img-responsive" alt="Trang chủ" />
-                    </a>
+    <form runat="server">
+        <div class="container-fluid div_above">
+            <div class="row">
+                <div class="col-xs-7 col-sm-7">
+                    <div class="badge_left">
+                        <a href="/">
+                            <img src="../../images/badge.png" class="img-responsive" alt="Trang chủ" />
+                        </a>
+                    </div>
+                    <div class="badge_right">
+                        <font color="red" class="visible-xs" style="font-size: 10px">CHI CỤC VĂN THƯ LƯU TRỮ TỈNH QUẢNG NINH</font>
+                        <font color="red" size="3" class="visible-lg visible-sm visible-md">CHI CỤC VĂN THƯ LƯU TRỮ TỈNH QUẢNG NINH</font>
+                    </div>
                 </div>
-                <div class="badge_right">
-                    <font color="red" class="visible-xs" style="font-size: 10px">CHI CỤC VĂN THƯ LƯU TRỮ TỈNH QUẢNG NINH</font>
-                    <font color="red" size="3" class="visible-lg visible-sm visible-md">CHI CỤC VĂN THƯ LƯU TRỮ TỈNH QUẢNG NINH</font>
+                <div class="col-xs-5 col-sm-5">
+                    <br />
+                    <div class="pull-right"><a href="#">Đăng nhập</a>&nbsp;</div>
+                    <div class="pull-right">&nbsp;/&nbsp; </div>
+                    <div class="pull-right"><a href="#">Đăng ký</a></div>
                 </div>
-            </div>
-            <div class="col-xs-5 col-sm-5">
-                <br />
-                <div class="pull-right"><a href="#">Đăng nhập</a>&nbsp;</div>
-                <div class="pull-right">&nbsp;/&nbsp; </div>
-                <div class="pull-right"><a href="#">Đăng ký</a></div>
-            </div>
 
+            </div>
+            <div class="row text-center">
+                <font size="5" class="font_bold visible-xs" style="font-size: 13px;">PHẦN MỀM QUẢN LÝ LƯU TRỮ</font>
+                <font size="5" class="font_bold visible-sm visible-md visible-lg">PHẦN MỀM QUẢN LÝ LƯU TRỮ</font>
+            </div>
+            <br />
+            <br />
         </div>
-        <div class="row text-center">
-            <font size="5" class="font_bold visible-xs" style="font-size: 13px;">PHẦN MỀM QUẢN LÝ LƯU TRỮ</font>
-            <font size="5" class="font_bold visible-sm visible-md visible-lg">PHẦN MỀM QUẢN LÝ LƯU TRỮ</font>
-        </div>
-        <br />
-        <br />
-    </div>
-    <nav class="navbar navbar-default nav_bar">
+        <nav class="navbar navbar-default nav_bar">
+            <div class="container-fluid">
+                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                <div class="collapse navbar-collapse" id="myNavbar">
+                    <ul class="nav navbar-nav">
+                        <li id="Li_TT" runat="server">
+                            <asp:LinkButton ID="Link_TT" runat="server" OnClick="a_QLDM_Click">Trang chủ</asp:LinkButton>                            
+                        </li>
+                        <li id="Li_HT" runat="server">
+                            <asp:LinkButton ID="Link_HT" runat="server" OnClick="a_QLDM_Click">Quản trị Hệ thống</asp:LinkButton>
+                        </li>
+                        <li id="Li_GT" runat="server">
+                            <asp:LinkButton ID="Link_GT" runat="server" OnClick="a_QLDM_Click">Giới thiệu về Chi cục</asp:LinkButton>
+                        </li>
+                        <li id="Li_DM" runat="server">
+                            <asp:LinkButton ID="Link_DM" runat="server" OnClick="a_QLDM_Click">Quản lý danh mục</asp:LinkButton>
+                        </li>
+                        <li id="Li_LT" runat="server">
+                            <asp:LinkButton ID="Link_LT" runat="server" OnClick="a_QLDM_Click">Quản lý lưu trữ</asp:LinkButton>
+                        </li>
+                        <li id="Li_BC" runat="server">
+                           <asp:LinkButton ID="Link_BC" runat="server" OnClick="a_QLDM_Click">Tra cứu báo cáo</asp:LinkButton>
+
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+
         <div class="container-fluid">
-            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
-                <span class="icon-bar"></span>
-                <span class="icon-bar"></span>
-                <span class="icon-bar"></span>
-            </button>
-            <div class="collapse navbar-collapse" id="myNavbar">
-                <ul class="nav navbar-nav">
-                    <li class="active"><a href="/">Trang chủ</a></li>
-                    <li><a href="#">Quản trị Hệ thống</a></li>
-                    <li><a href="#">Giới thiệu về Chi cục</a></li>
-                    <li><a href="/views/phong/FormThemPhong.aspx">Quản lý danh mục</a></li>
-                    <li><a href="/">Quản lý lưu trữ</a></li>
-                    <li><a href="#">Tra cứu báo cáo</a></li>
-                </ul>
-            </div>
+            <asp:ContentPlaceHolder ID="head" runat="server">
+            </asp:ContentPlaceHolder>
         </div>
-    </nav>
 
-    <div class="container-fluid">
-        <asp:ContentPlaceHolder ID="head" runat="server">
-
-
-        </asp:ContentPlaceHolder>
-    </div>
-
-    <footer>
-        <div class="row">
-            <div class="col-sm-5">
-                <h4 class="font_bold">CHI CỤC VĂN THƯ LƯU TRỮ TỈNH QUẢNG NINH</h4>
-                Địa chỉ: ............................................................................................................................<br />
-                Điện thoại: ......................................................................................................................<br />
-                Email: ..............................................................................................................................<br />
+        <footer>
+            <div class="row">
+                <div class="col-sm-5">
+                    <h4 class="font_bold">CHI CỤC VĂN THƯ LƯU TRỮ TỈNH QUẢNG NINH</h4>
+                    Địa chỉ: ............................................................................................................................<br />
+                    Điện thoại: ......................................................................................................................<br />
+                    Email: ..............................................................................................................................<br />
+                </div>
+                <div class="col-sm-7 author">
+                    <div class="pull-right">Đơn vị cung cấp phần mềm: .........</div>
+                </div>
             </div>
-            <div class="col-sm-7 author">
-                <div class="pull-right">Đơn vị cung cấp phần mềm: .........</div>
-            </div>
-        </div>
-    </footer>
-    <script src="../../js/jquery.js"></script>
-    <script src="../../js/bootstrap.min.js"></script>
+        </footer>
+        <script src="../../js/jquery.js"></script>
+        <script src="../../js/bootstrap.min.js"></script>
+    </form>
 </body>
 </html>
