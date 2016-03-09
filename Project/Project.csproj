@@ -62,6 +62,7 @@
     <Content Include="js\jquery.js" />
     <Content Include="views\hoso\FormThemHS.aspx" />
     <Content Include="views\phong\FormThemPhong.aspx" />
+    <Content Include="views\QLdanhmuc\default.aspx" />
     <Content Include="views\vanban\FormThemVB.aspx" />
     <Content Include="Web.config" />
   </ItemGroup>
@@ -106,6 +107,13 @@
     <Compile Include="views\phong\FormThemPhong.aspx.designer.cs">
       <DependentUpon>FormThemPhong.aspx</DependentUpon>
     </Compile>
+    <Compile Include="views\QLdanhmuc\default.aspx.cs">
+      <DependentUpon>default.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="views\QLdanhmuc\default.aspx.designer.cs">
+      <DependentUpon>default.aspx</DependentUpon>
+    </Compile>
     <Compile Include="views\vanban\FormThemVB.aspx.cs">
       <DependentUpon>FormThemVB.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -136,6 +144,7 @@
       <DependentUpon>Database.dbml</DependentUpon>
     </None>
   </ItemGroup>
+  <ItemGroup />
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
     <VSToolsPath Condition="'$(VSToolsPath)' == ''">$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)</VSToolsPath>

@@ -18,18 +18,20 @@ namespace Project.views.phong
             lst_Phong.DataSource = tbl_phongs;
             lst_Phong.DataBind();
 
+            // [Toàn] hiển thị danh sách Phông ở sidebar
             if (Request.QueryString["act"]== "display" && Request.QueryString["id"] != "" && Request.QueryString["id"] != null)
             {
                 int id = int.Parse(Request.QueryString["id"]);
                 var tbl_Phong10 = db.Hsrecords.Where(o => o.MaPhong == id).Take(10);
-                dtl_HoSo.DataSource = tbl_Phong10;
-                dtl_HoSo.DataBind();
+                list_HS.DataSource = tbl_Phong10;
+                list_HS.DataBind();
             }
 
             Page.DataBind();
 
         }
 
+        // [Toàn] expand children of Phông in sidebar
         protected void a_Expand_Click(object sender, EventArgs e)
         {
             LinkButton link = sender as LinkButton;
@@ -49,6 +51,7 @@ namespace Project.views.phong
 
         }
 
+        //[Toàn] Hiển thị danh sách các hồ sơ ở content
         protected void a_Phong_Click(object sender, EventArgs e)
         {
             LinkButton link = sender as LinkButton;
@@ -97,6 +100,7 @@ namespace Project.views.phong
             Response.Redirect("/");
         }
 
+        // [Toàn] Nested listview in sidebar
         protected void lst_Phong_ItemDataBound(object sender, ListViewItemEventArgs e)
         {
             ListViewDataItem dataItem = (ListViewDataItem)e.Item;

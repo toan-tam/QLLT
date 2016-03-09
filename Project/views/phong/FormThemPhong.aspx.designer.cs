@@ -22,13 +22,13 @@ namespace Project.views.phong {
         protected global::System.Web.UI.WebControls.ListView lst_Phong;
         
         /// <summary>
-        /// dtl_HoSo control.
+        /// list_HS control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.DataList dtl_HoSo;
+        protected global::System.Web.UI.WebControls.ListView list_HS;
         
         /// <summary>
         /// txt_TenPhong control.
