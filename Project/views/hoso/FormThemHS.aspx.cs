@@ -10,12 +10,13 @@ namespace Project.views
 {
     public partial class FormThemHS : System.Web.UI.Page
     {
+        //[Duong]
         DatabaseDataContext db = new DatabaseDataContext();
 
         protected void Page_Load(object sender, EventArgs e)
         {
             //lbl_ShowInfo.Text = "xuốn<br> dòng";
-            lbl_ShowInfo.ForeColor = System.Drawing.Color.Black;
+            //lbl_ShowInfo.ForeColor = System.Drawing.Color.Black;
 
             //if (!IsPostBack)
             //{
@@ -56,9 +57,11 @@ namespace Project.views
                 obj.ThoihanBQ = ddl_TGBaoquan.SelectedValue;
                 obj.ChedoSD = ddl_CDSD.SelectedValue;
                 obj.TinhtrangVL = ddl_TTVL.SelectedValue;
+               
 
                 //chèn mơi vào csdl
                 db.Hsrecords.InsertOnSubmit(obj);
+                
 
                 db.SubmitChanges();
 

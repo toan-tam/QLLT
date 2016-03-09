@@ -13,6 +13,24 @@ namespace Project.views.vanban {
     public partial class FormThemVB {
         
         /// <summary>
+        /// div_alert control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Panel div_alert;
+        
+        /// <summary>
+        /// lbl_ShowInfo control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label lbl_ShowInfo;
+        
+        /// <summary>
         /// txt_HoSo control.
         /// </summary>
         /// <remarks>
@@ -31,13 +49,13 @@ namespace Project.views.vanban {
         protected global::System.Web.UI.WebControls.TextBox txt_SoHS;
         
         /// <summary>
-        /// ddl_CQLT control.
+        /// ddl_CQLuuTru control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.DropDownList ddl_CQLT;
+        protected global::System.Web.UI.WebControls.DropDownList ddl_CQLuuTru;
         
         /// <summary>
         /// txt_SoVB control.

@@ -7,7 +7,7 @@
             <asp:Label ID="lbl_ShowInfo" runat="server" ForeColor="#009933" ></asp:Label>
         </asp:Panel>
         
-        <form runat="server">
+        <%--<form id="form_Add_Hs" runat="server">--%>
             <table class="table table-condensed">
                 <tr>
                     <th colspan="4" class="tilte_themmoiHS">THÊM MỚI HỒ SƠ</th>
@@ -77,7 +77,7 @@
                 <tr>
                     <td>Chú giải</td>
                     <td colspan="3">
-                        <asp:TextBox id="txta_ChuGiai" TextMode="multiline" Width="100%" Rows="5" runat="server" />
+                        <asp:TextBox ID="txta_ChuGiai" TextMode="multiline" Width="100%" Rows="5" runat="server" />
                     </td>
                 </tr>
 
@@ -126,11 +126,11 @@
                     <td colspan="3">
                         <asp:Button ID="btn_themmoi" runat="server" Text="Thêm mới" OnClick="btn_themmoi_Click" />
                         <asp:Button ID="btn_huybo" runat="server" Text="Hủy bỏ" OnClick="btn_huybo_Click" />
-                        <asp:Button ID="btn_quaylai" runat="server" Text="Quay lại" />
+                        <asp:Button ID="btn_quaylai" runat="server" Text="Quay lại" Visible="False" />
                     </td>
                 </tr>
-                
+
             </table>
-        </form>
+        <%--</form>--%>
     </div>
 </asp:Content>

@@ -2,10 +2,13 @@
 
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
     <div class="table-responsive font_bold">
-        <form runat="server">
+        <asp:Panel id="div_alert" runat="server">
+            <asp:Label ID="lbl_ShowInfo" runat="server" ForeColor="#009933" ></asp:Label>
+        </asp:Panel>
+        <%--<form runat="server" id="form_add_vb">--%>
             <table class="table table-condensed">
                 <tr>
-                    <th colspan="4" class="tilte_themmoiHS">Quản lý văn bản trong hồ sơ</th>
+                    <th colspan="4" class="tilte_themmoiHS">Thêm mới văn bản vào Hồ sơ</th>
                 </tr>
                 <tr>
                     <td>Hồ sơ</td>
@@ -20,7 +23,7 @@
                     </td>
                     <td>Cơ quan lưu trữ</td>
                     <td>
-                        <asp:DropDownList ID="ddl_CQLT" runat="server" Width="100%"></asp:DropDownList>
+                        <asp:DropDownList ID="ddl_CQLuuTru" runat="server" Width="100%"></asp:DropDownList>
                     </td>
                 </tr>
                 <tr>
@@ -128,13 +131,13 @@
                 <tr>
                     <td></td>
                     <td colspan="3">
-                        <asp:Button ID="btn_themmoi" runat="server" Text="Thêm mới" />
-                        <asp:Button ID="btn_huybo" runat="server" Text="Hủy bỏ" />
-                        <asp:Button ID="btn_quaylai" runat="server" Text="Quay lại" />
+                        <asp:Button ID="btn_themmoi" runat="server" Text="Thêm mới" OnClick="btn_themmoi_Click" />
+                        <asp:Button ID="btn_huybo" runat="server" Text="Hủy bỏ" OnClick="btn_huybo_Click" />
+                        <asp:Button ID="btn_quaylai" runat="server" Text="Quay lại" Visible="False" />
                     </td>
                 </tr>
             </table>
-        </form>
+        <%--</form>--%>
     </div>
 
 </asp:Content>
