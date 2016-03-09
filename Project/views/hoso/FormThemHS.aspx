@@ -24,7 +24,15 @@
                 <tr>
                     <td>Mục lục số</td>
                     <td>
-                        <asp:DropDownList ID="ddl_MucLucSo" runat="server" Width="62%"></asp:DropDownList>
+                        <asp:DropDownList ID="ddl_MucLucSo" runat="server" Width="62%">
+                            <asp:ListItem>01</asp:ListItem>
+                            <asp:ListItem>02</asp:ListItem>
+                            <asp:ListItem>03</asp:ListItem>
+                            <asp:ListItem>04</asp:ListItem>
+                            <asp:ListItem>05</asp:ListItem>
+                            <asp:ListItem>06</asp:ListItem>
+                            <asp:ListItem>07</asp:ListItem>
+                        </asp:DropDownList>
                     </td>
                     <td>Hộp số</td>
                     <td>
@@ -39,7 +47,10 @@
                     </td>
                     <td>Ngôn ngữ</td>
                     <td>
-                        <asp:DropDownList ID="ddl_NgonNgu" runat="server"></asp:DropDownList>
+                        <asp:DropDownList ID="ddl_NgonNgu" runat="server">
+                            <asp:ListItem>Tiếng Việt</asp:ListItem>
+                            <asp:ListItem>English</asp:ListItem>
+                        </asp:DropDownList>
                     </td>
                 </tr>
 
@@ -83,13 +94,17 @@
                     </td>
                 </tr>
                 <tr>
-                    <td>Số lượng từ</td>
+                    <td>Số lượng tờ</td>
                     <td>
                         <asp:TextBox ID="txt_SoLuongTu" runat="server"></asp:TextBox>
                     </td>
                     <td>Thời hạn bảo quản</td>
                     <td>
-                        <asp:DropDownList ID="ddl_TGBaoquan" runat="server" Width="70%"></asp:DropDownList>
+                        <asp:DropDownList ID="ddl_TGBaoquan" runat="server" Width="70%">
+                            <asp:ListItem>Tạm thời</asp:ListItem>
+                            <asp:ListItem>Lâu dài</asp:ListItem>
+                            <asp:ListItem>Vĩnh viễn</asp:ListItem>
+                        </asp:DropDownList>
                     </td>
                 </tr>
                 <tr>
@@ -105,8 +120,8 @@
                 <tr>
                     <td></td>
                     <td colspan="3">
-                        <asp:Button ID="btn_themmoi" runat="server" Text="Thêm mới" />
-                        <asp:Button ID="btn_huybo" runat="server" Text="Hủy bỏ" />
+                        <asp:Button ID="btn_themmoi" runat="server" Text="Thêm mới" OnClick="btn_themmoi_Click" />
+                        <asp:Button ID="btn_huybo" runat="server" Text="Hủy bỏ" OnClick="btn_huybo_Click" />
                         <asp:Button ID="btn_quaylai" runat="server" Text="Quay lại" />
                     </td>
                 </tr>
