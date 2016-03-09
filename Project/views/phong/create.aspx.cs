@@ -13,7 +13,12 @@ namespace Project.views.phong
 
         protected void Page_Load(object sender, EventArgs e)
         {
-
+            if (Request.QueryString["id"] != null)
+            {
+                var phong_input = db.Phongs.Where(o => o.MaPhong == int.Parse(Request.QueryString["id"])).SingleOrDefault();
+                txt_TenPhong.Text = phong_input.TenPhong;
+                txta_GhiChu.Text = phong_input.GhiChu;
+            }
         }
 
 
@@ -59,5 +64,15 @@ namespace Project.views.phong
             Response.Redirect("/");
         }
 
+        protected void btn_capnhat_Click(object sender, EventArgs e)
+        {
+            long id_phong = long.Parse(Request.QueryString["id"]);
+            var phong_input = db.Phongs.Where(o => o.MaPhong == id_phong).SingleOrDefault();
+
+
+            phong_input.GhiChu = txta_GhiChu.Text;
+            phong_input.TenPhong = txt_TenPhong.Text;
+            Response.Redirect("/views/phong/show.aspx");
+        }
     }
 }

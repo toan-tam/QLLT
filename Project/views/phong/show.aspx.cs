@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Project.shared;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Web;
@@ -23,6 +24,14 @@ namespace Project.views.phong
         protected void btn_show_insert_Click(object sender, EventArgs e)
         {
             Response.Redirect("/views/phong/create.aspx");
+        }
+
+        protected void btn_edit_phong_Click(object sender, EventArgs e)
+        {
+            if (Util.getCommandName(sender) != null)
+            {       
+                Response.Redirect("/views/phong/create.aspx?id=" + Util.getCommandName(sender));
+            }
         }
     }
 }
