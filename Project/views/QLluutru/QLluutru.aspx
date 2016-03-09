@@ -42,7 +42,7 @@
                                                         <ItemTemplate>
 
                                                             <li class="list-group-item" id="li_HoSo" runat="server">- &nbsp; 
-                                                                <asp:LinkButton href="#" CommandName='<%#Eval("Hososo") %>' runat="server">Hồ sơ số  <%#Eval("Hososo") %></asp:LinkButton>
+                                                                <asp:LinkButton ID="Link_HoSo" OnClick="Link_HoSo_Click" CommandName='<%#Eval("Hososo") %>' runat="server">Hồ sơ số  <%#Eval("Hososo") %></asp:LinkButton>
                                                             </li>
 
                                                         </ItemTemplate>

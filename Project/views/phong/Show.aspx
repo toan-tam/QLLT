@@ -41,11 +41,13 @@
                                 <td>Ảnh Phông lưu trữ</td>
                                 <td>Tên Phông lưu trữ</td>
                                 <td>Ghi chú</td>
-                                <td>Thao tác</td>
+                               <%-- <td>Thao tác</td>--%>
                             </tr>
                             <asp:PlaceHolder runat="server" ID="place_holder_phong" />
                         </table>
-                        <asp:DataPager ID="lst_Phong" runat="server" PageSize="10"></asp:DataPager>
+                        <asp:DataPager ID="lst_Phong" runat="server" PageSize="10">
+
+                        </asp:DataPager>
                     </LayoutTemplate>
                     <ItemTemplate>
                         <tr>
@@ -56,12 +58,12 @@
                             </td>
                             <td><%#Eval("TenPhong") %></td>
                             <td><%#Eval("GhiChu") %></td>
-                            <td>
+                           <%-- <td>
                                 <asp:LinkButton ID="btn_edit_phong" CommandName='<%#Eval("MaPhong") %>' OnClick="btn_edit_phong_Click" CssClass="btn btn-info btn-xs" runat="server">
                                     <span class="glyphicon glyphicon-edit"></span> &nbsp;Sửa
 
                                 </asp:LinkButton>
-                            </td>
+                            </td>--%>
                         </tr>
                     </ItemTemplate>
                 </asp:ListView>

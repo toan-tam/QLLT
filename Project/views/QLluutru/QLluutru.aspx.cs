@@ -79,5 +79,9 @@ namespace Project.views.QLluutru
             }
         }
 
+        protected void Link_HoSo_Click(object sender, EventArgs e)
+        {
+            Response.Redirect("/");
+        }
     }
 }
