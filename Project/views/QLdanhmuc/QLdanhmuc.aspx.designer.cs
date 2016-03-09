@@ -10,6 +10,6 @@
 namespace Project.views.QLdanhmuc {
     
     
-    public partial class _default {
+    public partial class QLdanhmuc {
     }
 }

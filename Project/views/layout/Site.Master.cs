@@ -61,23 +61,23 @@ namespace Project.views.layout
 
                     break;
                 case "Link_HT":
-                    Response.Redirect("/views/QLdanhmuc/default.aspx?active=HT");
+                    Response.Redirect("/?active=TT");
 
                     break;
                 case "Link_GT":
-                    Response.Redirect("/views/QLdanhmuc/default.aspx?active=GT");
+                    Response.Redirect("/?active=TT");
 
                     break;
                 case "Link_DM":
-                    Response.Redirect("/views/QLdanhmuc/default.aspx?active=DM");
+                    Response.Redirect("/views/QLdanhmuc/QLdanhmuc.aspx?active=DM");
 
                     break;
                 case "Link_LT":
-                    Response.Redirect("/views/QLdanhmuc/default.aspx?active=LT");
+                    Response.Redirect("/views/QLluutru/QLluutru.aspx?active=LT");
 
                     break;
                 case "Link_BC":
-                    Response.Redirect("/views/QLdanhmuc/default.aspx?active=BC");
+                    Response.Redirect("/?active=TT");
 
                     break;
                 default:

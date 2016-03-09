@@ -153,3 +153,8 @@ a.list-group-item:focus, a.list-group-item:hover, button.list-group-item:focus, 
 .table_group{
     background-color:#ddd!important;
 }
+
+.div_content_QLphong{
+    padding:0px -15px 0 -15px;
+    border: 1px solid #ddd;
+}
