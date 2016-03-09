@@ -50,16 +50,17 @@
                     <ItemTemplate>
                         <tr>
                             <td>
-                                <div style="padding-left:30%">
+                                <div style="padding-left: 30%">
                                     <asp:Image Height="60" ImageUrl="~/images/badge.png" class="img-rounded img-responsive" runat="server" />
                                 </div>
                             </td>
                             <td><%#Eval("TenPhong") %></td>
                             <td><%#Eval("GhiChu") %></td>
                             <td>
-                                <a href="#" class="btn btn-info btn-xs">
+                                <asp:LinkButton ID="btn_edit_phong" CommandName='<%#Eval("MaPhong") %>' OnClick="btn_edit_phong_Click" CssClass="btn btn-info btn-xs" runat="server">
                                     <span class="glyphicon glyphicon-edit"></span> &nbsp;Sửa
-                                </a>
+
+                                </asp:LinkButton>
                             </td>
                         </tr>
                     </ItemTemplate>
