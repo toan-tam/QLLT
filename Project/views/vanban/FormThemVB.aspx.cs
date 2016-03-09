@@ -51,20 +51,28 @@ namespace Project.views.vanban
                 {
                     if (ful_TaiLieu.PostedFile.ContentLength < 1024000000) //1GB
                     {
-                        string filename = Request.PhysicalApplicationPath + "uploads\\" + ful_TaiLieu.FileName; // Path.GetFileName(ful_TaiLieu.FileName);
-                        ful_TaiLieu.SaveAs(filename);
+                        string filename = "uploads\\" + ful_TaiLieu.FileName;
+                        string filepath = Request.PhysicalApplicationPath + filename;// Path.GetFileName(ful_TaiLieu.FileName);
+                        ful_TaiLieu.SaveAs(filepath);
                         //div_alert.CssClass = "alert alert-succes";
                         //lbl_ShowInfo.Text = "Upload status: File uploaded!";
 
                         //kiểm tra xem upload có thành công không
-                        if (File.Exists(filename))
+                        if (File.Exists(filepath))
                         {
                             //nếu thành công thì save văn bản vào csdl
-                            Insert_Vb(filename);
-                            //Thông báo thành công
-                            div_alert.CssClass = "alert alert-success";
-                            lbl_ShowInfo.ForeColor = System.Drawing.Color.Green;
-                            lbl_ShowInfo.Text = "Thêm mới Văn bản thành công";
+                            if (Insert_Vb(filename))
+                            {
+                                //Thông báo thành công
+                                div_alert.CssClass = "alert alert-success";
+                                lbl_ShowInfo.ForeColor = System.Drawing.Color.Green;
+                                lbl_ShowInfo.Text = "Thêm mới Văn bản thành công";
+                            }
+                            else
+                            {
+                                div_alert.CssClass = "alert alert-danger";
+                                lbl_ShowInfo.Text = "Đã xảy ra lỗi khi thêm mới văn bản";
+                            }
                         }
                         else
                         {
@@ -120,15 +128,20 @@ namespace Project.views.vanban
                     //lưu link đến file
                     VbFileAttach fobj = new VbFileAttach();
                     fobj.Vbrecords_ID = obj.Vbrecords_Id;
-                    fobj.DestFileName = filename;
+                    fobj.DestFileName = "\\" + filename;
 
                     db.VbFileAttaches.InsertOnSubmit(fobj);
 
                     db.SubmitChanges();
+                    return true;
+                }
+                else
+                {
+                    return false;
                 }
                 
 
-                return true;
+                
             }
             catch
             {

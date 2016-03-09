@@ -54,6 +54,9 @@ namespace Project
     partial void InsertVbfield(Vbfield instance);
     partial void UpdateVbfield(Vbfield instance);
     partial void DeleteVbfield(Vbfield instance);
+    partial void InsertVbFileAttach(VbFileAttach instance);
+    partial void UpdateVbFileAttach(VbFileAttach instance);
+    partial void DeleteVbFileAttach(VbFileAttach instance);
     #endregion
 		
 		public DatabaseDataContext() : 
@@ -684,6 +687,8 @@ namespace Project
 		
 		private string _Hosocv;
 		
+		private EntitySet<VbFileAttach> _VbFileAttaches;
+		
 		private EntityRef<Hsrecord> _Hsrecord;
 		
 		private EntityRef<Vbbook> _Vbbook;
@@ -828,6 +833,7 @@ namespace Project
 		
 		public Vbrecord()
 		{
+			this._VbFileAttaches = new EntitySet<VbFileAttach>(new Action<VbFileAttach>(this.attach_VbFileAttaches), new Action<VbFileAttach>(this.detach_VbFileAttaches));
 			this._Hsrecord = default(EntityRef<Hsrecord>);
 			this._Vbbook = default(EntityRef<Vbbook>);
 			OnCreated();
@@ -2161,6 +2167,19 @@ namespace Project
 			}
 		}
 		
+		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="Vbrecord_VbFileAttach", Storage="_VbFileAttaches", ThisKey="Vbrecords_Id", OtherKey="Vbrecords_ID")]
+		public EntitySet<VbFileAttach> VbFileAttaches
+		{
+			get
+			{
+				return this._VbFileAttaches;
+			}
+			set
+			{
+				this._VbFileAttaches.Assign(value);
+			}
+		}
+		
 		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="Hsrecord_Vbrecord", Storage="_Hsrecord", ThisKey="Hsrecords_Id", OtherKey="Hsrecords_Id", IsForeignKey=true)]
 		public Hsrecord Hsrecord
 		{
@@ -2247,6 +2266,18 @@ namespace Project
 			{
 				this.PropertyChanged(this, new PropertyChangedEventArgs(propertyName));
 			}
+		}
+		
+		private void attach_VbFileAttaches(VbFileAttach entity)
+		{
+			this.SendPropertyChanging();
+			entity.Vbrecord = this;
+		}
+		
+		private void detach_VbFileAttaches(VbFileAttach entity)
+		{
+			this.SendPropertyChanging();
+			entity.Vbrecord = null;
 		}
 	}
 	
@@ -8483,8 +8514,10 @@ namespace Project
 	}
 	
 	[global::System.Data.Linq.Mapping.TableAttribute(Name="dbo.VbFileAttach")]
-	public partial class VbFileAttach
+	public partial class VbFileAttach : INotifyPropertyChanging, INotifyPropertyChanged
 	{
+		
+		private static PropertyChangingEventArgs emptyChangingEventArgs = new PropertyChangingEventArgs(String.Empty);
 		
 		private int _Vbfileattachs_ID;
 		
@@ -8512,11 +8545,47 @@ namespace Project
 		
 		private string _DataSize;
 		
+		private EntityRef<Vbrecord> _Vbrecord;
+		
+    #region Extensibility Method Definitions
+    partial void OnLoaded();
+    partial void OnValidate(System.Data.Linq.ChangeAction action);
+    partial void OnCreated();
+    partial void OnVbfileattachs_IDChanging(int value);
+    partial void OnVbfileattachs_IDChanged();
+    partial void OnVbrecords_IDChanging(System.Nullable<long> value);
+    partial void OnVbrecords_IDChanged();
+    partial void OnFileOldNameChanging(string value);
+    partial void OnFileOldNameChanged();
+    partial void OnFileNewNameChanging(string value);
+    partial void OnFileNewNameChanged();
+    partial void OnFileSizeChanging(string value);
+    partial void OnFileSizeChanged();
+    partial void OnFileTypeChanging(string value);
+    partial void OnFileTypeChanged();
+    partial void OnAdduserChanging(string value);
+    partial void OnAdduserChanged();
+    partial void OnAddtimeChanging(System.Nullable<System.DateTime> value);
+    partial void OnAddtimeChanged();
+    partial void OnUploadDTChanging(System.Nullable<System.DateTime> value);
+    partial void OnUploadDTChanged();
+    partial void OnDescriptionChanging(string value);
+    partial void OnDescriptionChanged();
+    partial void OnSourceFileNameChanging(string value);
+    partial void OnSourceFileNameChanged();
+    partial void OnDestFileNameChanging(string value);
+    partial void OnDestFileNameChanged();
+    partial void OnDataSizeChanging(string value);
+    partial void OnDataSizeChanged();
+    #endregion
+		
 		public VbFileAttach()
 		{
+			this._Vbrecord = default(EntityRef<Vbrecord>);
+			OnCreated();
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Vbfileattachs_ID", AutoSync=AutoSync.Always, DbType="Int NOT NULL IDENTITY", IsDbGenerated=true)]
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Vbfileattachs_ID", AutoSync=AutoSync.OnInsert, DbType="Int NOT NULL IDENTITY", IsPrimaryKey=true, IsDbGenerated=true)]
 		public int Vbfileattachs_ID
 		{
 			get
@@ -8527,7 +8596,11 @@ namespace Project
 			{
 				if ((this._Vbfileattachs_ID != value))
 				{
+					this.OnVbfileattachs_IDChanging(value);
+					this.SendPropertyChanging();
 					this._Vbfileattachs_ID = value;
+					this.SendPropertyChanged("Vbfileattachs_ID");
+					this.OnVbfileattachs_IDChanged();
 				}
 			}
 		}
@@ -8543,7 +8616,15 @@ namespace Project
 			{
 				if ((this._Vbrecords_ID != value))
 				{
+					if (this._Vbrecord.HasLoadedOrAssignedValue)
+					{
+						throw new System.Data.Linq.ForeignKeyReferenceAlreadyHasValueException();
+					}
+					this.OnVbrecords_IDChanging(value);
+					this.SendPropertyChanging();
 					this._Vbrecords_ID = value;
+					this.SendPropertyChanged("Vbrecords_ID");
+					this.OnVbrecords_IDChanged();
 				}
 			}
 		}
@@ -8559,7 +8640,11 @@ namespace Project
 			{
 				if ((this._FileOldName != value))
 				{
+					this.OnFileOldNameChanging(value);
+					this.SendPropertyChanging();
 					this._FileOldName = value;
+					this.SendPropertyChanged("FileOldName");
+					this.OnFileOldNameChanged();
 				}
 			}
 		}
@@ -8575,7 +8660,11 @@ namespace Project
 			{
 				if ((this._FileNewName != value))
 				{
+					this.OnFileNewNameChanging(value);
+					this.SendPropertyChanging();
 					this._FileNewName = value;
+					this.SendPropertyChanged("FileNewName");
+					this.OnFileNewNameChanged();
 				}
 			}
 		}
@@ -8591,7 +8680,11 @@ namespace Project
 			{
 				if ((this._FileSize != value))
 				{
+					this.OnFileSizeChanging(value);
+					this.SendPropertyChanging();
 					this._FileSize = value;
+					this.SendPropertyChanged("FileSize");
+					this.OnFileSizeChanged();
 				}
 			}
 		}
@@ -8607,7 +8700,11 @@ namespace Project
 			{
 				if ((this._FileType != value))
 				{
+					this.OnFileTypeChanging(value);
+					this.SendPropertyChanging();
 					this._FileType = value;
+					this.SendPropertyChanged("FileType");
+					this.OnFileTypeChanged();
 				}
 			}
 		}
@@ -8623,7 +8720,11 @@ namespace Project
 			{
 				if ((this._Adduser != value))
 				{
+					this.OnAdduserChanging(value);
+					this.SendPropertyChanging();
 					this._Adduser = value;
+					this.SendPropertyChanged("Adduser");
+					this.OnAdduserChanged();
 				}
 			}
 		}
@@ -8639,7 +8740,11 @@ namespace Project
 			{
 				if ((this._Addtime != value))
 				{
+					this.OnAddtimeChanging(value);
+					this.SendPropertyChanging();
 					this._Addtime = value;
+					this.SendPropertyChanged("Addtime");
+					this.OnAddtimeChanged();
 				}
 			}
 		}
@@ -8655,7 +8760,11 @@ namespace Project
 			{
 				if ((this._UploadDT != value))
 				{
+					this.OnUploadDTChanging(value);
+					this.SendPropertyChanging();
 					this._UploadDT = value;
+					this.SendPropertyChanged("UploadDT");
+					this.OnUploadDTChanged();
 				}
 			}
 		}
@@ -8671,7 +8780,11 @@ namespace Project
 			{
 				if ((this._Description != value))
 				{
+					this.OnDescriptionChanging(value);
+					this.SendPropertyChanging();
 					this._Description = value;
+					this.SendPropertyChanged("Description");
+					this.OnDescriptionChanged();
 				}
 			}
 		}
@@ -8687,7 +8800,11 @@ namespace Project
 			{
 				if ((this._SourceFileName != value))
 				{
+					this.OnSourceFileNameChanging(value);
+					this.SendPropertyChanging();
 					this._SourceFileName = value;
+					this.SendPropertyChanged("SourceFileName");
+					this.OnSourceFileNameChanged();
 				}
 			}
 		}
@@ -8703,7 +8820,11 @@ namespace Project
 			{
 				if ((this._DestFileName != value))
 				{
+					this.OnDestFileNameChanging(value);
+					this.SendPropertyChanging();
 					this._DestFileName = value;
+					this.SendPropertyChanged("DestFileName");
+					this.OnDestFileNameChanged();
 				}
 			}
 		}
@@ -8719,8 +8840,66 @@ namespace Project
 			{
 				if ((this._DataSize != value))
 				{
+					this.OnDataSizeChanging(value);
+					this.SendPropertyChanging();
 					this._DataSize = value;
+					this.SendPropertyChanged("DataSize");
+					this.OnDataSizeChanged();
 				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="Vbrecord_VbFileAttach", Storage="_Vbrecord", ThisKey="Vbrecords_ID", OtherKey="Vbrecords_Id", IsForeignKey=true)]
+		public Vbrecord Vbrecord
+		{
+			get
+			{
+				return this._Vbrecord.Entity;
+			}
+			set
+			{
+				Vbrecord previousValue = this._Vbrecord.Entity;
+				if (((previousValue != value) 
+							|| (this._Vbrecord.HasLoadedOrAssignedValue == false)))
+				{
+					this.SendPropertyChanging();
+					if ((previousValue != null))
+					{
+						this._Vbrecord.Entity = null;
+						previousValue.VbFileAttaches.Remove(this);
+					}
+					this._Vbrecord.Entity = value;
+					if ((value != null))
+					{
+						value.VbFileAttaches.Add(this);
+						this._Vbrecords_ID = value.Vbrecords_Id;
+					}
+					else
+					{
+						this._Vbrecords_ID = default(Nullable<long>);
+					}
+					this.SendPropertyChanged("Vbrecord");
+				}
+			}
+		}
+		
+		public event PropertyChangingEventHandler PropertyChanging;
+		
+		public event PropertyChangedEventHandler PropertyChanged;
+		
+		protected virtual void SendPropertyChanging()
+		{
+			if ((this.PropertyChanging != null))
+			{
+				this.PropertyChanging(this, emptyChangingEventArgs);
+			}
+		}
+		
+		protected virtual void SendPropertyChanged(String propertyName)
+		{
+			if ((this.PropertyChanged != null))
+			{
+				this.PropertyChanged(this, new PropertyChangedEventArgs(propertyName));
 			}
 		}
 	}
