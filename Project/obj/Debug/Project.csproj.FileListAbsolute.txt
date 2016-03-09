@@ -1,0 +1,6 @@
+D:\Project\QLLT\Project\bin\Project.dll.config
+D:\Project\QLLT\Project\bin\Project.dll
+D:\Project\QLLT\Project\bin\Project.pdb
+D:\Project\QLLT\Project\obj\Debug\Project.csprojResolveAssemblyReference.cache
+D:\Project\QLLT\Project\obj\Debug\Project.dll
+D:\Project\QLLT\Project\obj\Debug\Project.pdb

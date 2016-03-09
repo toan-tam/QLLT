@@ -94,20 +94,8 @@
                     </tr>
                     <tr>
                         <td></td>
-                        <td colspan="3">
-                            <%
-                                if (Request.QueryString["id"] != null)
-                                {
-                            %>
-                            <asp:Button ID="btn_capnhat" class="btn btn-primary font_12 font_bold" runat="server" Text="Cập nhật" OnClick="btn_capnhat_Click" />
-
-                            <%
-                                }
-                                else
-                                {
-                            %>
+                        <td colspan="3">                    
                             <asp:Button ID="btn_themmoi" class="btn btn-primary font_12 font_bold" runat="server" Text="Thêm mới" OnClick="btn_themmoi_Click" />
-                            <%} %>
                             <asp:Button ID="btn_huybo" class="btn btn-danger font_12 font_bold" runat="server" Text="Hủy bỏ" OnClick="btn_huybo_Click" />
                             <asp:Button ID="btn_quaylai" class="btn btn-warning font_12 font_bold" runat="server" Text="Quay lại" OnClick="btn_quaylai_Click" />
                         </td>

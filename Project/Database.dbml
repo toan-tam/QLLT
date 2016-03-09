@@ -1,5 +1,10 @@
 ﻿<?xml version="1.0" encoding="utf-8"?><Database Name="langson" Class="DatabaseDataContext" xmlns="http://schemas.microsoft.com/linqtosql/dbml/2007">
+<<<<<<< HEAD
   <Connection Mode="WebSettings" ConnectionString="Data Source=ThaoNhi-PC\SQL2014;Initial Catalog=langson;Persist Security Info=True;User ID=sa" SettingsObjectName="System.Configuration.ConfigurationManager.ConnectionStrings" SettingsPropertyName="langsonConnectionString" Provider="System.Data.SqlClient" />
+=======
+  <Connection Mode="WebSettings" ConnectionString="Data Source=TOANTAM\SQLEXPRESS;Initial Catalog=langson;Integrated Security=True" SettingsObjectName="System.Configuration.ConfigurationManager.ConnectionStrings" SettingsPropertyName="langsonConnectionString1" Provider="System.Data.SqlClient" />
+  <!--<Connection Mode="WebSettings" ConnectionString="Data Source=ThaoNhi-PC\SQL2014;Initial Catalog=langson;Integrated Security=True" SettingsObjectName="System.Configuration.ConfigurationManager.ConnectionStrings" SettingsPropertyName="langsonConnectionString" Provider="System.Data.SqlClient" />-->
+>>>>>>> 6786413b2d8edf9650826692c489363d25a1e4fd
   <Table Name="dbo.DataFileImport" Member="DataFileImports">
     <Type Name="DataFileImport">
       <Column Name="DataFileImport_ID" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsDbGenerated="true" CanBeNull="false" />

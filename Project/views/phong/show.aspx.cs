@@ -13,7 +13,7 @@ namespace Project.views.phong
         DatabaseDataContext db = new DatabaseDataContext();
         protected void Page_Load(object sender, EventArgs e)
         {
-            var tbl_phongs = db.Phongs;
+            var tbl_phongs = db.Phongs.OrderByDescending(o => o.MaPhong);
 
             lst_Phong.DataSource = tbl_phongs;
             lst_Phong.DataBind();
