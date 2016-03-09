@@ -101,12 +101,12 @@ namespace Project.views.QLluutru
 
         protected void btn_VB_insert_Click(object sender, EventArgs e)
         {
-            Response.Redirect("/views/vanban/FormThemVB.aspx");
+            Response.Redirect("/views/vanban/FormThemVB.aspx?hsid=" + Request["id"]);
         }
 
         protected void btn_HS_insert_Click(object sender, EventArgs e)
         {
-            Response.Redirect("/views/hoso/FormThemHS.aspx");
+            Response.Redirect("/views/hoso/FormThemHS.aspx?phongid=" + Request["id"]);
         }
     }
 }

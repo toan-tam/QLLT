@@ -62,6 +62,7 @@
                     <td>Ngôn ngữ</td>
                     <td>
                         <asp:DropDownList ID="ddl_NgonNgu" runat="server" Enabled="False">
+                            <asp:ListItem></asp:ListItem>
                             <asp:ListItem>Tiếng Việt</asp:ListItem>
                             <asp:ListItem>English</asp:ListItem>
                         </asp:DropDownList>

@@ -18,8 +18,8 @@ namespace Project.views
             //lbl_ShowInfo.Text = "xuốn<br> dòng";
             //lbl_ShowInfo.ForeColor = System.Drawing.Color.Black;
 
-            //if (!IsPostBack)
-            //{
+            if (!IsPostBack)
+            {
                 //lấy dữ liệu cho ddl_CQLuuTru
                 ddl_CQLuuTru.DataSource = db.Khos;
                 ddl_CQLuuTru.DataTextField = "TenKho";
@@ -31,7 +31,13 @@ namespace Project.views
                 ddl_Phong.DataTextField = "TenPhong";
                 ddl_Phong.DataValueField = "MaPhong";
                 ddl_Phong.DataBind();
-            //}
+
+                //kiểm tra xem có phongid k thì chèn vào ddl_phong
+                if (Request["phongid"] != null)
+                {
+                    Util.set_selected_val_4_ddl(ddl_Phong, Request["phongid"]);
+                }
+            }
         }
 
         protected void btn_themmoi_Click(object sender, EventArgs e)

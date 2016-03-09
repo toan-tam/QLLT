@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Project.shared;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Web;
@@ -16,6 +17,27 @@ namespace Project.views.vanban
         {
             if (!IsPostBack)
             {
+                //lấy dữ liệu cho ddl_CQLuuTru
+                ddl_CQLuuTru.DataSource = db.Khos;
+                ddl_CQLuuTru.DataTextField = "TenKho";
+                ddl_CQLuuTru.DataValueField = "MaKho";
+                ddl_CQLuuTru.DataBind();
+
+                //lấy dữ liệu cho ddl_phong
+                ddl_Phong.DataSource = db.Phongs;
+                ddl_Phong.DataTextField = "TenPhong";
+                ddl_Phong.DataValueField = "MaPhong";
+                ddl_Phong.DataBind();
+
+                //lấy dữ liệu cho ddl_loaiVb
+                ddl_LoaiVB.DataSource = db.Vbrecords.Select(element => new
+                {
+                    Tenloai = element.Tenloai
+                }).Distinct(); // db.Vbrecords.GroupBy(o => o.Tenloai);
+                ddl_LoaiVB.DataTextField = "Tenloai";
+                ddl_LoaiVB.DataValueField = "Tenloai";
+
+                ddl_LoaiVB.DataBind();
                 //get id of Vb
                 if (long.TryParse(Request["vbid"], out vb_id))
                 {
@@ -38,6 +60,17 @@ namespace Project.views.vanban
                         txt_MucDoTinCay.Text = obj.Mucdotruycap;
                         txt_GhiChu.Text = obj.YkienGQ;
 
+                        Util.set_selected_val_4_ddl(ddl_Phong, obj.Hsrecord.MaPhong.ToString());
+                        if (obj.Ngonngu != null)
+                        {
+                            Util.set_selected_val_4_ddl(ddl_NgonNgu, obj.Ngonngu);
+                        }
+                        else
+                        {
+                            Util.set_selected_val_4_ddl(ddl_NgonNgu, "");
+                        }
+                        Util.set_selected_val_4_ddl(ddl_LoaiVB, obj.Tenloai);
+
                         var fobjs = db.VbFileAttaches.Where(o => o.Vbrecords_ID == vb_id);
                         if (fobjs.Count() > 0)
                         {
@@ -56,26 +89,7 @@ namespace Project.views.vanban
                     }
                 }
 
-                //lấy dữ liệu cho ddl_CQLuuTru
-                ddl_CQLuuTru.DataSource = db.Khos;
-                ddl_CQLuuTru.DataTextField = "TenKho";
-                ddl_CQLuuTru.DataValueField = "MaKho";
-                ddl_CQLuuTru.DataBind();
-
-                //lấy dữ liệu cho ddl_phong
-                ddl_Phong.DataSource = db.Phongs;
-                ddl_Phong.DataTextField = "TenPhong";
-                ddl_Phong.DataValueField = "MaPhong";
-                ddl_Phong.DataBind();
-
-                //lấy dữ liệu cho ddl_loaiVb
-                ddl_LoaiVB.DataSource = db.Vbrecords.Select(element => new
-                {
-                    Tenloai = element.Tenloai
-                }).Distinct(); // db.Vbrecords.GroupBy(o => o.Tenloai);
-                ddl_LoaiVB.DataTextField = "Tenloai";
-                ddl_LoaiVB.DataValueField = "Tenloai";
-                ddl_LoaiVB.DataBind();
+                
 
 
             }

@@ -42,7 +42,7 @@
                                                         <ItemTemplate>
 
                                                             <li class="list-group-item" id="li_HoSo" runat="server">- &nbsp; 
-                                                                <asp:LinkButton ID="Link_HoSo" OnClick="Link_HoSo_Click" CommandName='<%#Eval("Hososo") %>' runat="server">Hồ sơ số  <%#Eval("Hososo") %></asp:LinkButton>
+                                                                <asp:LinkButton ID="Link_HoSo" OnClick="Link_HoSo_Click" CommandName='<%#Eval("Hsrecords_Id") %>' runat="server">Hồ sơ số  <%#Eval("Hososo") %></asp:LinkButton>
                                                             </li>
 
                                                         </ItemTemplate>
@@ -97,10 +97,11 @@
                 <ItemTemplate>
                     <td>
                         <div class="row margin_b10">
-                            <img src="../../images/badge.png" width="70" alt="Alternate Text" />
+                            <img src="../../images/badge.png" width="80" alt="Alternate Text" />
                         </div>
 
-                        <p>Hồ sơ <%#Eval("Hososo")%></p>
+                        <%--<p>Hồ sơ <%#Eval("Hososo")%></p>--%>
+                        <asp:LinkButton ID="Link_HoSo" OnClick="Link_HoSo_Click" CommandName='<%#Eval("Hsrecords_Id") %>' runat="server">Hồ sơ số  <%#Eval("Hososo") %></asp:LinkButton>
                     </td>
                 </ItemTemplate>
             </asp:ListView>
@@ -116,7 +117,7 @@
                     <LayoutTemplate>
                         <table class="table table-bordered text-center">
                             <tr>
-                                <th colspan="11" class="font_18 text-center">Danh sách văn bản</th>
+                                <th colspan="12" class="font_18 text-center">Danh sách văn bản</th>
                             </tr>
                             <tr class="font_14">
                                 <td>SoKHVB</td>
@@ -132,6 +133,7 @@
                                 <td>Mucdomat</td>
                                 <td>Mucdotruycap</td>
                                 <td>YkienGQ</td>
+                                <td>Xem Nội dung</td>
                             </tr>
                             <asp:PlaceHolder runat="server" ID="place_holder_phong" />
                         </table>
@@ -160,6 +162,7 @@
                                 <%#Eval("Mucdotruycap") %>
                             </td>
                             <td><%#Eval("YkienGQ") %></td>
+                            <td><asp:LinkButton runat="server" id="link_hienthi_vb" PostBackUrl='<%# "~/views/vanban/FormHienThiVB.aspx?vbid=" + Eval("Vbrecords_Id") %>' >Xem</asp:LinkButton></td>
                         </tr>
                     </ItemTemplate>
                 </asp:ListView>

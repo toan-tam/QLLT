@@ -13,7 +13,7 @@
                 <tr>
                     <td>Hồ sơ</td>
                     <td colspan="3">
-                        <asp:TextBox ID="txt_HoSo" runat="server" Width="100%"></asp:TextBox>
+                        <asp:TextBox ID="txt_HoSo" runat="server" Width="100%" ReadOnly="true"></asp:TextBox>
                     </td>
                 </tr>
                 <tr>
