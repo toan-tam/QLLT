@@ -1,8 +1,12 @@
 ﻿<%@ Page Title="" Language="C#" MasterPageFile="~/views/layout/Site.Master" AutoEventWireup="true" CodeBehind="FormThemHS.aspx.cs" Inherits="Project.views.FormThemHS" %>
 
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
-<%--  --%>
+    <%--  --%>
     <div class="table-responsive font_bold form_themmoiHS">
+        <asp:Panel id="div_alert" runat="server">
+            <asp:Label ID="lbl_ShowInfo" runat="server" ForeColor="#009933" ></asp:Label>
+        </asp:Panel>
+        
         <form runat="server">
             <table class="table table-condensed">
                 <tr>
@@ -125,6 +129,7 @@
                         <asp:Button ID="btn_quaylai" runat="server" Text="Quay lại" />
                     </td>
                 </tr>
+                
             </table>
         </form>
     </div>

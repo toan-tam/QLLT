@@ -1,6 +1,0 @@
-D:\QLLT\Project\bin\Project.dll.config
-D:\QLLT\Project\bin\Project.dll
-D:\QLLT\Project\bin\Project.pdb
-D:\QLLT\Project\obj\Debug\Project.dll
-D:\QLLT\Project\obj\Debug\Project.pdb
-D:\QLLT\Project\obj\Debug\Project.csprojResolveAssemblyReference.cache
