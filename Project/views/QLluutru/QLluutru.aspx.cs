@@ -28,6 +28,17 @@ namespace Project.views.QLluutru
                 list_HS.DataBind();
             }
 
+
+            // [Toàn] bind dữ liệu cho văn bản
+            if (Request.QueryString["act"] == "displayVB" && Request.QueryString["id"] != "" && Request.QueryString["id"] != null)
+            {
+                int id = int.Parse(Request.QueryString["id"]);
+                var tbl_VB = db.Vbrecords.Where(o=>o.Hsrecords_Id == id);
+                lst_VB.DataSource = tbl_VB;
+                lst_VB.DataBind();
+            }
+
+
             Page.DataBind();
 
         }
@@ -81,7 +92,21 @@ namespace Project.views.QLluutru
 
         protected void Link_HoSo_Click(object sender, EventArgs e)
         {
-            Response.Redirect("/");
+            if (Util.getCommandName(sender) != null)
+            {
+                Response.Redirect("/views/QLluutru/QLluutru.aspx?act=displayVB&id=" + Util.getCommandName(sender));
+
+            }
+        }
+
+        protected void btn_VB_insert_Click(object sender, EventArgs e)
+        {
+            Response.Redirect("/views/vanban/FormThemVB.aspx");
+        }
+
+        protected void btn_HS_insert_Click(object sender, EventArgs e)
+        {
+            Response.Redirect("/views/hoso/FormThemHS.aspx");
         }
     }
 }

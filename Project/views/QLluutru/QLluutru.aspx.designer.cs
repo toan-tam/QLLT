@@ -22,6 +22,15 @@ namespace Project.views.QLluutru {
         protected global::System.Web.UI.WebControls.ListView lst_Phong;
         
         /// <summary>
+        /// btn_HS_insert control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Button btn_HS_insert;
+        
+        /// <summary>
         /// list_HS control.
         /// </summary>
         /// <remarks>
@@ -29,5 +38,23 @@ namespace Project.views.QLluutru {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.ListView list_HS;
+        
+        /// <summary>
+        /// btn_VB_insert control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Button btn_VB_insert;
+        
+        /// <summary>
+        /// lst_VB control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.ListView lst_VB;
     }
 }

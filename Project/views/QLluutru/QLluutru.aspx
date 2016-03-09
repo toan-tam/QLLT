@@ -60,49 +60,112 @@
 
             </div>
         </div>
-        <div class="col-sm-9 div_content" style="padding: 20px 0 0 0">
+        <div class="col-sm-9 div_content_QLphong">
 
-            <div class="table-responsive font_bold" style="padding: 6px;">
 
-                <% if (Request.QueryString["act"] == "display")
-                    {%>
+            <% if (Request.QueryString["act"] == "display")
+                {%>
 
-                <asp:ListView ID="list_HS" runat="server" GroupItemCount="8">
+            <div class="row nav_bar header_padding text-center">Quản lý hồ sơ</div>
+            <br />
+            <asp:Button ID="btn_HS_insert" OnClick="btn_HS_insert_Click" runat="server" CssClass="btn btn-primary font_12 font_bold" Text="Thêm mới" />
+
+            <asp:ListView ID="list_HS" runat="server" GroupItemCount="8">
+                <LayoutTemplate>
+                    <table class="table table-responsive">
+                        <tr>
+                            <td>
+                                <table class="table table_group">
+                                    <asp:PlaceHolder runat="server" ID="groupPlaceHolder"></asp:PlaceHolder>
+                                </table>
+                            </td>
+                        </tr>
+                    </table>
+                    <asp:DataPager ID="list_HS" runat="server" PageSize="24">
+                        <Fields>
+                            <asp:NextPreviousPagerField FirstPageText="&lt;&lt;" ShowFirstPageButton="True" ShowNextPageButton="False" />
+                            <asp:NumericPagerField />
+                            <asp:NextPreviousPagerField LastPageText="&gt;&gt;" ShowLastPageButton="True" ShowPreviousPageButton="False" />
+                        </Fields>
+                    </asp:DataPager>
+                </LayoutTemplate>
+                <GroupTemplate>
+                    <tr>
+                        <asp:PlaceHolder runat="server" ID="itemPlaceHolder"></asp:PlaceHolder>
+                    </tr>
+                </GroupTemplate>
+                <ItemTemplate>
+                    <td>
+                        <div class="row margin_b10">
+                            <img src="../../images/badge.png" width="70" alt="Alternate Text" />
+                        </div>
+
+                        <p>Hồ sơ <%#Eval("Hososo")%></p>
+                    </td>
+                </ItemTemplate>
+            </asp:ListView>
+            <% }%>
+
+            <% if (Request.QueryString["act"] == "displayVB")
+                {%>
+            <div class="row nav_bar header_padding text-center">Quản lý văn bản</div>
+            <br />
+            <asp:Button ID="btn_VB_insert" runat="server" CssClass="btn btn-primary font_12 font_bold" OnClick="btn_VB_insert_Click" Text="Thêm mới" />
+            <table class="table table-bordered">
+                <asp:ListView ID="lst_VB" runat="server" ItemPlaceholderID="place_holder_phong">
                     <LayoutTemplate>
-                        <table class="table table-responsive">
+                        <table class="table table-bordered text-center">
                             <tr>
-                                <td>
-                                    <table class="table table_group">
-                                        <asp:PlaceHolder runat="server" ID="groupPlaceHolder"></asp:PlaceHolder>
-                                    </table>
-                                </td>
+                                <th colspan="11" class="font_18 text-center">Danh sách văn bản</th>
                             </tr>
+                            <tr class="font_14">
+                                <td>SoKHVB</td>
+                                <td>Soto</td>
+                                <td>Ngonngu</td>
+                                <td>TrichyeuND</td>
+
+                                <td>Tacgia</td>
+                                <td>Tenloai</td>
+                                <td>Tinhtrangvatly</td>
+                                <td>TrinhLD</td>
+
+                                <td>Mucdomat</td>
+                                <td>Mucdotruycap</td>
+                                <td>YkienGQ</td>
+                            </tr>
+                            <asp:PlaceHolder runat="server" ID="place_holder_phong" />
                         </table>
-                        <asp:DataPager ID="list_HS" runat="server" PageSize="8">
-                            <Fields>
-                                <asp:NextPreviousPagerField FirstPageText="&lt;&lt;" ShowFirstPageButton="True" ShowNextPageButton="False" />
-                                <asp:NumericPagerField />
-                                <asp:NextPreviousPagerField LastPageText="&gt;&gt;" ShowLastPageButton="True" ShowPreviousPageButton="False" />
-                            </Fields>
+                        <asp:DataPager ID="lst_Phong" runat="server" PageSize="30">
                         </asp:DataPager>
                     </LayoutTemplate>
-                    <GroupTemplate>
-                        <tr>
-                            <asp:PlaceHolder runat="server" ID="itemPlaceHolder"></asp:PlaceHolder>
-                        </tr>
-                    </GroupTemplate>
                     <ItemTemplate>
-                        <td>
-                            <div class="row margin_b10">
-                                <img src="../../images/badge.png" width="70" alt="Alternate Text" />
-                            </div>
+                        <tr>
+                            <td>
+                                <%#Eval("SoKHVB") %>
+                            </td>
+                            <td><%#Eval("Soto") %></td>
+                            <td><%#Eval("Ngonngu") %></td>
 
-                            <p>Hồ sơ <%#Eval("Hososo")%></p>
-                        </td>
+                            <td>
+                                <%#Eval("TrichyeuND") %>
+                            </td>
+                            <td><%#Eval("Tacgia") %></td>
+                            <td><%#Eval("Tenloai") %></td>
+                            <td>
+                                <%#Eval("Tinhtrangvatly") %>
+                            </td>
+                            <td><%#Eval("TrinhLD") %></td>
+                            <td><%#Eval("Mucdomat") %></td>
+                            <td>
+                                <%#Eval("Mucdotruycap") %>
+                            </td>
+                            <td><%#Eval("YkienGQ") %></td>
+                        </tr>
                     </ItemTemplate>
                 </asp:ListView>
-                <% }%>
-            </div>
+
+            </table>
+            <%} %>
         </div>
     </div>
 </asp:Content>
