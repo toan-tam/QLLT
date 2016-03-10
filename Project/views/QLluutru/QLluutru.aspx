@@ -94,7 +94,7 @@
                 <ItemTemplate>
                     <td>
                         <div class="row margin_b10">
-                            <img src="../../images/badge.png" width="80" alt="Alternate Text" />
+                            <img src="../../images/hosoicon.png" width="80" alt="Alternate Text" />
                         </div>
 
                         <%--<p>Hồ sơ <%#Eval("Hososo")%></p>--%>
