@@ -64,6 +64,7 @@
     <Content Include="views\auth\DangNhap.aspx" />
     <Content Include="views\hoso\FormThemHS.aspx" />
     <Content Include="views\pages\gioithieu.aspx" />
+    <Content Include="views\pages\trangchu.aspx" />
     <Content Include="views\phong\create.aspx" />
     <Content Include="views\phong\show.aspx" />
     <Content Include="views\QLdanhmuc\QLdanhmuc.aspx" />
@@ -122,6 +123,13 @@
     </Compile>
     <Compile Include="views\pages\gioithieu.aspx.designer.cs">
       <DependentUpon>gioithieu.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="views\pages\trangchu.aspx.cs">
+      <DependentUpon>trangchu.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="views\pages\trangchu.aspx.designer.cs">
+      <DependentUpon>trangchu.aspx</DependentUpon>
     </Compile>
     <Compile Include="views\phong\create.aspx.cs">
       <DependentUpon>create.aspx</DependentUpon>
