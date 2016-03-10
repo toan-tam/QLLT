@@ -34,14 +34,11 @@
                 <asp:ListView ID="lst_Phong" runat="server" ItemPlaceholderID="place_holder_phong">
                     <LayoutTemplate>
                         <table class="table table-bordered text-center">
-                            <tr>
-                                <th colspan="4" class="font_18 text-center">Danh sách Phông lưu trữ</th>
-                            </tr>
                             <tr class="font_14">
                                 <td>Ảnh Phông lưu trữ</td>
                                 <td>Tên Phông lưu trữ</td>
                                 <td>Ghi chú</td>
-                               <%-- <td>Thao tác</td>--%>
+                                <td>Thao tác</td>
                             </tr>
                             <asp:PlaceHolder runat="server" ID="place_holder_phong" />
                         </table>
@@ -58,12 +55,17 @@
                             </td>
                             <td><%#Eval("TenPhong") %></td>
                             <td><%#Eval("GhiChu") %></td>
-                           <%-- <td>
+                            <td>
                                 <asp:LinkButton ID="btn_edit_phong" CommandName='<%#Eval("MaPhong") %>' OnClick="btn_edit_phong_Click" CssClass="btn btn-info btn-xs" runat="server">
                                     <span class="glyphicon glyphicon-edit"></span> &nbsp;Sửa
 
                                 </asp:LinkButton>
-                            </td>--%>
+                                  <asp:LinkButton ID="LinkButton1" CommandName='<%#Eval("MaPhong") %>' OnClick="btn_edit_phong_Click" CssClass="btn btn-info btn-xs" runat="server">
+                                     <span class="glyphicon glyphicon-remove"></span> &nbsp;Xóa
+
+                                </asp:LinkButton>
+                               
+                            </td>
                         </tr>
                     </ItemTemplate>
                 </asp:ListView>

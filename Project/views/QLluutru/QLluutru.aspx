@@ -16,17 +16,14 @@
                         </LayoutTemplate>
                         <ItemTemplate>
                             <div class="row margin_b1">
-                                <div class="col-sm-4 col-xs-4">
-                                    <asp:Image Height="50" ImageUrl="~/images/badge.png" class="img-rounded img-responsive" runat="server" />
-                                </div>
-
-                                <div class="col-sm-8 col-xs-8 font_bold font_14">
+                              
+                                <div class="col-sm-12 col-xs-12 font_bold font_14" style="padding: 0px">
 
                                     <div class="panel-group" id="accordition">
                                         <div class="panel panel_sidebar">
                                             <div class="panel-heading">
                                                 <p class="panel-title">
-                                                    <asp:LinkButton CssClass="font_12" data-toggle="collapse" data-parent="#accordion" href='<%# "#" + Eval("MaPhong") %>' OnClick="a_Expand_Click" CommandName='<%#Eval("MaPhong") %>' runat="server">+</asp:LinkButton>
+                                                    <asp:LinkButton CssClass="font_12 padding_sidebar" data-toggle="collapse" data-parent="#accordion" href='<%# "#" + Eval("MaPhong") %>' OnClick="a_Expand_Click" CommandName='<%#Eval("MaPhong") %>' runat="server"> <span class="glyphicon glyphicon-list-alt"></span></asp:LinkButton>
                                                     <asp:LinkButton CssClass="font_12" OnClick="a_Phong_Click" CommandName='<%#Eval("MaPhong") %>' runat="server"><%#Eval("TenPhong") %></asp:LinkButton>
                                                 </p>
                                             </div>
@@ -142,7 +139,8 @@
                     </LayoutTemplate>
                     <ItemTemplate>
                         <tr>
-                            <td><asp:LinkButton runat="server" id="LinkButton1" PostBackUrl='<%# "~/views/vanban/FormHienThiVB.aspx?vbid=" + Eval("Vbrecords_Id") %>'><%#Eval("SoKHVB") %></asp:LinkButton></td>
+                            <td>
+                                <asp:LinkButton runat="server" ID="LinkButton1" PostBackUrl='<%# "~/views/vanban/FormHienThiVB.aspx?vbid=" + Eval("Vbrecords_Id") %>'><%#Eval("SoKHVB") %></asp:LinkButton></td>
                             <td><%#Eval("Soto") %></td>
                             <td><%#Eval("Ngonngu") %></td>
 
@@ -160,7 +158,8 @@
                                 <%#Eval("Mucdotruycap") %>
                             </td>
                             <td><%#Eval("YkienGQ") %></td>
-                            <td><asp:LinkButton runat="server" id="link_hienthi_vb" PostBackUrl='<%# "~/views/vanban/FormHienThiVB.aspx?vbid=" + Eval("Vbrecords_Id") %>' >Xem</asp:LinkButton>
+                            <td>
+                                <asp:LinkButton runat="server" ID="link_hienthi_vb" PostBackUrl='<%# "~/views/vanban/FormHienThiVB.aspx?vbid=" + Eval("Vbrecords_Id") %>'>Xem</asp:LinkButton>
 
                                 <%--<asp:LinkButton runat="server" id="LinkButton2" PostBackUrl='<% 
                                     

@@ -12,7 +12,9 @@ body {
     color: white;
     margin-bottom: 10px;
 }
-
+.padding_sidebar{
+    padding:0 1% 0 5%;
+}
 .navbar-default .navbar-nav > li > a {
     color: white;
 }
