@@ -29,5 +29,11 @@ namespace Project.shared
 
             return null;
         }
+
+        public static void set_selected_val_4_ddl(DropDownList ddl, string val_search)
+        {
+            ddl.ClearSelection(); //making sure the previous selection has been cleared
+            ddl.Items.FindByValue(val_search).Selected = true;
+        }
     }
 }

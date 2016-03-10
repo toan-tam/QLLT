@@ -16,6 +16,8 @@ namespace Project.views.vanban
 
         protected void Page_Load(object sender, EventArgs e)
         {
+            ddl_Phong.Enabled = false;
+
             if (!IsPostBack)
             {
                 //lấy dữ liệu cho ddl_CQLuuTru
@@ -39,7 +41,15 @@ namespace Project.views.vanban
                 ddl_LoaiVB.DataValueField = "Tenloai";
                 ddl_LoaiVB.DataBind();
 
-
+                //nếu có hồ sơ id thì hiển thị lên txt_HoSo & bind dữ liệu vào ddl_phong
+                if (Request["hsid"] != null)
+                {
+                    var hsid = Request["hsid"];
+                    txt_HoSo.Text = hsid;
+                    //bind ddl_phong
+                    var phongid = db.Hsrecords.Where(o => o.Hsrecords_Id == int.Parse(hsid)).SingleOrDefault().MaPhong;
+                    Util.set_selected_val_4_ddl(ddl_Phong, phongid.ToString());
+                }
             }
         }
 
