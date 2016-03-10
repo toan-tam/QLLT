@@ -59,6 +59,7 @@
     <Content Include="fonts\glyphicons-halflings-regular.svg" />
     <Content Include="images\badge.png" />
     <Content Include="default.aspx" />
+    <Content Include="images\hosoicon.png" />
     <Content Include="js\bootstrap.min.js" />
     <Content Include="js\jquery.js" />
     <Content Include="views\auth\DangNhap.aspx" />
