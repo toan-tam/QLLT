@@ -4,7 +4,7 @@
 
     <div class="row">
         <div class="col-sm-3">
-            <div class="row menu-left" >
+            <div class="row menu-left">
                 <div class="col-sm-12  div_content">
                     <div class="row nav_bar header_padding text-center">Quản lý lưu trữ</div>
                     <br />
@@ -16,7 +16,7 @@
                         </LayoutTemplate>
                         <ItemTemplate>
                             <div class="row margin_b1">
-                              
+
                                 <div class="col-sm-12 col-xs-12 font_bold font_14" style="padding: 0px">
 
                                     <div class="panel-group" id="accordition">
@@ -140,26 +140,27 @@
                     <ItemTemplate>
                         <tr>
                             <td>
-                                <asp:LinkButton runat="server" ID="LinkButton1" PostBackUrl='<%# "~/views/vanban/FormHienThiVB.aspx?vbid=" + Eval("Vbrecords_Id") %>'><%#Eval("SoKHVB") %></asp:LinkButton></td>
-                            <td><%#Eval("Soto") %></td>
-                            <td><%#Eval("Ngonngu") %></td>
+
+                                <asp:LinkButton runat="server" ID="LinkButton1" PostBackUrl='<%# "~/views/vanban/FormHienThiVB.aspx?vbid=" + Eval("VBrecordID") %>'><%#Eval("SoKHVB") %></asp:LinkButton></td>
+                            <td><%#Eval("SoTo") %></td>
+                            <td><%#Eval("NgonNgu") %></td>
 
                             <td>
-                                <%#Eval("TrichyeuND") %>
+                                <%#Eval("TrichYeuND") %>
                             </td>
-                            <td><%#Eval("Tacgia") %></td>
-                            <td><%#Eval("Tenloai") %></td>
+                            <td><%#Eval("TacGia") %></td>
+                            <td><%#Eval("TenLoaiVB") %></td>
                             <td>
-                                <%#Eval("Tinhtrangvatly") %>
+                                <%#Eval("TinhTrangVL") %>
                             </td>
                             <td><%#Eval("TrinhLD") %></td>
-                            <td><%#Eval("Mucdomat") %></td>
+                            <td><%#Eval("MucDoMat") %></td>
                             <td>
-                                <%#Eval("Mucdotruycap") %>
+                                <%#Eval("MucDoTruyCap") %>
                             </td>
-                            <td><%#Eval("YkienGQ") %></td>
+                            <td><%#Eval("YKienGQ") %></td>
                             <td>
-                                <asp:LinkButton runat="server" ID="link_hienthi_vb" PostBackUrl='<%# "~/views/vanban/FormHienThiVB.aspx?vbid=" + Eval("Vbrecords_Id") %>'>Xem</asp:LinkButton>
+                                <asp:LinkButton runat="server" ID="link_hienthi_vb" PostBackUrl='<%# Eval("LinkFile") %>'>Xem</asp:LinkButton>
 
                                 <%--<asp:LinkButton runat="server" id="LinkButton2" PostBackUrl='<% 
                                     
