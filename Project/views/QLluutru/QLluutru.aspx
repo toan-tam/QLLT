@@ -113,9 +113,9 @@
                 <asp:ListView ID="lst_VB" runat="server" ItemPlaceholderID="place_holder_phong">
                     <LayoutTemplate>
                         <table class="table table-bordered text-center">
-                            <tr>
+                            <%--<tr>
                                 <th colspan="12" class="font_18 text-center">Danh sách văn bản</th>
-                            </tr>
+                            </tr>--%>
                             <tr class="font_14 font_bold">
                                 <td>SoKHVB</td>
                                 <td>Số tờ</td>
