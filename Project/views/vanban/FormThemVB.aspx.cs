@@ -62,32 +62,49 @@ namespace Project.views.vanban
                     if (ful_TaiLieu.PostedFile.ContentLength < 1024000000) //1GB
                     {
                         string filename = "uploads\\" + ful_TaiLieu.FileName;
-                        string filepath = Request.PhysicalApplicationPath + filename;// Path.GetFileName(ful_TaiLieu.FileName);
-                        ful_TaiLieu.SaveAs(filepath);
-                        //div_alert.CssClass = "alert alert-succes";
-                        //lbl_ShowInfo.Text = "Upload status: File uploaded!";
+                        string filepath = Request.PhysicalApplicationPath + filename;
 
-                        //kiểm tra xem upload có thành công không
-                        if (File.Exists(filepath))
+                        //filter file type
+                        String fileExtension = System.IO.Path.GetExtension(ful_TaiLieu.FileName).ToLower();
+                        String[] allowedExtensions = { ".gif", ".png", ".jpeg", ".jpg", ".doc", ".docx", ".xls", ".xlsx", ".ppt", ".pptx", ".pdf" };
+                        bool is_file_4mat = false;
+                        for (int i = 0; i < allowedExtensions.Length; i++)
                         {
-                            //nếu thành công thì save văn bản vào csdl
-                            if (Insert_Vb(filename))
+                            if (fileExtension == allowedExtensions[i])
                             {
-                                //Thông báo thành công
-                                div_alert.CssClass = "alert alert-success";
-                                lbl_ShowInfo.ForeColor = System.Drawing.Color.Green;
-                                lbl_ShowInfo.Text = "Thêm mới Văn bản thành công";
-                            }
-                            else
-                            {
-                                div_alert.CssClass = "alert alert-danger";
-                                lbl_ShowInfo.Text = "Đã xảy ra lỗi khi thêm mới văn bản";
+                                is_file_4mat = true;
+                                ful_TaiLieu.SaveAs(filepath);
+                                //kiểm tra xem upload có thành công không
+                                if (File.Exists(filepath))
+                                {
+                                    //nếu thành công thì save văn bản vào csdl
+                                    if (Insert_Vb(filename, fileExtension))
+                                    {
+                                        //Thông báo thành công
+                                        div_alert.CssClass = "alert alert-success";
+                                        lbl_ShowInfo.ForeColor = System.Drawing.Color.Green;
+                                        lbl_ShowInfo.Text = "Thêm mới Văn bản thành công";
+
+                                        
+                                    }
+                                    else
+                                    {
+                                        div_alert.CssClass = "alert alert-danger";
+                                        lbl_ShowInfo.Text = "Đã xảy ra lỗi khi thêm mới văn bản";
+                                    }
+                                }
+                                else
+                                {
+                                    div_alert.CssClass = "alert alert-danger";
+                                    lbl_ShowInfo.Text = "Lỗi Upload file";
+                                }
+
                             }
                         }
-                        else
+                        if (!is_file_4mat)
                         {
                             div_alert.CssClass = "alert alert-danger";
-                            lbl_ShowInfo.Text = "Lỗi Upload file";
+                            lbl_ShowInfo.Text = "Vui lòng chọn file có một trong cách định dạng sau: \"*.gif\", \"*.png\", \"*.jpeg\", \"*.jpg\", \"*.doc\", \"*.docx\", \"*.xls\", \"*.xlsx\", \"*.ppt\", \"*.pptx\", \"*.pdf\"";
                         }
                     }
                     else
@@ -99,7 +116,7 @@ namespace Project.views.vanban
                 else
                 {
                     //nếu không chèn file thì chỉ cần thêm bản ghi vào db
-                    Insert_Vb("");
+                    Insert_Vb("","");
                 }
             }
             catch (Exception ex)
@@ -109,7 +126,7 @@ namespace Project.views.vanban
 
         }
 
-        protected bool Insert_Vb(string filename)
+        protected bool Insert_Vb(string filename, string filetype)
         {
             try
             {
@@ -139,6 +156,7 @@ namespace Project.views.vanban
                     VbFileAttach fobj = new VbFileAttach();
                     fobj.Vbrecords_ID = obj.Vbrecords_Id;
                     fobj.DestFileName = "\\" + filename;
+                    fobj.FileType = filetype;
 
                     db.VbFileAttaches.InsertOnSubmit(fobj);
 

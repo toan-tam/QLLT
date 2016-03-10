@@ -70,6 +70,7 @@
     <Content Include="views\QLluutru\QLluutru.aspx" />
     <Content Include="views\vanban\FormHienThiVB.aspx" />
     <Content Include="views\vanban\FormThemVB.aspx" />
+    <Content Include="views\vanban\PlayVideoDemo.aspx" />
     <Content Include="Web.config">
       <SubType>Designer</SubType>
     </Content>
@@ -163,6 +164,13 @@
     </Compile>
     <Compile Include="views\vanban\FormThemVB.aspx.designer.cs">
       <DependentUpon>FormThemVB.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="views\vanban\PlayVideoDemo.aspx.cs">
+      <DependentUpon>PlayVideoDemo.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="views\vanban\PlayVideoDemo.aspx.designer.cs">
+      <DependentUpon>PlayVideoDemo.aspx</DependentUpon>
     </Compile>
   </ItemGroup>
   <ItemGroup>

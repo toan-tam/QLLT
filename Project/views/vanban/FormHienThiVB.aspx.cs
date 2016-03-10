@@ -74,13 +74,35 @@ namespace Project.views.vanban
                         var fobjs = db.VbFileAttaches.Where(o => o.Vbrecords_ID == vb_id);
                         if (fobjs.Count() > 0)
                         {
-                            //nếu có file attach thì hiển thị link
-                            link_File_Doc.Text = "Link File";
-                            link_File_Doc.NavigateUrl = Request.Url.GetLeftPart(UriPartial.Authority) +  fobjs.SingleOrDefault().DestFileName; //"\\uploads\\DATN_DuongNH-Report-Success.doc"; // fobjs.SingleOrDefault().DestFileName);
+                            var fobj = fobjs.SingleOrDefault();
+
+                            if (fobj.FileType != null && fobj.FileType!= "")
+                            {
+                                //nếu có file attach thì hiển thị link
+                                link_File_Doc.Text = "Link File";
+
+                                if (fobj.FileType == ".gif" || fobj.FileType == ".png" || fobj.FileType == ".jpeg" || fobj.FileType == ".jpg")
+                                {
+                                    link_File_Doc.NavigateUrl = Request.Url.GetLeftPart(UriPartial.Authority) + fobj.DestFileName.Replace('\\', '/');
+                                }
+                                else
+                                {
+                                    if (fobj.FileType == ".doc" || fobj.FileType == ".docx" || fobj.FileType == ".xls" || fobj.FileType == ".xlsx" || fobj.FileType == ".ppt" || fobj.FileType == ".pptx" || fobj.FileType == ".pdf")
+                                    {
+                                        link_File_Doc.NavigateUrl = "http://docs.google.com/gview?url=" + Request.Url.GetLeftPart(UriPartial.Authority) + fobj.DestFileName.Replace('\\', '/');
+                                    }
+                                }
+                            }
+                            else
+                            {
+                                //nếu k có file attach thì hiển thị Thông báo k có file attach
+                                link_File_Doc.Text = "Không có file đính kèm";
+                                link_File_Doc.ForeColor = System.Drawing.Color.Red;
+                            }
                         }
                         else
                         {
-                            //nếu có file attach thì hiển thị Thông báo k có file attach
+                            //nếu k có file attach thì hiển thị Thông báo k có file attach
                             link_File_Doc.Text = "Không có file đính kèm";
                             link_File_Doc.ForeColor = System.Drawing.Color.Red;
                         }
@@ -89,7 +111,7 @@ namespace Project.views.vanban
                     }
                 }
 
-                
+
 
 
             }
