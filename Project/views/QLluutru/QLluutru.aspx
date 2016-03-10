@@ -4,8 +4,8 @@
 
     <div class="row">
         <div class="col-sm-3">
-            <div class="row">
-                <div class="col-sm-11  div_content">
+            <div class="row menu-left" >
+                <div class="col-sm-12  div_content">
                     <div class="row nav_bar header_padding text-center">Quản lý lưu trữ</div>
                     <br />
 
