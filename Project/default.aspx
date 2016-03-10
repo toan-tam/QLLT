@@ -1,6 +1,7 @@
 ﻿<%@ Page Title="" Language="C#" MasterPageFile="~/views/layout/Site.Master" AutoEventWireup="true" CodeBehind="default.aspx.cs" Inherits="Project.index" %>
 
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
+    
  <%--   <div class="row nav_bar header_padding">Phông số 1</div>
     <br />
     <asp:DataList ID="DataList_Hoso" runat="server" CssClass="table table-responsive text-center" RepeatColumns="8" RepeatDirection="Horizontal" ShowFooter="False" ShowHeader="False">

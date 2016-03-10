@@ -12,6 +12,8 @@ namespace Project
     {
         protected void Page_Load(object sender, EventArgs e)
         {
+            Response.Redirect("views/auth/DangNhap.aspx");
+
             //HSRecord_ctrl record_ctrl = new HSRecord_ctrl();
             //var rs = record_ctrl.GetDataByBookID(11);
 
