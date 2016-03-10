@@ -94,6 +94,7 @@
     <Compile Include="models\ErrorCode.cs" />
     <Compile Include="models\Phong_ett.cs" />
     <Compile Include="models\Result.cs" />
+    <Compile Include="models\Vbrecord_ett.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="shared\Constants.cs" />
     <Compile Include="shared\Util.cs" />

@@ -30,14 +30,39 @@ namespace Project.views.QLluutru
 
 
             // [Toàn] bind dữ liệu cho văn bản
+            //if (Request.QueryString["act"] == "displayVB" && Request.QueryString["id"] != "" && Request.QueryString["id"] != null)
+            //{
+            //    int id = int.Parse(Request.QueryString["id"]);
+            //    var tbl_VB = db.Vbrecords.Where(o=>o.Hsrecords_Id == id);
+            //    lst_VB.DataSource = tbl_VB;
+            //    lst_VB.DataBind();
+            //}
+
+
+            //[Duong] bind du lieu van ban
             if (Request.QueryString["act"] == "displayVB" && Request.QueryString["id"] != "" && Request.QueryString["id"] != null)
             {
                 int id = int.Parse(Request.QueryString["id"]);
-                var tbl_VB = db.Vbrecords.Where(o=>o.Hsrecords_Id == id);
-                lst_VB.DataSource = tbl_VB;
+                var tbl_VB = db.Vbrecords.Where(o => o.Hsrecords_Id == id);
+
+                //get domain path
+                string domain_path = Page.Request.Url.GetLeftPart(UriPartial.Authority);
+                //khoi tao list doi tuong vbrecord_ett
+                List<models.Vbrecord_ett> lst_dt = new List<models.Vbrecord_ett>();
+                
+
+                if (tbl_VB.Count() > 0)
+                {
+                    foreach (var i in tbl_VB)
+                    {
+                        models.Vbrecord_ett vbobj = new models.Vbrecord_ett(i, domain_path);
+                        lst_dt.Add(vbobj);
+                    }
+                }
+
+                lst_VB.DataSource = lst_dt;
                 lst_VB.DataBind();
             }
-
 
             Page.DataBind();
 
