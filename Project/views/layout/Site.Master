@@ -14,7 +14,7 @@
             <div class="row">
                 <div class="col-xs-7 col-sm-7">
                     <div class="badge_left">
-                        <a href="/">
+                        <a href="/?active=TT">
                             <img src="../../images/badge.png" class="img-responsive" alt="Trang chủ" />
                         </a>
                     </div>

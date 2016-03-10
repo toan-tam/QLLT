@@ -119,8 +119,21 @@
                             <tr>
                                 <th colspan="12" class="font_18 text-center">Danh sách văn bản</th>
                             </tr>
-                            <tr class="font_14 fotn">
-                            
+                            <tr class="font_14 font_bold">
+                                <td>SoKHVB</td>
+                                <td>Số tờ</td>
+                                <td>Ngôn ngữ</td>
+                                <td>Trích yếu ND</td>
+
+                                <td>Tác giả</td>
+                                <td>Tên Loại</td>
+                                <td>Trình trạng vật lý</td>
+                                <td>TrinhLD</td>
+
+                                <td>Mức độ mật</td>
+                                <td>Mức độ truy cập</td>
+                                <td>Ý kiến GQ</td>
+                                <td>Xem Nội dung</td>
                             </tr>
                             <asp:PlaceHolder runat="server" ID="place_holder_phong" />
                         </table>
