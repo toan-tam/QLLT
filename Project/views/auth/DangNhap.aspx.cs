@@ -16,7 +16,7 @@ namespace Project.views.auth
 
         protected void btn_dangnhap_Click(object sender, EventArgs e)
         {
-            if (txt_matkhau.Text == "admin" && txt_tendangnhap.Text== "admin")
+            if (txt_matkhau.Value == "admin" && txt_tendangnhap.Text== "admin")
             {
                 Response.Redirect("/views/pages/gioithieu.aspx?active=GT");
             }
