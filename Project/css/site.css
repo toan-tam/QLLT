@@ -134,6 +134,7 @@ a.list-group-item:focus, a.list-group-item:hover, button.list-group-item:focus, 
 
 .side_bar_ul {
     margin-bottom: 0;
+    padding-left:10%;   
 }
 
 #ctl00_head_DataList_Hoso tr {
