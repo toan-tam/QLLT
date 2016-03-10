@@ -4,7 +4,7 @@
 
     <div class="row">
         <div class="col-sm-3">
-            <div class="row menu-left" >
+            <div class="row menu-left">
                 <div class="col-sm-12  div_content">
                     <div class="row nav_bar header_padding text-center">Quản lý lưu trữ</div>
                     <br />
@@ -16,7 +16,7 @@
                         </LayoutTemplate>
                         <ItemTemplate>
                             <div class="row margin_b1">
-                              
+
                                 <div class="col-sm-12 col-xs-12 font_bold font_14" style="padding: 0px">
 
                                     <div class="panel-group" id="accordition">
@@ -144,6 +144,10 @@
                                 <asp:LinkButton runat="server" ID="LinkButton1" PostBackUrl='<%# "~/views/vanban/FormHienThiVB.aspx?vbid=" + Eval("VBrecordID") %>'><%#Eval("SoKHVB") %></asp:LinkButton></td>
                             <td><%#Eval("SoTo") %></td>
                             <td><%#Eval("NgonNgu") %></td>
+<<<<<<< HEAD
+=======
+
+>>>>>>> 56d2c11a2090777f08d9e76fbcbf6076c1a61eb5
                             <td>
                                 <%#Eval("TrichYeuND") %>
                             </td>
