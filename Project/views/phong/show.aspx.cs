@@ -13,12 +13,15 @@ namespace Project.views.phong
         DatabaseDataContext db = new DatabaseDataContext();
         protected void Page_Load(object sender, EventArgs e)
         {
-            var tbl_phongs = db.Phongs.OrderByDescending(o => o.MaPhong);
+            if (!IsPostBack)
+            {
+                var tbl_phongs = db.Phongs.OrderByDescending(o => o.MaPhong);
 
-            lst_Phong.DataSource = tbl_phongs;
-            lst_Phong.DataBind();
+                lst_Phong.DataSource = tbl_phongs;
+                lst_Phong.DataBind();
 
-            Page.DataBind();
+                Page.DataBind();
+            }
         }
 
         protected void btn_show_insert_Click(object sender, EventArgs e)
@@ -28,10 +31,10 @@ namespace Project.views.phong
 
         protected void btn_edit_phong_Click(object sender, EventArgs e)
         {
-            if (Util.getCommandName(sender) != null)
-            {       
-                Response.Redirect("/views/phong/create.aspx?id=" + Util.getCommandName(sender));
-            }
+            //if (Util.getCommandName(sender) != null)
+            //{       
+            //    Response.Redirect("/views/phong/create.aspx?id=" + Util.getCommandName(sender));
+            //}
         }
     }
 }
