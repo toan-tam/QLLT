@@ -127,7 +127,7 @@
                 <tr>
                     <td>File tài liệu</td>
                     <td colspan="3">
-                        <asp:FileUpload ID="ful_TaiLieu" runat="server" />
+                        <asp:FileUpload ID="ful_TaiLieu" runat="server" Visible="False" />
                         <asp:HyperLink ID="link_File_Doc" runat="server" ></asp:HyperLink>
                         <iframe width="560" height="315" src="http://www.youtube.com/embed/fxCEcPxUbYA" frameborder="0" allowfullscreen hidden></iframe>
                     </td>
