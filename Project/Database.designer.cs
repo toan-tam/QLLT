@@ -60,7 +60,7 @@ namespace Project
     #endregion
 		
 		public DatabaseDataContext() : 
-				base(global::System.Configuration.ConfigurationManager.ConnectionStrings["langsonConnectionString1"].ConnectionString, mappingSource)
+				base(global::System.Configuration.ConfigurationManager.ConnectionStrings["langsonConnectionString"].ConnectionString, mappingSource)
 		{
 			OnCreated();
 		}
