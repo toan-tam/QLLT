@@ -140,17 +140,10 @@
                     <ItemTemplate>
                         <tr>
                             <td>
-<<<<<<< HEAD
+
                                 <asp:LinkButton runat="server" ID="LinkButton1" PostBackUrl='<%# "~/views/vanban/FormHienThiVB.aspx?vbid=" + Eval("VBrecordID") %>'><%#Eval("SoKHVB") %></asp:LinkButton></td>
                             <td><%#Eval("SoTo") %></td>
                             <td><%#Eval("NgonNgu") %></td>
-=======
-                                <asp:LinkButton runat="server" ID="LinkButton1" PostBackUrl='<%# "~/views/vanban/FormHienThiVB.aspx?vbid=" + Eval("Vbrecords_Id") %>'><%#Eval("SoKHVB") %></asp:LinkButton></td>
-                            <td><%#Eval("Soto") %></td>
-                            <%# Container.DataItem %>
-                            <td><%#Eval("Ngonngu") %></td>
->>>>>>> 175e3a56dd57d1c635a8248b4b5968435e92be37
-
                             <td>
                                 <%#Eval("TrichYeuND") %>
                             </td>
@@ -166,11 +159,8 @@
                             </td>
                             <td><%#Eval("YKienGQ") %></td>
                             <td>
-                                <asp:LinkButton runat="server" ID="link_hienthi_vb" PostBackUrl='<%# Eval("LinkFile") %>'>Xem</asp:LinkButton>
-
-                                <%--<asp:LinkButton runat="server" id="LinkButton2" PostBackUrl='<% 
-                                    
-                                     %>' >Xem</asp:LinkButton>--%>
+                                <%--<asp:LinkButton runat="server" ID="link_hienthi_vb" PostBackUrl='<%# Eval("LinkFile") %>' ForeColor='<%# Eval("LinkColor") %>'> <%# Eval("LinkText") %></asp:LinkButton>--%>
+                                <a id="Link_File" runat="server" href='<%# Eval("LinkFile") %>' ><%# Eval("LinkText") %></a>
                             </td>
                         </tr>
                     </ItemTemplate>
