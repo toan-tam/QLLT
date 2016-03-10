@@ -57,11 +57,11 @@ namespace Project.views.layout
             switch (buttonId)
             {
                 case "Link_TT":
-                    Response.Redirect("/?active=TT");
+                    Response.Redirect("/views/pages/gioithieu.aspx?active=GT");
 
                     break;
                 case "Link_HT":
-                    Response.Redirect("/?active=TT");
+                    Response.Redirect("/views/pages/gioithieu.aspx?active=GT");
 
                     break;
                 case "Link_GT":
@@ -77,7 +77,7 @@ namespace Project.views.layout
 
                     break;
                 case "Link_BC":
-                    Response.Redirect("/?active=TT");
+                    Response.Redirect("/views/pages/gioithieu.aspx?active=GT");
 
                     break;
                 default:

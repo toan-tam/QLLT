@@ -10,6 +10,7 @@ body {
     font-size: 14px;
     background-color: #225599;
     color:white;
+    margin-bottom: 10px;
 }
 
 .navbar-default .navbar-nav > li > a {
