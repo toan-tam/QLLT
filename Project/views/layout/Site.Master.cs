@@ -65,7 +65,7 @@ namespace Project.views.layout
 
                     break;
                 case "Link_GT":
-                    Response.Redirect("/?active=TT");
+                    Response.Redirect("/views/pages/gioithieu.aspx?active=GT");
 
                     break;
                 case "Link_DM":

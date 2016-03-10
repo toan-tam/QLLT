@@ -63,13 +63,16 @@
     <Content Include="js\jquery.js" />
     <Content Include="views\auth\DangNhap.aspx" />
     <Content Include="views\hoso\FormThemHS.aspx" />
+    <Content Include="views\pages\gioithieu.aspx" />
     <Content Include="views\phong\create.aspx" />
     <Content Include="views\phong\show.aspx" />
     <Content Include="views\QLdanhmuc\QLdanhmuc.aspx" />
     <Content Include="views\QLluutru\QLluutru.aspx" />
     <Content Include="views\vanban\FormHienThiVB.aspx" />
     <Content Include="views\vanban\FormThemVB.aspx" />
-    <Content Include="Web.config" />
+    <Content Include="Web.config">
+      <SubType>Designer</SubType>
+    </Content>
   </ItemGroup>
   <ItemGroup>
     <Compile Include="controllers\Phong_ctrl.cs" />
@@ -111,6 +114,13 @@
     </Compile>
     <Compile Include="views\layout\Site.Master.designer.cs">
       <DependentUpon>Site.Master</DependentUpon>
+    </Compile>
+    <Compile Include="views\pages\gioithieu.aspx.cs">
+      <DependentUpon>gioithieu.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="views\pages\gioithieu.aspx.designer.cs">
+      <DependentUpon>gioithieu.aspx</DependentUpon>
     </Compile>
     <Compile Include="views\phong\create.aspx.cs">
       <DependentUpon>create.aspx</DependentUpon>
