@@ -75,6 +75,7 @@ namespace Project.views
                 div_alert.CssClass = "alert alert-success";
                 lbl_ShowInfo.ForeColor = System.Drawing.Color.Green;
                 lbl_ShowInfo.Text = "Thêm mới hồ sơ thành công";
+
                 
             }
             catch (Exception ex)
