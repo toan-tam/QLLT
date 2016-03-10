@@ -142,7 +142,6 @@
                             <td>
                                 <asp:LinkButton runat="server" ID="LinkButton1" PostBackUrl='<%# "~/views/vanban/FormHienThiVB.aspx?vbid=" + Eval("Vbrecords_Id") %>'><%#Eval("SoKHVB") %></asp:LinkButton></td>
                             <td><%#Eval("Soto") %></td>
-                            <%# Container.DataItem %>
                             <td><%#Eval("Ngonngu") %></td>
 
                             <td>
