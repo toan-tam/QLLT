@@ -8,11 +8,12 @@ body {
 .nav_bar {
     font-weight: bold;
     font-size: 14px;
-    background-color: #00b557;
+    background-color: #5588cc;
+    color:white;
 }
 
 .navbar-default .navbar-nav > li > a {
-    color: black;
+    color: white;
 }
 
 .div_above {
@@ -26,7 +27,8 @@ body {
 
 
 footer {
-    background: #ddd;
+    background-color: #5588cc;
+    color:white;
     margin-top: 10px;
     padding: 5px;
 }
@@ -34,7 +36,6 @@ footer {
 .author {
     padding-top: 75px;
     height: 90px;
-    color: blue;
     font-weight: bold;
 }
 
