@@ -140,9 +140,16 @@
                     <ItemTemplate>
                         <tr>
                             <td>
+<<<<<<< HEAD
                                 <asp:LinkButton runat="server" ID="LinkButton1" PostBackUrl='<%# "~/views/vanban/FormHienThiVB.aspx?vbid=" + Eval("VBrecordID") %>'><%#Eval("SoKHVB") %></asp:LinkButton></td>
                             <td><%#Eval("SoTo") %></td>
                             <td><%#Eval("NgonNgu") %></td>
+=======
+                                <asp:LinkButton runat="server" ID="LinkButton1" PostBackUrl='<%# "~/views/vanban/FormHienThiVB.aspx?vbid=" + Eval("Vbrecords_Id") %>'><%#Eval("SoKHVB") %></asp:LinkButton></td>
+                            <td><%#Eval("Soto") %></td>
+                            <%# Container.DataItem %>
+                            <td><%#Eval("Ngonngu") %></td>
+>>>>>>> 175e3a56dd57d1c635a8248b4b5968435e92be37
 
                             <td>
                                 <%#Eval("TrichYeuND") %>
