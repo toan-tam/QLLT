@@ -69,7 +69,9 @@
     <Content Include="views\QLluutru\QLluutru.aspx" />
     <Content Include="views\vanban\FormHienThiVB.aspx" />
     <Content Include="views\vanban\FormThemVB.aspx" />
-    <Content Include="Web.config" />
+    <Content Include="Web.config">
+      <SubType>Designer</SubType>
+    </Content>
   </ItemGroup>
   <ItemGroup>
     <Compile Include="controllers\Phong_ctrl.cs" />
