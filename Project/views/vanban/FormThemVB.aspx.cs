@@ -85,7 +85,7 @@ namespace Project.views.vanban
                                         lbl_ShowInfo.ForeColor = System.Drawing.Color.Green;
                                         lbl_ShowInfo.Text = "Thêm mới Văn bản thành công";
 
-                                        
+                                        //Response.Redirect("FormHienThiVB.aspx");
                                     }
                                     else
                                     {
@@ -167,9 +167,6 @@ namespace Project.views.vanban
                 {
                     return false;
                 }
-                
-
-                
             }
             catch
             {

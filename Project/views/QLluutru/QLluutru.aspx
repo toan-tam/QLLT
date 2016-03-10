@@ -142,9 +142,7 @@
                     </LayoutTemplate>
                     <ItemTemplate>
                         <tr>
-                            <td>
-                                <%#Eval("SoKHVB") %>
-                            </td>
+                            <td><asp:LinkButton runat="server" id="LinkButton1" PostBackUrl='<%# "~/views/vanban/FormHienThiVB.aspx?vbid=" + Eval("Vbrecords_Id") %>'><%#Eval("SoKHVB") %></asp:LinkButton></td>
                             <td><%#Eval("Soto") %></td>
                             <td><%#Eval("Ngonngu") %></td>
 
@@ -162,7 +160,12 @@
                                 <%#Eval("Mucdotruycap") %>
                             </td>
                             <td><%#Eval("YkienGQ") %></td>
-                            <td><asp:LinkButton runat="server" id="link_hienthi_vb" PostBackUrl='<%# "~/views/vanban/FormHienThiVB.aspx?vbid=" + Eval("Vbrecords_Id") %>' >Xem</asp:LinkButton></td>
+                            <td><asp:LinkButton runat="server" id="link_hienthi_vb" PostBackUrl='<%# "~/views/vanban/FormHienThiVB.aspx?vbid=" + Eval("Vbrecords_Id") %>' >Xem</asp:LinkButton>
+
+                                <%--<asp:LinkButton runat="server" id="LinkButton2" PostBackUrl='<% 
+                                    
+                                     %>' >Xem</asp:LinkButton>--%>
+                            </td>
                         </tr>
                     </ItemTemplate>
                 </asp:ListView>

@@ -139,6 +139,8 @@ namespace Project.views.vanban
             ddl_LoaiVB.Enabled = true;
             ddl_NgonNgu.Enabled = true;
             ddl_Phong.Enabled = true;
+
+            ful_TaiLieu.Visible = true;
         }
 
         protected void btn_huybo_Click(object sender, EventArgs e)
@@ -163,6 +165,8 @@ namespace Project.views.vanban
             ddl_LoaiVB.Enabled = false;
             ddl_NgonNgu.Enabled = false;
             ddl_Phong.Enabled = false;
+
+            ful_TaiLieu.Visible = false;
         }
     }
 }
