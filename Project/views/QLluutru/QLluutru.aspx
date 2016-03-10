@@ -17,7 +17,7 @@
                         <ItemTemplate>
                             <div class="row margin_b1">
                                 <div class="col-sm-4 col-xs-4">
-                                    <asp:Image Height="60" ImageUrl="~/images/badge.png" class="img-rounded img-responsive" runat="server" />
+                                    <asp:Image Height="50" ImageUrl="~/images/badge.png" class="img-rounded img-responsive" runat="server" />
                                 </div>
 
                                 <div class="col-sm-8 col-xs-8 font_bold font_14">

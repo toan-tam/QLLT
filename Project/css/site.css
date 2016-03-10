@@ -1,14 +1,14 @@
 ﻿@import url('site.css');
 
 body {
-    padding: 1%;
+    padding: 0 10% 0 10%;
     font-size: 12px;
 }
 
 .nav_bar {
     font-weight: bold;
     font-size: 14px;
-    background-color: #5588cc;
+    background-color: #225599;
     color:white;
 }
 
@@ -16,8 +16,11 @@ body {
     color: white;
 }
 
+.panel-body{
+    padding:0;
+}
 .div_above {
-    min-height: 150px;
+    min-height: 100px;
 }
 
 .div_content {
@@ -27,7 +30,7 @@ body {
 
 
 footer {
-    background-color: #5588cc;
+    background-color: #225599;
     color:white;
     margin-top: 10px;
     padding: 5px;
@@ -41,7 +44,7 @@ footer {
 
 
 .navbar-nav li:hover {
-    background-color: #43d500;
+    background-color:  #5588cc;
 }
 
 .navbar-nav li a:hover {
@@ -85,18 +88,18 @@ footer {
 .badge_right {
     float: left;
     width: 84%;
-    padding-top: 5%;
+    padding-top: 1%;
     margin-left: 1%;
 }
 
 .navbar-default .navbar-nav > .active > a, .navbar-default .navbar-nav > .active > a:focus, .navbar-default .navbar-nav > .active > a:hover {
-    color: #555;
-    background-color: #80ff00;
+    color: white;
+    background-color:  #5588cc;
 }
 
 .list-group-item.active, .list-group-item.active:focus, .list-group-item.active:hover {
     color: black;
-    background-color: #80ff00;
+    background-color:  #5588cc;
 }
 
 a.list-group-item, button.list-group-item{
