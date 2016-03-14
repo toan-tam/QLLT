@@ -12,9 +12,11 @@ body {
     color: white;
     margin-bottom: 10px;
 }
-.padding_sidebar{
-    padding:0 1% 0 5%;
+
+.padding_sidebar {
+    padding: 0 1% 0 5%;
 }
+
 .navbar-default .navbar-nav > li > a {
     color: white;
 }
@@ -134,7 +136,7 @@ a.list-group-item:focus, a.list-group-item:hover, button.list-group-item:focus, 
 
 .side_bar_ul {
     margin-bottom: 0;
-    padding-left:10%;   
+    padding-left: 10%;
 }
 
 #ctl00_head_DataList_Hoso tr {
@@ -182,6 +184,14 @@ a.list-group-item:focus, a.list-group-item:hover, button.list-group-item:focus, 
     }
 }
 
-.div_insert{
-    display:none;
+.div_insert {
+    display: none;
 }
+
+.a_title {
+    color: white;
+}
+
+    .a_title:hover {
+        color: white;
+    }

@@ -12,7 +12,6 @@
                     <asp:ListView ID="lst_Phong" runat="server" ItemPlaceholderID="place_holder_phong" OnItemDataBound="lst_Phong_ItemDataBound" OnPagePropertiesChanging="lst_Phong_PagePropertiesChanging">
                         <LayoutTemplate>
                             <asp:PlaceHolder runat="server" ID="place_holder_phong" />
-                            <asp:DataPager ID="lst_Phong" runat="server" PageSize="10"></asp:DataPager>
                         </LayoutTemplate>
                         <ItemTemplate>
                             <div class="row margin_b1">
@@ -53,14 +52,16 @@
                         </ItemTemplate>
                     </asp:ListView>
 
-                     <asp:DataPager ID="Pager_Phong" runat="server" PagedControlID="lst_Phong" PageSize="10">
-                    <Fields>
-                       <asp:NextPreviousPagerField
-                        ShowFirstPageButton="true" ShowLastPageButton="true"
-                        FirstPageText="|<< " LastPageText=" >>|"
-                        NextPageText=" > " PreviousPageText=" < " />
-                    </Fields>
-                </asp:DataPager>
+                    <div class="text-center">
+                        <asp:DataPager ID="Pager_Phong" runat="server" PagedControlID="lst_Phong" PageSize="10">
+                            <Fields>
+                                <asp:NextPreviousPagerField ButtonType="Link" ShowFirstPageButton="false" ShowPreviousPageButton="true" PreviousPageText="Trước"
+                                    ShowNextPageButton="false" />
+                                <asp:NumericPagerField ButtonType="Link" />
+                                <asp:NextPreviousPagerField ButtonType="Link" ShowNextPageButton="true" ShowLastPageButton="false" ShowPreviousPageButton="false" NextPageText="Sau" />
+                            </Fields>
+                        </asp:DataPager>
+                    </div>
                 </div>
 
 
@@ -72,7 +73,7 @@
             <% if (Request.QueryString["act"] == "display")
                 {%>
 
-            <div class="row nav_bar header_padding text-left">Quản lý lưu trữ > Quản lý hồ sơ</div>
+            <div class="row nav_bar header_padding text-left"><a href="QLluutru.aspx?active=LT" class="a_title">Quản lý lưu trữ</a>  > Quản lý hồ sơ</div>
             <br />
             <asp:Panel ID="div_alert" runat="server">
                 <asp:Label ID="lbl_ShowInfo" runat="server" ForeColor="#009933"></asp:Label>
@@ -126,20 +127,22 @@
                 </ItemTemplate>
             </asp:ListView>
 
-             <asp:DataPager ID="Pager_HS" runat="server" PagedControlID="lst_HS" PageSize="10">
+            <div class="text-center">
+                <asp:DataPager ID="Pager_HS" runat="server" PagedControlID="lst_HS" PageSize="10">
                     <Fields>
-                       <asp:NextPreviousPagerField
-                        ShowFirstPageButton="true" ShowLastPageButton="true"
-                        FirstPageText="|<< " LastPageText=" >>|"
-                        NextPageText=" > " PreviousPageText=" < " />
+                        <asp:NextPreviousPagerField ButtonType="Link" ShowFirstPageButton="false" ShowPreviousPageButton="true" PreviousPageText="Trước"
+                            ShowNextPageButton="false" />
+                        <asp:NumericPagerField ButtonType="Link" />
+                        <asp:NextPreviousPagerField ButtonType="Link" ShowNextPageButton="true" ShowLastPageButton="false" ShowPreviousPageButton="false" NextPageText="Sau" />
                     </Fields>
                 </asp:DataPager>
+            </div>
 
             <% }%>
 
             <% if (Request.QueryString["act"] == "displayVB")
                 {%>
-            <div class="row nav_bar header_padding text-left">Quản lý lưu trữ > Quản lý hồ sơ > Quản lý văn bản</div>
+            <div class="row nav_bar header_padding text-left"><a href="QLluutru.aspx?active=LT" class="a_title">Quản lý lưu trữ</a> > <a href="QLluutru.aspx?act=display&id=<%=GetPhongParentIdByHSID(Request["id"]) %>" class="a_title">Quản lý hồ sơ</a> > Quản lý văn bản</div>
             <br />
             <asp:Panel ID="div_alert1" runat="server">
                 <asp:Label ID="lbl_ShowInfo1" runat="server" ForeColor="#009933"></asp:Label>
@@ -190,8 +193,8 @@
                             </td>
                             <td><%#Eval("YKienGQ") %></td>
                             <td>
-                                <asp:LinkButton runat="server" ID="link_hienthi_vb" PostBackUrl='<%# Eval("LinkFile") %>'>Xem</asp:LinkButton>
-                                <a id="Link_File" runat="server" href='<%# Eval("LinkFile") %>' ><%# Eval("LinkText") %></a>
+                               <%-- <asp:LinkButton runat="server" ID="link_hienthi_vb" PostBackUrl='<%# Eval("LinkFile") %>'>Xem</asp:LinkButton>--%>
+                                <a id="Link_File" runat="server" href='<%# Eval("LinkFile") %>'><%# Eval("LinkText") %></a>
                             </td>
                             <td>
                                 <asp:LinkButton ID="btn_edit_phong" CommandName='<%#Eval("VBrecordID") %>' CssClass="btn btn-info btn-xs" runat="server">
@@ -209,14 +212,16 @@
                     </ItemTemplate>
                 </asp:ListView>
 
-                 <asp:DataPager ID="Pager_VB" runat="server" PagedControlID="lst_VB" PageSize="10">
-                    <Fields>
-                       <asp:NextPreviousPagerField
-                        ShowFirstPageButton="true" ShowLastPageButton="true"
-                        FirstPageText="|<< " LastPageText=" >>|"
-                        NextPageText=" > " PreviousPageText=" < " />
-                    </Fields>
-                </asp:DataPager>
+                <div class="text-center">
+                    <asp:DataPager ID="Pager_VB" runat="server" PagedControlID="lst_VB" PageSize="10">
+                        <Fields>
+                            <asp:NextPreviousPagerField ButtonType="Link" ShowFirstPageButton="false" ShowPreviousPageButton="true" PreviousPageText="Trước"
+                                ShowNextPageButton="false" />
+                            <asp:NumericPagerField ButtonType="Link" />
+                            <asp:NextPreviousPagerField ButtonType="Link" ShowNextPageButton="true" ShowLastPageButton="false" ShowPreviousPageButton="false" NextPageText="Sau" />
+                        </Fields>
+                    </asp:DataPager>
+                </div>
             </table>
             <%} %>
         </div>

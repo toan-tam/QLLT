@@ -219,5 +219,22 @@ namespace Project.views.QLluutru
             lst_Phong.DataSource = tbl_phongs;
             lst_Phong.DataBind();
         }
+
+
+        // lấy Hồ sơ_Id by văn bản ID
+        protected string GetHSParentIdByVBID(string id_vanban)
+        {
+            Vbrecord vb = db.Vbrecords.Where(o => o.Vbrecords_Id == long.Parse(id_vanban)).SingleOrDefault();
+
+            return vb.Hsrecords_Id.ToString();
+        }
+
+        // lấy Phông_Id by Hồ sơ ID
+        protected string GetPhongParentIdByHSID(string id_hoso)
+        {
+            Hsrecord hs = db.Hsrecords.Where(o => o.Hsrecords_Id == long.Parse(id_hoso)).SingleOrDefault();
+
+            return hs.MaPhong.ToString();
+        }
     }
 }

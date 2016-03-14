@@ -70,6 +70,7 @@
     <Content Include="views\phong\show.aspx" />
     <Content Include="views\QLdanhmuc\QLdanhmuc.aspx" />
     <Content Include="views\QLluutru\QLluutru.aspx" />
+    <Content Include="views\partials\sidebarQLDanhmuc.ascx" />
     <Content Include="views\vanban\FormHienThiVB.aspx" />
     <Content Include="views\vanban\FormThemVB.aspx" />
     <Content Include="views\vanban\PlayVideoDemo.aspx" />
@@ -160,6 +161,13 @@
     </Compile>
     <Compile Include="views\QLluutru\QLluutru.aspx.designer.cs">
       <DependentUpon>QLluutru.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="views\partials\sidebarQLDanhmuc.ascx.cs">
+      <DependentUpon>sidebarQLDanhmuc.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="views\partials\sidebarQLDanhmuc.ascx.designer.cs">
+      <DependentUpon>sidebarQLDanhmuc.ascx</DependentUpon>
     </Compile>
     <Compile Include="views\vanban\FormHienThiVB.aspx.cs">
       <DependentUpon>FormHienThiVB.aspx</DependentUpon>

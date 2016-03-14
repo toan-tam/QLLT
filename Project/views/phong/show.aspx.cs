@@ -13,6 +13,7 @@ namespace Project.views.phong
     {
         public int i { get; set; }
 
+        // sử dụng cho sửa
         private int id_global;
         // Toàn : tăng i cho số thứ tự
         public void IncreaseI()
@@ -163,8 +164,14 @@ namespace Project.views.phong
 
                 Phong phong = db.Phongs.Where(o => o.MaPhong == id_global).SingleOrDefault();
 
-                phong.TenPhong = txt_TenPhong.Text;
-                phong.GhiChu = txta_GhiChu.Text;
+                if (txt_TenPhong.Text != null && txt_TenPhong.Text != "")
+                {
+                    phong.TenPhong = txt_TenPhong.Text;
+                }
+                if (txta_GhiChu.Text != null && txta_GhiChu.Text != "")
+                {
+                    phong.GhiChu = txta_GhiChu.Text;
+                }         
 
                 db.SubmitChanges();
                 Session["info"] = "Sửa Phông thành công";

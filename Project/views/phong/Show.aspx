@@ -1,32 +1,15 @@
 ﻿<%@ Page Title="" Language="C#" MasterPageFile="~/views/layout/Site.Master" AutoEventWireup="true" CodeBehind="show.aspx.cs" Inherits="Project.views.phong.Show" %>
 
+<%@ Register TagPrefix="uc" TagName="sidebarQLDM" Src="~/views/partials/sidebarQLDanhmuc.ascx" %>
+
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
 
     <div class="row">
-        <div class="col-sm-3">
-            <div class="row">
-                <div class="col-sm-11  div_content">
-                    <div class="row nav_bar header_padding text-center">Quản lý danh mục</div>
-                    <br />
 
-                    <div class="row margin_b1">
-                        <div class="list-group font_bold ">
-                            <a href="/views/phong/Show.aspx" class="list-group-item">Quản lý Phông lưu trữ</a>
-                            <a href="/views/kho/show.aspx" class="list-group-item">Quản lý Mục lục</a>
-                            <a href="#" class="list-group-item">Quản lý danh mục Loại văn bản</a>
-                            <a href="#" class="list-group-item">Quản lý danh mục Thời hạn bảo quản</a>
-                            <a href="#" class="list-group-item">Quản lý danh mục Chế độ sử dụng</a>
-                            <a href="#" class="list-group-item">Quản lý danh mục Tình trạng vật lý</a>
-                            <a href="#" class="list-group-item">Quản lý danh mục Ngôn ngữ</a>
-                            <a href="#" class="list-group-item">Quản lý danh mục Đơn vị hành chính</a>
-                        </div>
-                    </div>
+        <uc:sidebarQLDM runat="server" />
 
-                </div>
-            </div>
-        </div>
         <div class="col-sm-9 div_content_QLphong">
-            <div class="row nav_bar header_padding text-left">Quản lý danh mục > Quản lý Phông lưu trữ</div>
+            <div class="row nav_bar header_padding text-left"><a href="/views/QLdanhmuc/QLdanhmuc.aspx?active=DM" class="a_title"> Quản lý danh mục</a> > Quản lý Phông lưu trữ</div>
             <br />
             <asp:Panel ID="div_alert" runat="server">
                 <asp:Label ID="lbl_ShowInfo" runat="server" ForeColor="#009933"></asp:Label>
@@ -43,7 +26,7 @@
                         </td>
                     </tr>
                     <tr>
-                        <td>Tên phông: </td>
+                        <td>Tên Phông: </td>
                         <td colspan="3">
                             <asp:TextBox ID="txt_TenPhong" class="form-control" runat="server" Width="100%"></asp:TextBox>
                         </td>
@@ -101,15 +84,18 @@
                     </ItemTemplate>
                 </asp:ListView>
 
-                <asp:DataPager ID="Pager_Phong" runat="server" PagedControlID="lst_Phong" PageSize="10">
-                    <Fields>
-                       <asp:NextPreviousPagerField
-                        ShowFirstPageButton="true" ShowLastPageButton="true"
-                        FirstPageText="|<< " LastPageText=" >>|"
-                        NextPageText=" > " PreviousPageText=" < " />
-                    </Fields>
-                </asp:DataPager>
+                <div class="text-center">
+                    <asp:DataPager ID="Pager_Phong" runat="server" PagedControlID="lst_Phong" PageSize="10">
+                        <Fields>
+                            <asp:NextPreviousPagerField ButtonType="Link" ShowFirstPageButton="false" ShowPreviousPageButton="true" PreviousPageText="Trước"
+                                ShowNextPageButton="false" />
+                            <asp:NumericPagerField ButtonType="Link" />
+                            <asp:NextPreviousPagerField ButtonType="Link" ShowNextPageButton="true" ShowLastPageButton="false" ShowPreviousPageButton="false" NextPageText="Sau" />
+                        </Fields>
+                    </asp:DataPager>
+                </div>
             </div>
 
         </div>
+    </div>
 </asp:Content>
