@@ -16,6 +16,13 @@ namespace Project.shared
             target_showInfo.Text = msg + "<br> Thông tin lỗi: <br>" + ex.ToString();
         }
 
+        public static void ShowExceptionError(Label target_showInfo, Panel div_alert, string msg)
+        {
+            div_alert.CssClass = "alert alert-danger";
+            target_showInfo.ForeColor = System.Drawing.Color.Red;
+            target_showInfo.Text = msg;
+        }
+
         // [Toàn] function to get CommandName of current control clicked
         public static string getCommandName(object sender)
         {

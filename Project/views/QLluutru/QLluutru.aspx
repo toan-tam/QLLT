@@ -9,7 +9,7 @@
                     <div class="row nav_bar header_padding text-center">Quản lý lưu trữ</div>
                     <br />
 
-                    <asp:ListView ID="lst_Phong" runat="server" ItemPlaceholderID="place_holder_phong" OnItemDataBound="lst_Phong_ItemDataBound">
+                    <asp:ListView ID="lst_Phong" runat="server" ItemPlaceholderID="place_holder_phong" OnItemDataBound="lst_Phong_ItemDataBound" OnPagePropertiesChanging="lst_Phong_PagePropertiesChanging">
                         <LayoutTemplate>
                             <asp:PlaceHolder runat="server" ID="place_holder_phong" />
                             <asp:DataPager ID="lst_Phong" runat="server" PageSize="10"></asp:DataPager>
@@ -52,6 +52,15 @@
                             </div>
                         </ItemTemplate>
                     </asp:ListView>
+
+                     <asp:DataPager ID="Pager_Phong" runat="server" PagedControlID="lst_Phong" PageSize="10">
+                    <Fields>
+                       <asp:NextPreviousPagerField
+                        ShowFirstPageButton="true" ShowLastPageButton="true"
+                        FirstPageText="|<< " LastPageText=" >>|"
+                        NextPageText=" > " PreviousPageText=" < " />
+                    </Fields>
+                </asp:DataPager>
                 </div>
 
 
@@ -63,59 +72,83 @@
             <% if (Request.QueryString["act"] == "display")
                 {%>
 
-            <div class="row nav_bar header_padding text-center">Quản lý hồ sơ</div>
+            <div class="row nav_bar header_padding text-left">Quản lý lưu trữ > Quản lý hồ sơ</div>
             <br />
+            <asp:Panel ID="div_alert" runat="server">
+                <asp:Label ID="lbl_ShowInfo" runat="server" ForeColor="#009933"></asp:Label>
+            </asp:Panel>
             <asp:Button ID="btn_HS_insert" OnClick="btn_HS_insert_Click" runat="server" CssClass="btn btn-primary font_12 font_bold" Text="Thêm mới" />
-
-            <asp:ListView ID="list_HS" runat="server" GroupItemCount="8">
+            <br />
+            <br />
+            <asp:ListView ID="lst_HS" runat="server" ItemPlaceholderID="tablePlaceHolder" OnPagePropertiesChanging="lst_HS_PagePropertiesChanging">
                 <LayoutTemplate>
-                    <table class="table table-responsive">
-                        <tr>
-                            <td>
-                                <table class="table table_group">
-                                    <asp:PlaceHolder runat="server" ID="groupPlaceHolder"></asp:PlaceHolder>
-                                </table>
-                            </td>
-                        </tr>
-                    </table>
-                    <asp:DataPager ID="list_HS" runat="server" PageSize="24">
-                        <Fields>
-                            <asp:NextPreviousPagerField FirstPageText="&lt;&lt;" ShowFirstPageButton="True" ShowNextPageButton="False" />
-                            <asp:NumericPagerField />
-                            <asp:NextPreviousPagerField LastPageText="&gt;&gt;" ShowLastPageButton="True" ShowPreviousPageButton="False" />
-                        </Fields>
-                    </asp:DataPager>
-                </LayoutTemplate>
-                <GroupTemplate>
-                    <tr>
-                        <asp:PlaceHolder runat="server" ID="itemPlaceHolder"></asp:PlaceHolder>
-                    </tr>
-                </GroupTemplate>
-                <ItemTemplate>
-                    <td>
-                        <div class="row margin_b10">
-                            <img src="../../images/hosoicon.png" width="80" alt="Alternate Text" />
-                        </div>
+                    <table class="table table-responsive table-bordered text-center">
+                        <tr class="font_12 font_bold">
+                            <td>Hồ sơ số</td>
+                            <td>Cơ quan lưu trữ</td>
+                            <td>Phông</td>
+                            <td>Mục lục số</td>
+                            <td>Hộp số</td>
 
-                        <%--<p>Hồ sơ <%#Eval("Hososo")%></p>--%>
-                        <asp:LinkButton ID="Link_HoSo" OnClick="Link_HoSo_Click" CommandName='<%#Eval("Hsrecords_Id") %>' runat="server">Hồ sơ số  <%#Eval("Hososo") %></asp:LinkButton>
-                    </td>
+                            <td>Tiêu đề</td>
+
+                            <td>Bút tích</td>
+                            <td>Số lượng tờ</td>
+                            <td>Thao tác</td>
+                        </tr>
+                        <asp:PlaceHolder runat="server" ID="tablePlaceHolder"></asp:PlaceHolder>
+                    </table>
+                </LayoutTemplate>
+                <ItemTemplate>
+                    <tr>
+                        <td>
+                            <asp:LinkButton ID="Link_HoSo" OnClick="Link_HoSo_Click" CommandName='<%#Eval("Hsrecords_Id") %>' runat="server">Hồ sơ số  <%#Eval("Hososo") %></asp:LinkButton>
+                        </td>
+                        <td><%#Eval("MaKho") %></td>
+                        <td><%#Eval("MaPhong") %></td>
+                        <td><%#Eval("Muclucso") %></td>
+                        <td><%#Eval("Hopso") %></td>
+                        <td><%#Eval("Tieude") %></td>
+                        <td><%#Eval("Buttich") %></td>
+                        <td><%#Eval("Soluongto") %></td>
+                        <td>
+                            <asp:LinkButton ID="btn_edit_HS" CommandName='<%#Eval("Hsrecords_Id") %>' CssClass="btn btn-info btn-xs" runat="server">
+                                    <span class="glyphicon glyphicon-edit"></span> &nbsp;Sửa
+
+                            </asp:LinkButton>
+                            <br />
+                            <br />
+                            <asp:LinkButton ID="btn_remove_HS" OnClick="btn_remove_HS_Click" CommandName='<%#Eval("Hsrecords_Id") %>' OnClientClick="return confirm('Bạn có chắc chắn muốn xóa?')" CssClass="btn btn-info btn-xs" runat="server">
+                                     <span class="glyphicon glyphicon-remove"></span> &nbsp;Xóa
+                            </asp:LinkButton>
+                        </td>
+                    </tr>
                 </ItemTemplate>
             </asp:ListView>
+
+             <asp:DataPager ID="Pager_HS" runat="server" PagedControlID="lst_HS" PageSize="10">
+                    <Fields>
+                       <asp:NextPreviousPagerField
+                        ShowFirstPageButton="true" ShowLastPageButton="true"
+                        FirstPageText="|<< " LastPageText=" >>|"
+                        NextPageText=" > " PreviousPageText=" < " />
+                    </Fields>
+                </asp:DataPager>
+
             <% }%>
 
             <% if (Request.QueryString["act"] == "displayVB")
                 {%>
-            <div class="row nav_bar header_padding text-center">Quản lý văn bản</div>
+            <div class="row nav_bar header_padding text-left">Quản lý lưu trữ > Quản lý hồ sơ > Quản lý văn bản</div>
             <br />
+            <asp:Panel ID="div_alert1" runat="server">
+                <asp:Label ID="lbl_ShowInfo1" runat="server" ForeColor="#009933"></asp:Label>
+            </asp:Panel>
             <asp:Button ID="btn_VB_insert" runat="server" CssClass="btn btn-primary font_12 font_bold" OnClick="btn_VB_insert_Click" Text="Thêm mới" />
             <table class="table table-bordered">
-                <asp:ListView ID="lst_VB" runat="server" ItemPlaceholderID="place_holder_phong">
+                <asp:ListView ID="lst_VB" runat="server" ItemPlaceholderID="place_holder_phong" OnPagePropertiesChanging="lst_VB_PagePropertiesChanging">
                     <LayoutTemplate>
                         <table class="table table-bordered text-center">
-                            <%--<tr>
-                                <th colspan="12" class="font_18 text-center">Danh sách văn bản</th>
-                            </tr>--%>
                             <tr class="font_14 font_bold">
                                 <td>SoKHVB</td>
                                 <td>Số tờ</td>
@@ -131,16 +164,14 @@
                                 <td>Mức độ truy cập</td>
                                 <td>Ý kiến GQ</td>
                                 <td>Xem Nội dung</td>
+                                <td>Thao tác</td>
                             </tr>
                             <asp:PlaceHolder runat="server" ID="place_holder_phong" />
                         </table>
-                        <asp:DataPager ID="lst_Phong" runat="server" PageSize="30">
-                        </asp:DataPager>
                     </LayoutTemplate>
                     <ItemTemplate>
                         <tr>
                             <td>
-
                                 <asp:LinkButton runat="server" ID="LinkButton1" PostBackUrl='<%# "~/views/vanban/FormHienThiVB.aspx?vbid=" + Eval("VBrecordID") %>'><%#Eval("SoKHVB") %></asp:LinkButton></td>
                             <td><%#Eval("SoTo") %></td>
                             <td><%#Eval("NgonNgu") %></td>
@@ -161,15 +192,31 @@
                             <td><%#Eval("YKienGQ") %></td>
                             <td>
                                 <asp:LinkButton runat="server" ID="link_hienthi_vb" PostBackUrl='<%# Eval("LinkFile") %>'>Xem</asp:LinkButton>
-
-                                <%--<asp:LinkButton runat="server" id="LinkButton2" PostBackUrl='<% 
-                                    
-                                     %>' >Xem</asp:LinkButton>--%>
                             </td>
+                            <td>
+                                <asp:LinkButton ID="btn_edit_phong" CommandName='<%#Eval("VBrecordID") %>' CssClass="btn btn-info btn-xs" runat="server">
+                                    <span class="glyphicon glyphicon-edit"></span> &nbsp;Sửa
+
+                                </asp:LinkButton>
+                                <br />
+                                <br />
+                                <asp:LinkButton ID="btn_remove_phong" OnClick="btn_remove_phong_Click" CommandName='<%#Eval("VBrecordID") %>' OnClientClick="return confirm('Bạn có chắc chắn muốn xóa?')" CssClass="btn btn-info btn-xs" runat="server">
+                                     <span class="glyphicon glyphicon-remove"></span> &nbsp;Xóa
+                                </asp:LinkButton>
+                            </td>
+
                         </tr>
                     </ItemTemplate>
                 </asp:ListView>
 
+                 <asp:DataPager ID="Pager_VB" runat="server" PagedControlID="lst_VB" PageSize="10">
+                    <Fields>
+                       <asp:NextPreviousPagerField
+                        ShowFirstPageButton="true" ShowLastPageButton="true"
+                        FirstPageText="|<< " LastPageText=" >>|"
+                        NextPageText=" > " PreviousPageText=" < " />
+                    </Fields>
+                </asp:DataPager>
             </table>
             <%} %>
         </div>

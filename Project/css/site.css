@@ -181,3 +181,7 @@ a.list-group-item:focus, a.list-group-item:hover, button.list-group-item:focus, 
         padding-right: 0;
     }
 }
+
+.div_insert{
+    display:none;
+}

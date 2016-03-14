@@ -22,6 +22,33 @@ namespace Project.views.QLluutru {
         protected global::System.Web.UI.WebControls.ListView lst_Phong;
         
         /// <summary>
+        /// Pager_Phong control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.DataPager Pager_Phong;
+        
+        /// <summary>
+        /// div_alert control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Panel div_alert;
+        
+        /// <summary>
+        /// lbl_ShowInfo control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label lbl_ShowInfo;
+        
+        /// <summary>
         /// btn_HS_insert control.
         /// </summary>
         /// <remarks>
@@ -31,13 +58,40 @@ namespace Project.views.QLluutru {
         protected global::System.Web.UI.WebControls.Button btn_HS_insert;
         
         /// <summary>
-        /// list_HS control.
+        /// lst_HS control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.ListView list_HS;
+        protected global::System.Web.UI.WebControls.ListView lst_HS;
+        
+        /// <summary>
+        /// Pager_HS control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.DataPager Pager_HS;
+        
+        /// <summary>
+        /// div_alert1 control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Panel div_alert1;
+        
+        /// <summary>
+        /// lbl_ShowInfo1 control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label lbl_ShowInfo1;
         
         /// <summary>
         /// btn_VB_insert control.
@@ -56,5 +110,14 @@ namespace Project.views.QLluutru {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.ListView lst_VB;
+        
+        /// <summary>
+        /// Pager_VB control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.DataPager Pager_VB;
     }
 }

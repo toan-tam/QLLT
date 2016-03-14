@@ -13,6 +13,24 @@ namespace Project.views.phong {
     public partial class Show {
         
         /// <summary>
+        /// div_alert control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Panel div_alert;
+        
+        /// <summary>
+        /// lbl_ShowInfo control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label lbl_ShowInfo;
+        
+        /// <summary>
         /// btn_show_insert control.
         /// </summary>
         /// <remarks>
@@ -22,6 +40,78 @@ namespace Project.views.phong {
         protected global::System.Web.UI.WebControls.Button btn_show_insert;
         
         /// <summary>
+        /// div_insert control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.HtmlControls.HtmlGenericControl div_insert;
+        
+        /// <summary>
+        /// txt_TenPhong control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.TextBox txt_TenPhong;
+        
+        /// <summary>
+        /// txta_GhiChu control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.TextBox txta_GhiChu;
+        
+        /// <summary>
+        /// hidden_id control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.HtmlControls.HtmlInputHidden hidden_id;
+        
+        /// <summary>
+        /// btn_sua control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Button btn_sua;
+        
+        /// <summary>
+        /// btn_themmoi control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Button btn_themmoi;
+        
+        /// <summary>
+        /// btn_huybo control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Button btn_huybo;
+        
+        /// <summary>
+        /// btn_quaylai control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Button btn_quaylai;
+        
+        /// <summary>
         /// lst_Phong control.
         /// </summary>
         /// <remarks>
@@ -29,5 +119,14 @@ namespace Project.views.phong {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.ListView lst_Phong;
+        
+        /// <summary>
+        /// Pager_Phong control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.DataPager Pager_Phong;
     }
 }

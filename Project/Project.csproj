@@ -64,9 +64,9 @@
     <Content Include="js\jquery.js" />
     <Content Include="views\auth\DangNhap.aspx" />
     <Content Include="views\hoso\FormThemHS.aspx" />
+    <Content Include="views\kho\show.aspx" />
     <Content Include="views\pages\gioithieu.aspx" />
     <Content Include="views\pages\trangchu.aspx" />
-    <Content Include="views\phong\create.aspx" />
     <Content Include="views\phong\show.aspx" />
     <Content Include="views\QLdanhmuc\QLdanhmuc.aspx" />
     <Content Include="views\QLluutru\QLluutru.aspx" />
@@ -112,6 +112,13 @@
     <Compile Include="views\hoso\FormThemHS.aspx.designer.cs">
       <DependentUpon>FormThemHS.aspx</DependentUpon>
     </Compile>
+    <Compile Include="views\kho\show.aspx.cs">
+      <DependentUpon>show.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="views\kho\show.aspx.designer.cs">
+      <DependentUpon>show.aspx</DependentUpon>
+    </Compile>
     <Compile Include="views\layout\Site.Master.cs">
       <DependentUpon>Site.Master</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -132,13 +139,6 @@
     </Compile>
     <Compile Include="views\pages\trangchu.aspx.designer.cs">
       <DependentUpon>trangchu.aspx</DependentUpon>
-    </Compile>
-    <Compile Include="views\phong\create.aspx.cs">
-      <DependentUpon>create.aspx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="views\phong\create.aspx.designer.cs">
-      <DependentUpon>create.aspx</DependentUpon>
     </Compile>
     <Compile Include="views\phong\show.aspx.cs">
       <DependentUpon>show.aspx</DependentUpon>
