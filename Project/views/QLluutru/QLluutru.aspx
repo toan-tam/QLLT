@@ -175,7 +175,10 @@
                                 <asp:LinkButton runat="server" ID="LinkButton1" PostBackUrl='<%# "~/views/vanban/FormHienThiVB.aspx?vbid=" + Eval("VBrecordID") %>'><%#Eval("SoKHVB") %></asp:LinkButton></td>
                             <td><%#Eval("SoTo") %></td>
                             <td><%#Eval("NgonNgu") %></td>
+<<<<<<< HEAD
+=======
 
+>>>>>>> 56d2c11a2090777f08d9e76fbcbf6076c1a61eb5
                             <td>
                                 <%#Eval("TrichYeuND") %>
                             </td>
@@ -192,6 +195,7 @@
                             <td><%#Eval("YKienGQ") %></td>
                             <td>
                                 <asp:LinkButton runat="server" ID="link_hienthi_vb" PostBackUrl='<%# Eval("LinkFile") %>'>Xem</asp:LinkButton>
+                                <a id="Link_File" runat="server" href='<%# Eval("LinkFile") %>' ><%# Eval("LinkText") %></a>
                             </td>
                             <td>
                                 <asp:LinkButton ID="btn_edit_phong" CommandName='<%#Eval("VBrecordID") %>' CssClass="btn btn-info btn-xs" runat="server">

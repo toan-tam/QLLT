@@ -21,6 +21,8 @@ namespace Project.models
         public string MucDoTruyCap { get; set; }
         public string YKienGQ { get; set; }
         public string LinkFile { get; set; }
+        public string LinkText { get; set; }
+        public string LinkColor { get; set; }
         public string FileAttachType { get; set; }
 
         public Vbrecord_ett() {  }
@@ -39,6 +41,7 @@ namespace Project.models
             MucDoMat = vbobj.Mucdomat;
             MucDoTruyCap = vbobj.Mucdotruycap;
             YKienGQ = vbobj.YkienGQ;
+            LinkFile = "";
 
             var vbFileAttach = vbobj.VbFileAttaches.Where(o => o.Vbrecords_ID == vbobj.Vbrecords_Id);
 
@@ -58,6 +61,13 @@ namespace Project.models
                             LinkFile = "http://docs.google.com/gview?url=" + domain_str + faobj.DestFileName.Replace('\\', '/');
                         }
                     }
+                    LinkText = "Xem";
+                    LinkColor = "Green";
+                }
+                else
+                {
+                    LinkText = "Không có file đính kèm";
+                    LinkColor = "Red";
                 }
 
                 // faobj.DestFileName;
