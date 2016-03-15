@@ -9,7 +9,7 @@
         <uc:sidebarQLDM runat="server" />
 
         <div class="col-sm-9 div_content_QLphong">
-            <div class="row nav_bar header_padding text-left"><a href="/views/QLdanhmuc/QLdanhmuc.aspx?active=DM" class="a_title"> Quản lý danh mục</a> > Quản lý Phông lưu trữ</div>
+            <div class="row nav_bar header_padding text-left">Quản lý Phông lưu trữ</div>
             <br />
             <asp:Panel ID="div_alert" runat="server">
                 <asp:Label ID="lbl_ShowInfo" runat="server" ForeColor="#009933"></asp:Label>
