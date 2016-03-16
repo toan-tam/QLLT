@@ -13,7 +13,7 @@
                     <a href="#" class="list-group-item">Quản lý danh mục Thời hạn bảo quản</a>
                     <a href="#" class="list-group-item">Quản lý danh mục Chế độ sử dụng</a>
                     <a href="#" class="list-group-item">Quản lý danh mục Tình trạng vật lý</a>
-                    <a href="#" class="list-group-item">Quản lý danh mục Ngôn ngữ</a>
+                    <a href="/views/ngonngu/show.aspx" class="list-group-item">Quản lý danh mục Ngôn ngữ</a>
                     <a href="#" class="list-group-item">Quản lý danh mục Đơn vị hành chính</a>
                 </div>
             </div>
