@@ -73,7 +73,7 @@
             <% if (Request.QueryString["act"] == "display")
                 {%>
 
-            <div class="row nav_bar header_padding text-left"><a href="QLluutru.aspx?active=LT" class="a_title">Quản lý lưu trữ</a>  > Quản lý hồ sơ</div>
+            <div class="row nav_bar header_padding text-left"><a runat="server" id="link_Phong_tittle" class="a_title"></a>  > Danh sách hồ sơ</div>
             <br />
             <asp:Panel ID="div_alert" runat="server">
                 <asp:Label ID="lbl_ShowInfo" runat="server" ForeColor="#009933"></asp:Label>
@@ -86,8 +86,6 @@
                     <table class="table table-responsive table-bordered text-center">
                         <tr class="font_12 font_bold">
                             <td>Hồ sơ số</td>
-                            <td>Cơ quan lưu trữ</td>
-                            <td>Phông</td>
                             <td>Mục lục số</td>
                             <td>Hộp số</td>
 
@@ -105,8 +103,6 @@
                         <td>
                             <asp:LinkButton ID="Link_HoSo" OnClick="Link_HoSo_Click" CommandName='<%#Eval("Hsrecords_Id") %>' runat="server">Hồ sơ số  <%#Eval("Hososo") %></asp:LinkButton>
                         </td>
-                        <td><%#Eval("MaKho") %></td>
-                        <td><%#Eval("MaPhong") %></td>
                         <td><%#Eval("Muclucso") %></td>
                         <td><%#Eval("Hopso") %></td>
                         <td><%#Eval("Tieude") %></td>
@@ -142,7 +138,7 @@
 
             <% if (Request.QueryString["act"] == "displayVB")
                 {%>
-            <div class="row nav_bar header_padding text-left"><a href="QLluutru.aspx?active=LT" class="a_title">Quản lý lưu trữ</a> > <a href="QLluutru.aspx?act=display&id=<%=GetPhongParentIdByHSID(Request["id"]) %>" class="a_title">Quản lý hồ sơ</a> > Quản lý văn bản</div>
+            <div class="row nav_bar header_padding text-left"><a runat="server" id="link_phong_title1" class="a_title"></a> > <a id="link_hoso_title" runat="server" class="a_title"></a> > Danh sách văn bản</div>
             <br />
             <asp:Panel ID="div_alert1" runat="server">
                 <asp:Label ID="lbl_ShowInfo1" runat="server" ForeColor="#009933"></asp:Label>
@@ -193,7 +189,7 @@
                             </td>
                             <td><%#Eval("YKienGQ") %></td>
                             <td>
-                               <%-- <asp:LinkButton runat="server" ID="link_hienthi_vb" PostBackUrl='<%# Eval("LinkFile") %>'>Xem</asp:LinkButton>--%>
+                                <%-- <asp:LinkButton runat="server" ID="link_hienthi_vb" PostBackUrl='<%# Eval("LinkFile") %>'>Xem</asp:LinkButton>--%>
                                 <a id="Link_File" runat="server" href='<%# Eval("LinkFile") %>'><%# Eval("LinkText") %></a>
                             </td>
                             <td>
