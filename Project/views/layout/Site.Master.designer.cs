@@ -121,6 +121,24 @@ namespace Project.views.layout {
         protected global::System.Web.UI.WebControls.LinkButton Link_BC;
         
         /// <summary>
+        /// Li_TK control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.HtmlControls.HtmlGenericControl Li_TK;
+        
+        /// <summary>
+        /// Link_TK control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.LinkButton Link_TK;
+        
+        /// <summary>
         /// head control.
         /// </summary>
         /// <remarks>

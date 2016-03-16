@@ -26,13 +26,13 @@
                         </td>
                     </tr>
                     <tr>
-                        <td>Tên Kho: </td>
+                        <td><label for="txt_TenKho" class="form-control-static"> Tên kho: </label></td>
                         <td colspan="3">
                             <asp:TextBox ID="txt_TenKho" class="form-control" runat="server" Width="100%"></asp:TextBox>
                         </td>
                     </tr>
                     <tr>
-                        <td>Ghi chú: </td>
+                        <td><label for="txta_GhiChu" class="form-control-static"> Ghi chú: </label></td>
                         <td colspan="3">
                             <asp:TextBox ID="txta_GhiChu" class="form-control" TextMode="MultiLine" Width="100%" runat="server"></asp:TextBox>
                         </td>

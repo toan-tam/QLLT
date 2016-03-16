@@ -64,6 +64,10 @@
                             <asp:LinkButton ID="Link_BC" runat="server" OnClick="a_QLDM_Click">Tra cứu báo cáo</asp:LinkButton>
 
                         </li>
+                         <li id="Li_TK" runat="server">
+                            <asp:LinkButton ID="Link_TK" runat="server" OnClick="a_QLDM_Click">Tìm kiếm</asp:LinkButton>
+
+                        </li>
                     </ul>
                 </div>
             </div>

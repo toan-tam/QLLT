@@ -195,3 +195,17 @@ a.list-group-item:focus, a.list-group-item:hover, button.list-group-item:focus, 
     .a_title:hover {
         color: white;
     }
+
+.border_ddd {
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    min-height: 422px
+}
+
+.margintop_20px{
+    padding-top:20px;
+}
+
+.font_13{
+    font-size:13px;
+}
