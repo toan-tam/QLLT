@@ -40,6 +40,10 @@ namespace Project.views.layout
                     case "BC":
                         Li_BC.Attributes.Add("class", "active");
                         break;
+
+                    case "TK":
+                        Li_TK.Attributes.Add("class", "active");
+                        break;
                     default:
                         break;
                 }
@@ -80,10 +84,16 @@ namespace Project.views.layout
                     Response.Redirect("/views/pages/gioithieu.aspx?active=GT");
 
                     break;
+
+                case "Link_TK":
+                    Response.Redirect("/views/timkiem/timkiem.aspx?active=GT");
+
+                    break;
                 default:
                     break;
             }
 
         }
+
     }
 }

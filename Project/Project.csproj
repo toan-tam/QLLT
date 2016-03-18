@@ -71,6 +71,7 @@
     <Content Include="views\QLdanhmuc\QLdanhmuc.aspx" />
     <Content Include="views\QLluutru\QLluutru.aspx" />
     <Content Include="views\partials\sidebarQLDanhmuc.ascx" />
+    <Content Include="views\timkiem\timkiem.aspx" />
     <Content Include="views\vanban\FormHienThiVB.aspx" />
     <Content Include="views\vanban\FormThemVB.aspx" />
     <Content Include="views\vanban\PlayVideoDemo.aspx" />
@@ -168,6 +169,13 @@
     </Compile>
     <Compile Include="views\partials\sidebarQLDanhmuc.ascx.designer.cs">
       <DependentUpon>sidebarQLDanhmuc.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="views\timkiem\timkiem.aspx.cs">
+      <DependentUpon>timkiem.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="views\timkiem\timkiem.aspx.designer.cs">
+      <DependentUpon>timkiem.aspx</DependentUpon>
     </Compile>
     <Compile Include="views\vanban\FormHienThiVB.aspx.cs">
       <DependentUpon>FormHienThiVB.aspx</DependentUpon>

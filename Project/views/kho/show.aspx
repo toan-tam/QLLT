@@ -7,7 +7,7 @@
     <div class="row">
         <uc:sidebarQLDM runat="server" />
         <div class="col-sm-9 div_content_QLphong">
-            <div class="row nav_bar header_padding text-left"><a href="/views/QLdanhmuc/QLdanhmuc.aspx?active=DM" class="a_title">Quản lý danh mục</a> > Quản lý Kho lưu trữ</div>
+            <div class="row nav_bar header_padding text-left">Quản lý Kho lưu trữ</div>
             <br />
             <asp:Panel ID="div_alert" runat="server">
                 <asp:Label ID="lbl_ShowInfo" runat="server" ForeColor="#009933"></asp:Label>
@@ -26,13 +26,13 @@
                         </td>
                     </tr>
                     <tr>
-                        <td>Tên Kho: </td>
+                        <td><label for="txt_TenKho" class="form-control-static"> Tên kho: </label></td>
                         <td colspan="3">
                             <asp:TextBox ID="txt_TenKho" class="form-control" runat="server" Width="100%"></asp:TextBox>
                         </td>
                     </tr>
                     <tr>
-                        <td>Ghi chú: </td>
+                        <td><label for="txta_GhiChu" class="form-control-static"> Ghi chú: </label></td>
                         <td colspan="3">
                             <asp:TextBox ID="txta_GhiChu" class="form-control" TextMode="MultiLine" Width="100%" runat="server"></asp:TextBox>
                         </td>

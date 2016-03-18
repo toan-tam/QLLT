@@ -73,7 +73,7 @@
             <% if (Request.QueryString["act"] == "display")
                 {%>
 
-            <div class="row nav_bar header_padding text-left"><a href="QLluutru.aspx?active=LT" class="a_title">Quản lý lưu trữ</a>  > Quản lý hồ sơ</div>
+            <div class="row nav_bar header_padding text-left"><a runat="server" id="link_Phong_tittle" class="a_title"></a>> Danh sách hồ sơ</div>
             <br />
             <asp:Panel ID="div_alert" runat="server">
                 <asp:Label ID="lbl_ShowInfo" runat="server" ForeColor="#009933"></asp:Label>
@@ -81,49 +81,32 @@
             <asp:Button ID="btn_HS_insert" OnClick="btn_HS_insert_Click" runat="server" CssClass="btn btn-primary font_12 font_bold" Text="Thêm mới" />
             <br />
             <br />
-            <asp:ListView ID="lst_HS" runat="server" ItemPlaceholderID="tablePlaceHolder" OnPagePropertiesChanging="lst_HS_PagePropertiesChanging">
+            <asp:ListView ID="lst_HS" runat="server" GroupItemCount="8">
                 <LayoutTemplate>
-                    <table class="table table-responsive table-bordered text-center">
-                        <tr class="font_12 font_bold">
-                            <td>Hồ sơ số</td>
-                            <td>Cơ quan lưu trữ</td>
-                            <td>Phông</td>
-                            <td>Mục lục số</td>
-                            <td>Hộp số</td>
-
-                            <td>Tiêu đề</td>
-
-                            <td>Bút tích</td>
-                            <td>Số lượng tờ</td>
-                            <td>Thao tác</td>
+                    <table class="table table-responsive">
+                        <tr>
+                            <td>
+                                <table class="table table_group">
+                                    <asp:PlaceHolder runat="server" ID="groupPlaceHolder"></asp:PlaceHolder>
+                                </table>
+                            </td>
                         </tr>
-                        <asp:PlaceHolder runat="server" ID="tablePlaceHolder"></asp:PlaceHolder>
                     </table>
                 </LayoutTemplate>
-                <ItemTemplate>
+                <GroupTemplate>
                     <tr>
-                        <td>
-                            <asp:LinkButton ID="Link_HoSo" OnClick="Link_HoSo_Click" CommandName='<%#Eval("Hsrecords_Id") %>' runat="server">Hồ sơ số  <%#Eval("Hososo") %></asp:LinkButton>
-                        </td>
-                        <td><%#Eval("MaKho") %></td>
-                        <td><%#Eval("MaPhong") %></td>
-                        <td><%#Eval("Muclucso") %></td>
-                        <td><%#Eval("Hopso") %></td>
-                        <td><%#Eval("Tieude") %></td>
-                        <td><%#Eval("Buttich") %></td>
-                        <td><%#Eval("Soluongto") %></td>
-                        <td>
-                            <asp:LinkButton ID="btn_edit_HS" CommandName='<%#Eval("Hsrecords_Id") %>' CssClass="btn btn-info btn-xs" runat="server">
-                                    <span class="glyphicon glyphicon-edit"></span> &nbsp;Sửa
-
-                            </asp:LinkButton>
-                            <br />
-                            <br />
-                            <asp:LinkButton ID="btn_remove_HS" OnClick="btn_remove_HS_Click" CommandName='<%#Eval("Hsrecords_Id") %>' OnClientClick="return confirm('Bạn có chắc chắn muốn xóa?')" CssClass="btn btn-info btn-xs" runat="server">
-                                     <span class="glyphicon glyphicon-remove"></span> &nbsp;Xóa
-                            </asp:LinkButton>
-                        </td>
+                        <asp:PlaceHolder runat="server" ID="itemPlaceHolder"></asp:PlaceHolder>
                     </tr>
+                </GroupTemplate>
+                <ItemTemplate>
+                    <td>
+                        <div class="row margin_b10">
+                            <img src="../../images/hosoicon.png" width="80" alt="Alternate Text" />
+                        </div>
+
+                        <%--<p>Hồ sơ <%#Eval("Hososo")%></p>--%>
+                        <asp:LinkButton ID="Link_HoSo" OnClick="Link_HoSo_Click" CommandName='<%#Eval("Hsrecords_Id") %>' runat="server">Hồ sơ số  <%#Eval("Hososo") %></asp:LinkButton>
+                    </td>
                 </ItemTemplate>
             </asp:ListView>
 
@@ -142,7 +125,7 @@
 
             <% if (Request.QueryString["act"] == "displayVB")
                 {%>
-            <div class="row nav_bar header_padding text-left"><a href="QLluutru.aspx?active=LT" class="a_title">Quản lý lưu trữ</a> > <a href="QLluutru.aspx?act=display&id=<%=GetPhongParentIdByHSID(Request["id"]) %>" class="a_title">Quản lý hồ sơ</a> > Quản lý văn bản</div>
+            <div class="row nav_bar header_padding text-left"><a runat="server" id="link_phong_title1" class="a_title"></a>> <a id="link_hoso_title" runat="server" class="a_title"></a>> Danh sách văn bản</div>
             <br />
             <asp:Panel ID="div_alert1" runat="server">
                 <asp:Label ID="lbl_ShowInfo1" runat="server" ForeColor="#009933"></asp:Label>
@@ -193,7 +176,7 @@
                             </td>
                             <td><%#Eval("YKienGQ") %></td>
                             <td>
-                               <%-- <asp:LinkButton runat="server" ID="link_hienthi_vb" PostBackUrl='<%# Eval("LinkFile") %>'>Xem</asp:LinkButton>--%>
+                                <%-- <asp:LinkButton runat="server" ID="link_hienthi_vb" PostBackUrl='<%# Eval("LinkFile") %>'>Xem</asp:LinkButton>--%>
                                 <a id="Link_File" runat="server" href='<%# Eval("LinkFile") %>'><%# Eval("LinkText") %></a>
                             </td>
                             <td>

@@ -14,11 +14,10 @@ namespace Project.views.QLluutru
 
         protected void Page_Load(object sender, EventArgs e)
         {
+            // Bind dữ liệu
             BindListPhong();
             BindListHS();
             BindListVB();
-            Page.DataBind();
-
 
             //Thông báo thành công
             if (Session["info"] != null)
@@ -32,6 +31,9 @@ namespace Project.views.QLluutru
                 lbl_ShowInfo1.Text = Session["info"].ToString();
                 Session["info"] = null;
             }
+
+
+
 
         }
 
@@ -152,6 +154,7 @@ namespace Project.views.QLluutru
             }
         }
 
+        #region Phân trang và Bind dữ liệu
         protected void lst_VB_PagePropertiesChanging(object sender, PagePropertiesChangingEventArgs e)
         {
             Pager_VB.SetPageProperties(e.StartRowIndex, e.MaximumRows, false);
@@ -176,7 +179,16 @@ namespace Project.views.QLluutru
             //[Duong] bind du lieu van ban
             if (Request.QueryString["act"] == "displayVB" && Request.QueryString["id"] != "" && Request.QueryString["id"] != null)
             {
-                int id = int.Parse(Request.QueryString["id"]);
+                long id = long.Parse(Request.QueryString["id"]);
+
+                // title bar of content
+                link_hoso_title.HRef = Request.Url.ToString();
+                link_hoso_title.InnerText = "Hồ sơ số " + GetHSNameByID(id);
+
+                link_phong_title1.InnerText = GetPhongNameByVBID(id);
+                link_phong_title1.HRef = "/views/QLluutru/QLluutru.aspx?act=display&id=" + GetPhongIdByVBID(id);
+
+
                 var tbl_VB = db.Vbrecords.Where(o => o.Hsrecords_Id == id);
 
                 //get domain path
@@ -205,7 +217,13 @@ namespace Project.views.QLluutru
             // [Toàn] Bind hồ sơ
             if (Request.QueryString["act"] == "display" && Request.QueryString["id"] != "" && Request.QueryString["id"] != null)
             {
-                int id = int.Parse(Request.QueryString["id"]);
+                long id = long.Parse(Request.QueryString["id"]);
+
+                //title of bar content
+                link_Phong_tittle.HRef = Request.Url.ToString();
+                link_Phong_tittle.InnerText = GetPhongNameByID(id);
+
+
                 var tbl_Phong10 = db.Hsrecords.Where(o => o.MaPhong == id).Take(10);
                 lst_HS.DataSource = tbl_Phong10;
                 lst_HS.DataBind();
@@ -219,7 +237,7 @@ namespace Project.views.QLluutru
             lst_Phong.DataSource = tbl_phongs;
             lst_Phong.DataBind();
         }
-
+        #endregion
 
         // lấy Hồ sơ_Id by văn bản ID
         protected string GetHSParentIdByVBID(string id_vanban)
@@ -229,12 +247,29 @@ namespace Project.views.QLluutru
             return vb.Hsrecords_Id.ToString();
         }
 
-        // lấy Phông_Id by Hồ sơ ID
-        protected string GetPhongParentIdByHSID(string id_hoso)
+        // lấy tên của Phông by ID
+        protected string GetPhongNameByID(long id)
         {
-            Hsrecord hs = db.Hsrecords.Where(o => o.Hsrecords_Id == long.Parse(id_hoso)).SingleOrDefault();
+            return db.Phongs.Where(o => o.MaPhong == id).SingleOrDefault().TenPhong;
+        }
 
-            return hs.MaPhong.ToString();
+        // lấy tên của Phông by Văn bản ID
+        protected string GetPhongNameByVBID(long id)
+        {
+            Hsrecord hs = db.Hsrecords.Where(o => o.Hsrecords_Id == id).SingleOrDefault();
+            return db.Phongs.Where(o => o.MaPhong == hs.MaPhong).SingleOrDefault().TenPhong;
+        }
+
+        // lấy Phông_Id by Hồ sơ ID
+        protected string GetPhongIdByVBID(long id)
+        {
+            return db.Hsrecords.Where(o => o.Hsrecords_Id == id).SingleOrDefault().MaPhong.ToString();
+        }
+
+        // lấy tên của Hồ sơ by ID
+        protected string GetHSNameByID(long id)
+        {
+            return db.Hsrecords.Where(o => o.Hsrecords_Id == id).SingleOrDefault().Hososo;
         }
     }
 }

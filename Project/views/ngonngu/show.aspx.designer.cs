@@ -7,144 +7,153 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace Project.views.layout {
+namespace Project.views.ngonngu {
     
     
-    public partial class Site {
+    public partial class show {
         
         /// <summary>
-        /// Li_TT control.
+        /// div_alert control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.HtmlControls.HtmlGenericControl Li_TT;
+        protected global::System.Web.UI.WebControls.Panel div_alert;
         
         /// <summary>
-        /// Link_TT control.
+        /// lbl_ShowInfo control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.LinkButton Link_TT;
+        protected global::System.Web.UI.WebControls.Label lbl_ShowInfo;
         
         /// <summary>
-        /// Li_HT control.
+        /// btn_show_insert control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.HtmlControls.HtmlGenericControl Li_HT;
+        protected global::System.Web.UI.WebControls.Button btn_show_insert;
         
         /// <summary>
-        /// Link_HT control.
+        /// div_insert control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.LinkButton Link_HT;
+        protected global::System.Web.UI.HtmlControls.HtmlGenericControl div_insert;
         
         /// <summary>
-        /// Li_GT control.
+        /// txtTen control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.HtmlControls.HtmlGenericControl Li_GT;
+        protected global::System.Web.UI.WebControls.TextBox txtTen;
         
         /// <summary>
-        /// Link_GT control.
+        /// rfvtxtTen control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.LinkButton Link_GT;
+        protected global::System.Web.UI.WebControls.RequiredFieldValidator rfvtxtTen;
         
         /// <summary>
-        /// Li_DM control.
+        /// txtGhiChu control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.HtmlControls.HtmlGenericControl Li_DM;
+        protected global::System.Web.UI.WebControls.TextBox txtGhiChu;
         
         /// <summary>
-        /// Link_DM control.
+        /// txtSTT control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.LinkButton Link_DM;
+        protected global::System.Web.UI.WebControls.TextBox txtSTT;
         
         /// <summary>
-        /// Li_LT control.
+        /// ckbActive control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.HtmlControls.HtmlGenericControl Li_LT;
+        protected global::System.Web.UI.WebControls.CheckBox ckbActive;
         
         /// <summary>
-        /// Link_LT control.
+        /// hidden_id control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.LinkButton Link_LT;
+        protected global::System.Web.UI.HtmlControls.HtmlInputHidden hidden_id;
         
         /// <summary>
-        /// Li_BC control.
+        /// btn_sua control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.HtmlControls.HtmlGenericControl Li_BC;
+        protected global::System.Web.UI.WebControls.Button btn_sua;
         
         /// <summary>
-        /// Link_BC control.
+        /// btn_themmoi control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.LinkButton Link_BC;
+        protected global::System.Web.UI.WebControls.Button btn_themmoi;
         
         /// <summary>
-        /// Li_TK control.
+        /// btn_huybo control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.HtmlControls.HtmlGenericControl Li_TK;
+        protected global::System.Web.UI.WebControls.Button btn_huybo;
         
         /// <summary>
-        /// Link_TK control.
+        /// btn_quaylai control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.LinkButton Link_TK;
+        protected global::System.Web.UI.WebControls.Button btn_quaylai;
         
         /// <summary>
-        /// head control.
+        /// lst_NN control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.ContentPlaceHolder head;
+        protected global::System.Web.UI.WebControls.ListView lst_NN;
+        
+        /// <summary>
+        /// Pager_NN control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.DataPager Pager_NN;
     }
 }
